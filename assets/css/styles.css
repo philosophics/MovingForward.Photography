@@ -1,0 +1,202 @@
+/* Universal styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Roboto", "Open Sans", Arial, sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #808080;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* General Header Styles */
+header {
+  text-align: center;
+  padding: 10px;
+  background-color: #222;
+  color: #fff;
+  font-size: 1.5rem; /* Default font size */
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Prevent overflow */
+  text-overflow: ellipsis; /* Add ellipsis if content overflows */
+  max-width: 100%; /* Ensure header fits within the screen */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Ensure font scales properly on mobile screens */
+@media screen and (max-width: 768px) {
+  header {
+    font-size: calc(3vw); /* Scale font size relative to viewport width */
+    padding: 8px; /* Compact padding */
+  }
+}
+
+main {
+  flex: 1; /* Allows the main content to grow and fill available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #808080;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation styles */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #222;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #00aaff;
+}
+
+/* Card Container */
+.card {
+  position: relative;
+  width: 90%; /* Ensures the card adapts to screen size */
+  max-width: 512px; /* Limits the card's size to 512px */
+  aspect-ratio: 1 / 1; /* Ensures the card maintains a square shape */
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 20px; /* Adds padding for smaller screens */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Content */
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px; /* Adds padding for text content */
+  box-sizing: border-box;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent background for text */
+  border-radius: 10px;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+/* Image Styling */
+.card img {
+  width: 100%; /* Image adapts to the card's size */
+  height: 100%; /* Maintains aspect ratio */
+  object-fit: cover; /* Ensures the image covers the card area */
+  border-radius: 10px; /* Matches card's border-radius */
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover img {
+  opacity: 0.8; /* Slight fade effect on hover */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+}
+
+/* Footer Styles */
+footer {
+  background-color: #141414;
+  color: gray;
+  padding: 10px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Spread items evenly on larger screens */
+  align-items: center; /* Vertically align items */
+  max-width: 1200px; /* Constrain the content width */
+  margin: 0 auto; /* Center the footer container */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 10px; /* Space between items */
+}
+
+/* Footer Text and Links */
+footer p {
+  margin: 0;
+  font-size: 14px; /* Default font size */
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffa000;
+}
+
+/* Media Queries for Mobile Screens */
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 5px 10px; /* Reduce padding on mobile */
+  }
+
+  .footer-container {
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center-align the text */
+    gap: 5px; /* Reduce gap for compactness */
+  }
+
+  footer p {
+    font-size: 12px; /* Smaller font size on mobile */
+  }
+
+  footer a {
+    font-size: 12px; /* Adjust link font size */
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Photography Portfolio</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="assets/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" href="assets/images/favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="manifest" href="assets/manifest.json" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="card">
+        <img src="assets/images/logo.png" alt="Logo Image" />
+        <div class="card__content">
+          <p class="card__title">COMING SOON</p>
+          <p class="card__description">
+            Site under construction.
+            <br />Check back soon!
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("/MovingForward/service-worker.js")
+      .then((registration) => {
+        console.log(
+          "Service Worker registered with scope:",
+          registration.scope
+        );
+      })
+      .catch((error) => {
+        console.error("Service Worker registration failed:", error);
+      });
+  }
+</script>

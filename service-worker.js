@@ -2,6 +2,7 @@ const CACHE_NAME = "mfp-cache-v1";
 const ASSETS_TO_CACHE = [
   "/MovingForward/",
   "/MovingForward/index.html",
+  "/MovingForward/assets/manifest.json",
   "/MovingForward/assets/css/styles.css",
   "/MovingForward/assets/js/script.js",
   "/MovingForward/assets/images/icon-192x192.png",

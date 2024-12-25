@@ -1,19 +1,23 @@
 {
   "name": "Moving Forward Photography",
-  "short_name": "MFP",
+  "short_name": "MF Photos",
   "description": "Showcasing the best of Moving Forward Photography.",
   "start_url": "/MovingForward/index.html",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#808080",
   "theme_color": "#141414",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["photography", "art", "portfolio", "creativity"],
   "icons": [
     {
-      "src": "assets/images/icon-192x192.png",
+      "src": "images/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "assets/images/icon-512x512.png",
+      "src": "images/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

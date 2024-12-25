@@ -13,22 +13,21 @@ body {
   background-color: #808080;
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Ensures full viewport height */
-  overflow: hidden; /* Prevents body scrolling */
+  min-height: 100vh;
 }
 
 /* General Header Styles */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  text-align: center;
+  padding: 10px;
   background-color: #222;
   color: #fff;
   font-size: 1.5rem; /* Default font size */
-  text-align: center;
-  z-index: 1000; /* Ensures header is above other content */
-  padding: 10px;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Prevent overflow */
+  text-overflow: ellipsis; /* Add ellipsis if content overflows */
+  max-width: 100%; /* Ensure header fits within the screen */
+  box-sizing: border-box; /* Include padding in width */
 }
 
 /* Ensure font scales properly on mobile screens */
@@ -39,15 +38,14 @@ header {
   }
 }
 
-/* Main content styles */
 main {
-  flex: 1; /* Allows main content to grow and fill available space */
-  overflow-y: auto; /* Enables scrolling for the main content */
-  padding: 60px 20px 50px; /* Adds space for fixed header and footer */
+  flex: 1; /* Allows the main content to grow and fill available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   background: #808080;
-  display: flex; /* Flexbox to center content */
-  justify-content: center; /* Horizontally center the card */
-  align-items: center; /* Vertically center the card */
+  border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -149,15 +147,9 @@ nav ul li a:hover {
 
 /* Footer Styles */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   background-color: #141414;
   color: gray;
   padding: 10px 20px;
-  text-align: center;
-  z-index: 1000; /* Ensures footer stays above other content */
 }
 
 .footer-container {

@@ -8,7 +8,7 @@
     <link rel="icon" href="assets/images/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" href="assets/images/favicon-16x16.png" sizes="16x16" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="manifest" href="/MovingForward/assets/manifest.json" />
+    <link rel="manifest" href="assets/manifest.json" />
   </head>
   <body>
     <header></header>
@@ -32,7 +32,7 @@
 <script>
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
-      .register("/MovingForward/service-worker.js")
+      .register("service-worker.js")
       .then((registration) => {
         console.log(
           "Service Worker registered with scope:",

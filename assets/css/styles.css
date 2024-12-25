@@ -23,19 +23,49 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #222;
-  color: #fff;
-  font-size: 1.5rem; /* Default font size */
-  text-align: center;
-  z-index: 1000; /* Ensures header is above other content */
-  padding: 10px;
+  height: 120px; /* Adjust based on desired header height */
+  z-index: 1000;
+  overflow: hidden; /* Ensures no overflow from child elements */
 }
 
-/* Ensure font scales properly on mobile screens */
+.header-background {
+  width: 100%;
+  height: 100%;
+  background-image: repeating-radial-gradient(
+    #0c0a0a 80%,
+    #2f312f 90%,
+    #3f4549 90%
+  );
+  background-size: 65px 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#home-title {
+  background: linear-gradient(45deg, #a8dadc, #f1faee); /* Soft and calming */
+  background-clip: text; /* Standard property */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Makes gradient visible on text */
+  font-family: "Unica One", sans-serif;
+  font-size: 3rem; /* Default size for larger screens */
+  color: #222; /* Dark text for contrast */
+  text-align: center; /* Center align the title */
+  text-transform: uppercase; /* Make it bold and impactful */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  letter-spacing: 1px; /* Add some spacing for elegance */
+  margin: 20px 0; /* Add spacing around the title */
+  white-space: nowrap; /* Prevent stacking */
+}
+
+/* Ensure proper scaling for mobile screens */
 @media screen and (max-width: 768px) {
-  header {
-    font-size: calc(3vw); /* Scale font size relative to viewport width */
-    padding: 8px; /* Compact padding */
+  #home-title {
+    font-size: 2rem; /* Reduce font size on smaller screens */
+    white-space: normal; /* Allow wrapping only if absolutely necessary */
+    word-break: break-word; /* Break long words if needed */
   }
 }
 
@@ -156,26 +186,74 @@ footer {
   background-color: #141414;
   color: gray;
   padding: 10px 20px;
-  text-align: center;
-  z-index: 1000; /* Ensures footer stays above other content */
-}
-
-.footer-container {
+  z-index: 1000;
   display: flex;
-  justify-content: space-between; /* Spread items evenly on larger screens */
-  align-items: center; /* Vertically align items */
-  max-width: 1200px; /* Constrain the content width */
-  margin: 0 auto; /* Center the footer container */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  gap: 10px; /* Space between items */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
-/* Footer Text and Links */
+/* Left Content (Powered by Cloudflare) */
+.footer-left {
+  flex: 1;
+  text-align: left;
+}
+
+/* Center Content (Copyright) */
+.footer-center {
+  flex: 1;
+  text-align: center;
+}
+
+/* Right Content (Footer Buttons) */
+.footer-buttons {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Button Styles */
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  width: 48px; /* Adjust width for proportional scaling */
+  height: 48px; /* Match height to width */
+  border-radius: 12px; /* Softer rounded corners */
+  background-color: #2d2e32;
+  border: 2px solid #2d2e32;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button svg {
+  width: 22px; /* Proper scaling for the SVG */
+  height: 22px;
+  margin: auto;
+}
+
+.button:hover {
+  transform: scale(1.1); /* Subtle scaling effect on hover */
+  background-color: #fff;
+  color: #2d2e32;
+}
+
+.button:hover .btn-svg {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg)
+    brightness(103%) contrast(103%);
+}
+
+/* Text Styling */
 footer p {
   margin: 0;
-  font-size: 14px; /* Default font size */
+  font-size: 14px; /* Keep text compact */
 }
 
+/* Links */
 footer a {
   color: #007bff;
   text-decoration: none;
@@ -186,25 +264,21 @@ footer a:hover {
   color: #ffa000;
 }
 
-/* Media Queries for Mobile Screens */
+/* Mobile Adjustments */
 @media screen and (max-width: 768px) {
   footer {
-    padding: 5px 10px; /* Reduce padding on mobile */
-  }
-
-  .footer-container {
     flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center-align the text */
-    gap: 5px; /* Reduce gap for compactness */
+    padding: 10px; /* Adjust padding for mobile */
   }
 
-  footer p {
-    font-size: 12px; /* Smaller font size on mobile */
+  .footer-left,
+  .footer-center,
+  .footer-buttons {
+    text-align: center;
+    margin: 5px 0;
   }
 
-  footer a {
-    font-size: 12px; /* Adjust link font size */
+  .footer-buttons {
+    display: none; /* Hide buttons on mobile */
   }
 }

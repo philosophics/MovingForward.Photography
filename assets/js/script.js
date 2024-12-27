@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname; // Get the current page's path
-  const isInSubdir = currentPath.includes("../assets/pages/"); // Check if we're in a subdirectory
+  const isInSubdir = currentPath.includes("./assets/pages/"); // Check if we're in a subdirectory
 
   // Paths to header and footer based on the current location
-  const headerPath = isInSubdir ? "/docs/header.html" : "header.html";
-  const footerPath = isInSubdir ? "/docs/footer.html" : "footer.html";
+  const headerPath = isInSubdir ? "./docs/header.html" : "header.html";
+  const footerPath = isInSubdir ? "./docs/footer.html" : "footer.html";
 
   // Dynamically load the header
   fetch(headerPath)

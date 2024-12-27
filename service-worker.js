@@ -1,4 +1,4 @@
-const CACHE_NAME = "mfp-cache-v2";
+const CACHE_NAME = "mfp-cache-v1";
 const ASSETS_TO_CACHE = [
   "manifest.json",
   "./assets/css/styles.css",

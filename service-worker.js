@@ -1,17 +1,17 @@
 const CACHE_NAME = "mfp-cache-v1";
 const ASSETS_TO_CACHE = [
   "manifest.json",
-  "./assets/css/styles.css",
-  "./assets/js/script.js",
-  "./assets/images/icon-192x192.png",
-  "./assets/images/icon-512x512.png",
-  "./index.html",
-  "./assets/pages/about.html",
-  "./assets/pages/contact.html",
-  "./assets/pages/abstract.html",
-  "./assets/pages/landscape.html",
-  "./assets/pages/street.html",
-  "./portal.html",
+  "/assets/css/styles.css",
+  "/assets/js/script.js",
+  "/assets/images/icon-192x192.png",
+  "/assets/images/icon-512x512.png",
+  "/index.html",
+  "/assets/pages/about.html",
+  "/assets/pages/contact.html",
+  "/assets/pages/abstract.html",
+  "/assets/pages/landscape.html",
+  "/assets/pages/street.html",
+  "/portal.html",
 ];
 
 // Install event

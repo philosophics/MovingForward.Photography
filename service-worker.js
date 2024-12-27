@@ -1,18 +1,17 @@
-const CACHE_NAME = "mfp-cache-v1";
+const CACHE_NAME = "mfp-cache-v1.01";
 const ASSETS_TO_CACHE = [
-  "/MovingForward/",
-  "/MovingForward/index.html",
-  "/MovingForward/assets/manifest.json",
-  "/MovingForward/assets/css/styles.css",
-  "/MovingForward/assets/js/script.js",
-  "/MovingForward/assets/images/icon-192x192.png",
-  "/MovingForward/assets/images/icon-512x512.png",
-  "/MovingForward/assets/pages/about.html",
-  "/MovingForward/assets/pages/contact.html",
-  "/MovingForward/assets/pages/abstract.html",
-  "/MovingForward/assets/pages/landscape.html",
-  "/MovingForward/assets/pages/street.html",
-  "/MovingForward/assets/pages/portal.html",
+  "/index.html",
+  "/assets/manifest.json",
+  "/assets/css/styles.css",
+  "/assets/js/script.js",
+  "/assets/images/icon-192x192.png",
+  "/assets/images/icon-512x512.png",
+  "/assets/pages/about.html",
+  "/assets/pages/contact.html",
+  "/assets/pages/abstract.html",
+  "/assets/pages/landscape.html",
+  "/assets/pages/street.html",
+  "/assets/pages/portal.html",
 ];
 
 // Install event

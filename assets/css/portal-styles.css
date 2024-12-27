@@ -1,0 +1,239 @@
+/* Portal-specific styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  overflow: visible; /* Allow scrolling on desktop */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; /* Desktop header height */
+  background-color: #333;
+  color: #fff;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-background {
+  width: 100%;
+  height: 100%;
+  background-image: repeating-radial-gradient(
+    #0c0a0a 80%,
+    #2f312f 90%,
+    #3f4549 90%
+  );
+  background-size: 65px 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Card Container (Desktop) */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Desktop: Three columns */
+  gap: 20px;
+  justify-items: center;
+  margin: 20px auto;
+  max-width: 1000px; /* Desktop container width */
+}
+
+/* Cards */
+.card {
+  width: 190px; /* Ensure consistent card width */
+  height: 254px; /* Ensure consistent card height */
+  background-color: #424242;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* Hide overflow for smooth sliding */
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.card img {
+  width: 100%; /* Match card width */
+  height: 100%; /* Match card height */
+  object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+  position: absolute; /* Position within the card */
+  top: 0;
+  left: 0;
+  z-index: 10; /* Ensure image is above the text initially */
+  transition: transform 0.4s ease; /* Smooth sliding effect */
+}
+
+.card div {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.4s ease;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card:hover img {
+  transform: translateY(-30px); /* Slide the card up */
+}
+
+.card:hover div {
+  transform: translateY(-30px); /* Slide the card up */
+}
+
+/* Text Reveal */
+.card::before {
+  content: attr(data-text); /* Pull text dynamically */
+  letter-spacing: 0.2em;
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 0.8em;
+  font-weight: 700;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.4s ease;
+}
+
+.card:hover::before {
+  opacity: 1; /* Reveal text on hover */
+}
+
+/* Footer Links */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Desktop footer height */
+  background-color: #141414;
+  color: gray;
+  padding: 10px 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffa000;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Allow scrolling if necessary */
+  }
+
+  header {
+    height: 77px; /* Mobile header height */
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  footer {
+    height: 50px; /* Mobile footer height */
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px; /* Space between rows and columns */
+    width: 100%; /* Full width of the body */
+    max-width: 400px; /* Restrict container width */
+    padding: 5px; /* Padding around the container */
+    margin: auto; /* Center the container both vertically and horizontally */
+    box-sizing: border-box; /* Include padding in width calculations */
+  }
+
+  .card {
+    width: 150px; /* Portrait layout width */
+    height: 200px; /* Portrait layout height */
+    background-color: #424242;
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center;
+    overflow: hidden;
+    position: relative; /* Needed for pseudo-elements */
+  }
+
+  .card img {
+    position: relative; /* Ensure image stacks behind text */
+    z-index: 1; /* Image is below text */
+    width: 150px;
+    height: 200px;
+    transform: none;
+  }
+
+  .card::before {
+    content: attr(data-text); /* Display text dynamically */
+    font-size: 1rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    color: #ffffff; /* Ensure text is visible */
+    text-transform: uppercase; /* Uppercase styling */
+    position: absolute; /* Position text relative to card */
+    bottom: 5%; /* Lower the text further */
+    left: 50%; /* Center text horizontally */
+    transform: translateX(-50%); /* Adjust alignment */
+    z-index: 2; /* Ensure text is above image */
+    text-align: center; /* Align text within card */
+    white-space: nowrap; /* Prevent wrapping */
+    opacity: 1; /* Always visible on mobile */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+    background: rgba(0, 0, 0, 0.7); /* Add semi-transparent background */
+    padding: 5px 10px; /* Add padding for the background */
+    border-radius: 10px; /* Smooth corners for background */
+  }
+
+  .card:hover::before {
+    opacity: 1; /* Maintain visibility on hover */
+  }
+
+  .card div {
+    display: none; /* Disable hover effects for mobile */
+  }
+
+  .card:hover img {
+    transform: none; /* Disable slide-up effect */
+  }
+
+  .card:hover div {
+    transform: none;
+  }
+}

@@ -1,11 +1,11 @@
 const CACHE_NAME = "mfp-cache-v2";
 const ASSETS_TO_CACHE = [
-  "/index.html",
   "/assets/manifest.json",
   "/assets/css/styles.css",
   "/assets/js/script.js",
   "/assets/images/icon-192x192.png",
   "/assets/images/icon-512x512.png",
+  "/docs/index.html",
   "/docs/about.html",
   "/docs/contact.html",
   "/docs/abstract.html",

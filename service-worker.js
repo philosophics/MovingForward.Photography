@@ -6,12 +6,12 @@ const ASSETS_TO_CACHE = [
   "/assets/js/script.js",
   "/assets/images/icon-192x192.png",
   "/assets/images/icon-512x512.png",
-  "/assets/pages/about.html",
-  "/assets/pages/contact.html",
-  "/assets/pages/abstract.html",
-  "/assets/pages/landscape.html",
-  "/assets/pages/street.html",
-  "/assets/pages/portal.html",
+  "/docs/about.html",
+  "/docs/contact.html",
+  "/docs/abstract.html",
+  "/docs/landscape.html",
+  "/docs/street.html",
+  "/docs/portal.html",
 ];
 
 // Install event
@@ -60,7 +60,7 @@ self.addEventListener("fetch", (event) => {
         response ||
         fetch(event.request).catch(() => {
           if (event.request.destination === "document") {
-            return caches.match("/index.html");
+            return caches.match("/docs/index.html");
           }
         })
       );

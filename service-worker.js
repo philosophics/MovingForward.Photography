@@ -68,13 +68,3 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
-
-self.addEventListener("fetch", (event) => {
-  const url = new URL(event.request.url);
-  if (
-    url.hostname === "portal.movingforward.photography" &&
-    url.pathname === "/"
-  ) {
-    event.respondWith(fetch("/assets/pages/portal.html"));
-  }
-});

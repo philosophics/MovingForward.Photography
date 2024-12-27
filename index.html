@@ -42,4 +42,7 @@
         console.error("Service Worker registration failed:", error);
       });
   }
+  if (window.location.hostname === "portal.movingforward.photography") {
+    window.location.href = "/assets/pages/portal.html";
+  }
 </script>

@@ -1,4 +1,4 @@
-const CACHE_NAME = "mfp-cache-v1.01";
+const CACHE_NAME = "mfp-cache-v1";
 const ASSETS_TO_CACHE = [
   "/index.html",
   "/assets/manifest.json",
@@ -60,7 +60,7 @@ self.addEventListener("fetch", (event) => {
         response ||
         fetch(event.request).catch(() => {
           if (event.request.destination === "document") {
-            return caches.match("/MovingForward/index.html");
+            return caches.match("/index.html");
           }
         })
       );

@@ -13,25 +13,25 @@
   "categories": ["photography", "art", "portfolio", "creativity"],
   "icons": [
     {
-      "src": "images/icon-192x192.png",
+      "src": "./assets/images/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "images/icon-512x512.png",
+      "src": "./assets/images/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
-      "src": "images/home-mobile.png",
+      "src": "./assets/images/home-mobile.png",
       "sizes": "360x640",
       "type": "image/png",
       "form_factor": "narrow"
     },
     {
-      "src": "images/home-desktop.png",
+      "src": "./assets/images/home-desktop.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"

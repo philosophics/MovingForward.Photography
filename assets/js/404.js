@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Load header dynamically
   fetch("./assets/header.html")
     .then((response) => {
       if (!response.ok) {
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error loading header:", error);
     });
 
-  // Load footer dynamically
   fetch("assets/footer.html")
     .then((response) => {
       if (!response.ok) {

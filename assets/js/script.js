@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname;
   const pathSegments = currentPath.split("/");
-  const depth = pathSegments.length - 2;
+  const depth = pathSegments.length - 1;
   const basePath = "../".repeat(depth);
 
   const headerPath = `${basePath}assets/pages/header.html`;

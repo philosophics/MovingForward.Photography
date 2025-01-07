@@ -1,3 +1,13 @@
 # Moving Forward Photography
 
-STAY TUNED!
+Frequently Asked Questions
+
+1. Which device provides the best experience?
+   Desktop is the best choice for a full, immersive experience. While it works on mobile, desktop offers better layout, performance, and visual fidelity.
+
+2. Did you forget to add a background?
+   No, that's intentional. The gray background represents a gray card used for exposure adjustment—consider it a playful easter egg! 😉
+
+3. Why is the layout on a desktop browser so weird?
+   The layout is designed to resemble the feeling of randomly throwing photos on a table with no particular order.
+   If you were to refresh the page a couple times, you'll see that a few images are selected at random as "featured" to stand out, and the rest are shuffled. This approach ensures that every visit feels fresh, with something new to discover!

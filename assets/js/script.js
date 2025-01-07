@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname;
   const pathSegments = currentPath.split("/");
   const depth = pathSegments.length - 3;
-  const basePath = "../".repeat(depth);
+  const basePath = "/".repeat(depth);
 
-  const headerPath = `${basePath}pages/header.html`;
-  const footerPath = `${basePath}pages/footer.html`;
+  const headerPath = `${basePath}assets/pages/header.html`;
+  const footerPath = `${basePath}assets/pages/footer.html`;
   const imageDataPath = `${basePath}assets/images/image-data.json`;
 
   fetch(headerPath)

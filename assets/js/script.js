@@ -1,3 +1,4 @@
+document.addEventListener("contextmenu", (event) => event.preventDefault());
 document.addEventListener("DOMContentLoaded", () => {
   const isLocal =
     window.location.hostname === "localhost" ||
@@ -6,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pathParts = window.location.pathname.split("/");
   const subDir = isLocal && pathParts.length > 2 ? `/${pathParts[1]}/` : "/";
 
-  const currentPath = window.location.pathname.split("/").pop().split(".")[0]; // Added line
+  const currentPath = window.location.pathname.split("/").pop().split(".")[0];
 
   const headerPath = `${subDir}assets/pages/header.html`;
   const footerPath = `${subDir}assets/pages/footer.html`;
@@ -133,21 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
           const aspectRatio = img.naturalWidth / img.naturalHeight;
           card.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
 
-          EXIF.getData(img, function () {
-            const focalLength = EXIF.getTag(this, "FocalLength") || "N/A";
-            const fStop = EXIF.getTag(this, "FNumber") || "N/A";
-            const exposureTime = EXIF.getTag(this, "ExposureTime") || "N/A";
-            const isoSpeed = EXIF.getTag(this, "ISOSpeedRatings") || "N/A";
+          const subtitle = image.subtitle || "N/A";
+          const description = image.description || "No description available.";
 
-            const subtitle = `
-            ${focalLength}mm | F/${fStop} |
-            ${
-              exposureTime.toString().startsWith("0.")
-                ? `1/${Math.round(1 / exposureTime)}`
-                : exposureTime
-            }s | ISO ${isoSpeed}`;
-
-            card.innerHTML = `
+          card.innerHTML = `
             <div class="card-inner">
               <div class="card-front">
                 <img src="${image.src}" alt="${image.title}" />
@@ -158,25 +148,20 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div class="card-back">
                 <div class="text-wrapper back">
-                  <p class="description">${
-                    image.description || "No description available."
-                  }</p>
+                  <p class="description">${description}</p>
                 </div>
               </div>
             </div>`;
 
-            portfolioGrid.appendChild(card);
-            cardsPopulated++;
+          portfolioGrid.appendChild(card);
+          cardsPopulated++;
 
-            if (cardsPopulated === totalImages) {
-              console.log(
-                "All cards fully populated. Applying featured logic."
-              );
-              makeRandomImagesLarger();
-              adjustTitleFontSize();
-              setupHoverExpansion();
-            }
-          });
+          if (cardsPopulated === totalImages) {
+            console.log("All cards fully populated. Applying featured logic.");
+            makeRandomImagesLarger();
+            adjustTitleFontSize();
+            setupHoverExpansion();
+          }
         };
 
         img.onerror = () => {

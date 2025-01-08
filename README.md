@@ -21,7 +21,7 @@ If you were to refresh the page a couple times, you'll see that a few images are
 
 ---
 
-### 4. **Why didn't you just one of many templates?**
+### 4. **Why didn't you just use one of the many available templates?**
 
 Honestly, none of them really spoke to me. Using a pre-built template felt impersonal, like wearing a suit bought from Macy's when you want something tailor-made. Plus, if I had gone with a template, someone else would probably be using the exact same thing, and where’s the fun in that?
 

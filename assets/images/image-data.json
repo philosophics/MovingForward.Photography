@@ -1,320 +1,744 @@
 [
     {
-        "src": "../../assets/images/abstract/A Sideward Spiral.jpg",
-        "title": "A Sideward Spiral",
-        "description": "Enter your description here.",
-        "page": "abstract"
-    },
-    {
-        "src": "../../assets/images/abstract/Goblin's Lapse.jpg",
-        "title": "Goblin'S Lapse",
-        "description": "Enter your description here.",
-        "page": "abstract"
-    },
-    {
-        "src": "../../assets/images/abstract/Splash.jpg",
-        "title": "Splash",
-        "description": "Enter your description here.",
-        "page": "abstract"
-    },
-    {
-        "src": "../../assets/images/abstract/Water Shroom.jpg",
-        "title": "Water Shroom",
-        "description": "Enter your description here.",
-        "page": "abstract"
-    },
-    {
-        "src": "../../assets/images/abstract/Wet Web.jpg",
-        "title": "Wet Web",
-        "description": "Enter your description here.",
-        "page": "abstract"
-    },
-    {
-        "src": "../../assets/images/abstract/When Starlink Attacks.jpg",
-        "title": "When Starlink Attacks",
-        "description": "Enter your description here.",
-        "page": "abstract"
-    },
-    {
-        "src": "../../assets/images/abstract/Triple Collision.jpg",
-        "title": "Triple Collision",
-        "description": "Does this work to add comments?",
-        "page": "abstract"
-    },
-    {
-        "src": "../../assets/images/architecture/Palace Foyer.jpg",
-        "title": "Palace Foyer",
-        "description": "Enter your description here.",
-        "page": "architecture"
-    },
-    {
-        "src": "../../assets/images/architecture/_DSC0316.jpg",
-        "title": " Dsc0316",
-        "description": "Enter your description here.",
-        "page": "architecture"
-    },
-    {
-        "src": "../../assets/images/architecture/_DSC0388-2.jpg",
-        "title": " Dsc0388-2",
-        "description": "Enter your description here.",
-        "page": "architecture"
-    },
-    {
-        "src": "../../assets/images/architecture/_DSC0421-Enhanced-NR.jpg",
-        "title": " Dsc0421-Enhanced-Nr",
-        "description": "Enter your description here.",
-        "page": "architecture"
-    },
-    {
-        "src": "../../assets/images/architecture/DCL00624-Enhanced-NR.jpg",
-        "title": "Dcl00624-Enhanced-Nr",
-        "description": "Enter your description here.",
-        "page": "architecture"
-    },
-    {
-        "src": "../../assets/images/architecture/_DSC0696.jpg",
-        "title": " Dsc0696",
-        "description": "Enter your description here.",
-        "page": "architecture"
-    },
-    {
         "src": "../../assets/images/logo.png",
         "title": "Logo",
         "description": "Enter your description here.",
-        "page": "general"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "general",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
         "src": "../../assets/images/preview.jpg",
         "title": "Preview",
         "description": "Enter your description here.",
-        "page": "general"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "general",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
         "src": "../../assets/images/favicon-16x16.png",
         "title": "Favicon-16X16",
         "description": "Enter your description here.",
-        "page": "general"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "general",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
         "src": "../../assets/images/favicon-32x32.png",
         "title": "Favicon-32X32",
         "description": "Enter your description here.",
-        "page": "general"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "general",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
         "src": "../../assets/images/icon-192x192.png",
         "title": "Icon-192X192",
         "description": "Enter your description here.",
-        "page": "general"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "general",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
         "src": "../../assets/images/icon-512x512.png",
         "title": "Icon-512X512",
         "description": "Enter your description here.",
-        "page": "general"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "general",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/Allen's View.jpg",
+        "src": "../../assets/images/abstract/A Sideward Spiral.webp",
+        "title": "A Sideward Spiral",
+        "description": "Enter your description here.",
+        "subtitle": "24mm | F/5.6 | 15 | ISO 100",
+        "page": "abstract",
+        "metadata": {
+            "focal_length": "24",
+            "f_stop": "5.6",
+            "exposure_time": "15",
+            "iso_speed": "100",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/abstract/Goblin's Lapse.webp",
+        "title": "Goblin'S Lapse",
+        "description": "Enter your description here.",
+        "subtitle": "24mm | F/2.8 | 181 | ISO 100",
+        "page": "abstract",
+        "metadata": {
+            "focal_length": "24",
+            "f_stop": "2.8",
+            "exposure_time": "181",
+            "iso_speed": "100",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/abstract/Splash.webp",
+        "title": "Splash",
+        "description": "Enter your description here.",
+        "subtitle": "105mm | F/16.0 | 1/15s | ISO 800",
+        "page": "abstract",
+        "metadata": {
+            "focal_length": "105",
+            "f_stop": "16.0",
+            "exposure_time": "1/15s",
+            "iso_speed": "800",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/abstract/Triple Collision.webp",
+        "title": "Triple Collision",
+        "description": "Does this work to add comments?",
+        "subtitle": "105mm | F/18.0 | 1/2s | ISO 400",
+        "page": "abstract",
+        "metadata": {
+            "focal_length": "105",
+            "f_stop": "18.0",
+            "exposure_time": "1/2s",
+            "iso_speed": "400",
+            "comments": "Does this work to add comments?"
+        }
+    },
+    {
+        "src": "../../assets/images/abstract/Water Shroom.webp",
+        "title": "Water Shroom",
+        "description": "Enter your description here.",
+        "subtitle": "105mm | F/16.0 | 1/15s | ISO 800",
+        "page": "abstract",
+        "metadata": {
+            "focal_length": "105",
+            "f_stop": "16.0",
+            "exposure_time": "1/15s",
+            "iso_speed": "800",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/abstract/Wet Web.webp",
+        "title": "Wet Web",
+        "description": "Enter your description here.",
+        "subtitle": "105mm | F/10.0 | 1 | ISO 50",
+        "page": "abstract",
+        "metadata": {
+            "focal_length": "105",
+            "f_stop": "10.0",
+            "exposure_time": "1",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/abstract/When Starlink Attacks.webp",
+        "title": "When Starlink Attacks",
+        "description": "Enter your description here.",
+        "subtitle": "28mm | F/2.8 | 45 | ISO 320",
+        "page": "abstract",
+        "metadata": {
+            "focal_length": "28",
+            "f_stop": "2.8",
+            "exposure_time": "45",
+            "iso_speed": "320",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/architecture/Palace Foyer.webp",
+        "title": "Palace Foyer",
+        "description": "Enter your description here.",
+        "subtitle": "18mm | F/14.0 | 1/125s | ISO 200",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "18",
+            "f_stop": "14.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "200",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/architecture/_DSC0316.webp",
+        "title": " Dsc0316",
+        "description": "Enter your description here.",
+        "subtitle": "35mm | F/4.0 | 1/125s | ISO 100",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "4.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "100",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/architecture/_DSC0388-2.webp",
+        "title": " Dsc0388-2",
+        "description": "Enter your description here.",
+        "subtitle": "46mm | F/4.8 | 1/800s | ISO 160",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "46",
+            "f_stop": "4.8",
+            "exposure_time": "1/800s",
+            "iso_speed": "160",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/architecture/_DSC0421-Enhanced-NR.webp",
+        "title": " Dsc0421-Enhanced-Nr",
+        "description": "Enter your description here.",
+        "subtitle": "35mm | F/13.0 | 1/125s | ISO 400",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "13.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "400",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/architecture/DCL00624-Enhanced-NR.webp",
+        "title": "Dcl00624-Enhanced-Nr",
+        "description": "Enter your description here.",
+        "subtitle": "35mm | F/4.0 | 1/400s | ISO 50",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "4.0",
+            "exposure_time": "1/400s",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/architecture/_DSC0696.webp",
+        "title": " Dsc0696",
+        "description": "Enter your description here.",
+        "subtitle": "40mm | F/13.0 | 1/125s | ISO 200",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "40",
+            "f_stop": "13.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "200",
+            "comments": "N/A"
+        }
+    },
+    {
+        "src": "../../assets/images/landscape/Allen's View.webp",
         "title": "Allen'S View",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "35mm | F/10.0 | 1/500s | ISO 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "10.0",
+            "exposure_time": "1/500s",
+            "iso_speed": "200",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/Deserted Drought.jpg",
+        "src": "../../assets/images/landscape/Deserted Drought.webp",
         "title": "Deserted Drought",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "35mm | F/16.0 | 1/400s | ISO 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "16.0",
+            "exposure_time": "1/400s",
+            "iso_speed": "200",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/Devil's Castle.jpg",
+        "src": "../../assets/images/landscape/Devil's Castle.webp",
         "title": "Devil'S Castle",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "35mm | F/1.4 | 6 | ISO 1600",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "1.4",
+            "exposure_time": "6",
+            "iso_speed": "1600",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/Fire Mountain.jpg",
+        "src": "../../assets/images/landscape/Fire Mountain.webp",
         "title": "Fire Mountain",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "35mm | F/8.0 | 1/320s | ISO 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "8.0",
+            "exposure_time": "1/320s",
+            "iso_speed": "200",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/Motorcycle Journey through Mountain Wilderness.jpg",
+        "src": "../../assets/images/landscape/Motorcycle Journey through Mountain Wilderness.webp",
         "title": "Motorcycle Journey Through Mountain Wilderness",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "106mm | F/6.3 | 1/60s | ISO 50",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "106",
+            "f_stop": "6.3",
+            "exposure_time": "1/60s",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/Pond.jpg",
+        "src": "../../assets/images/landscape/Pond.webp",
         "title": "Pond",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "35mm | F/4.0 | 1/1000s | ISO 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "4.0",
+            "exposure_time": "1/1000s",
+            "iso_speed": "200",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/Stew's Solitude.jpg",
+        "src": "../../assets/images/landscape/Stew's Solitude.webp",
         "title": "Stew'S Solitude",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "19mm | F/4.2 | 1/1000s | ISO 125",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "19",
+            "f_stop": "4.2",
+            "exposure_time": "1/1000s",
+            "iso_speed": "125",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/Valley Colors.jpg",
+        "src": "../../assets/images/landscape/Valley Colors.webp",
         "title": "Valley Colors",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "50mm | F/8.0 | 1/8s | ISO 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "50",
+            "f_stop": "8.0",
+            "exposure_time": "1/8s",
+            "iso_speed": "200",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/_DSC0620.jpg",
+        "src": "../../assets/images/landscape/_DSC0620.webp",
         "title": " Dsc0620",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "35mm | F/14.0 | 2 | ISO 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "14.0",
+            "exposure_time": "2",
+            "iso_speed": "200",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/_DSC0824.jpg",
+        "src": "../../assets/images/landscape/_DSC0824.webp",
         "title": " Dsc0824",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "35mm | F/10.0 | 1/250s | ISO 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "10.0",
+            "exposure_time": "1/250s",
+            "iso_speed": "200",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/DCL00966-Enhanced-NR.jpg",
+        "src": "../../assets/images/landscape/DCL00966-Enhanced-NR.webp",
         "title": "Dcl00966-Enhanced-Nr",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "35mm | F/11.0 | 6 | ISO 50",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "11.0",
+            "exposure_time": "6",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/DCL01409-Enhanced-NR.jpg",
+        "src": "../../assets/images/landscape/DCL01409-Enhanced-NR.webp",
         "title": "Dcl01409-Enhanced-Nr",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "40mm | F/16.0 | 1/5s | ISO 50",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "40",
+            "f_stop": "16.0",
+            "exposure_time": "1/5s",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/DCL07975-Enhanced-NR.jpg",
+        "src": "../../assets/images/landscape/DCL07975-Enhanced-NR.webp",
         "title": "Dcl07975-Enhanced-Nr",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "69mm | F/18.0 | 1/320s | ISO 100",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "69",
+            "f_stop": "18.0",
+            "exposure_time": "1/320s",
+            "iso_speed": "100",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/DCL07995-Enhanced-NR-Edit.jpg",
+        "src": "../../assets/images/landscape/DCL07995-Enhanced-NR-Edit.webp",
         "title": "Dcl07995-Enhanced-Nr-Edit",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "51mm | F/7.1 | 1/25s | ISO 50",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "51",
+            "f_stop": "7.1",
+            "exposure_time": "1/25s",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/DCL08023-Enhanced-NR.jpg",
+        "src": "../../assets/images/landscape/DCL08023-Enhanced-NR.webp",
         "title": "Dcl08023-Enhanced-Nr",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "50mm | F/18.0 | 1/30s | ISO 50",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "50",
+            "f_stop": "18.0",
+            "exposure_time": "1/30s",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/DCL08507-Enhanced-NR.jpg",
+        "src": "../../assets/images/landscape/DCL08507-Enhanced-NR.webp",
         "title": "Dcl08507-Enhanced-Nr",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "50mm | F/4.0 | 1/125s | ISO 50",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "50",
+            "f_stop": "4.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/DCL08768-Enhanced-NR-Edit.jpg",
+        "src": "../../assets/images/landscape/DCL08768-Enhanced-NR-Edit.webp",
         "title": "Dcl08768-Enhanced-Nr-Edit",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "79mm | F/4.0 | 1/1600s | ISO 100",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "79",
+            "f_stop": "4.0",
+            "exposure_time": "1/1600s",
+            "iso_speed": "100",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/DCL08911-Enhanced-NR-Edit.jpg",
+        "src": "../../assets/images/landscape/DCL08911-Enhanced-NR-Edit.webp",
         "title": "Dcl08911-Enhanced-Nr-Edit",
-        "description": "This is a test to see how long I can make the description. I need to see how long I can make the description before it wraps or is potentially cut off because this is where I may explain the picture or tell the viewer where it was taken and what was happening. I don't know, it's an idea and this may not work. And then again, maybe it does and I really have nothing to worry abnout. However, it is a bit strange to make one continuous paragraph without the ability to break to the new line. But that's ok, I guess. This seems to do exactly what it needs to do after importing the data in. Epic woot, indeed.",
-        "page": "landscape"
+        "description": "Enter your description here.",
+        "subtitle": "35mm | F/11.0 | 1/250s | ISO 100",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "11.0",
+            "exposure_time": "1/250s",
+            "iso_speed": "100",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/landscape/DCL08951-Enhanced-NR-Edit.jpg",
+        "src": "../../assets/images/landscape/DCL08951-Enhanced-NR-Edit.webp",
         "title": "Dcl08951-Enhanced-Nr-Edit",
         "description": "Enter your description here.",
-        "page": "landscape"
+        "subtitle": "24mm | F/11.0 | 1/250s | ISO 100",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "24",
+            "f_stop": "11.0",
+            "exposure_time": "1/250s",
+            "iso_speed": "100",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-1.jpg",
+        "src": "../../assets/images/street/street-1.webp",
         "title": "Street-1",
-        "description": "This is a test description to see what happens.",
-        "page": "street"
+        "description": "Enter your description here.",
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-2.jpg",
+        "src": "../../assets/images/street/street-2.webp",
         "title": "Street-2",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-3.jpg",
+        "src": "../../assets/images/street/street-3.webp",
         "title": "Street-3",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-4.jpg",
+        "src": "../../assets/images/street/street-4.webp",
         "title": "Street-4",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-5.jpg",
+        "src": "../../assets/images/street/street-5.webp",
         "title": "Street-5",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-6.jpg",
+        "src": "../../assets/images/street/street-6.webp",
         "title": "Street-6",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-7.jpg",
+        "src": "../../assets/images/street/street-7.webp",
         "title": "Street-7",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-8.jpg",
+        "src": "../../assets/images/street/street-8.webp",
         "title": "Street-8",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-9.jpg",
+        "src": "../../assets/images/street/street-9.webp",
         "title": "Street-9",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-10.jpg",
+        "src": "../../assets/images/street/street-10.webp",
         "title": "Street-10",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-11.jpg",
+        "src": "../../assets/images/street/street-11.webp",
         "title": "Street-11",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-12.jpg",
+        "src": "../../assets/images/street/street-12.webp",
         "title": "Street-12",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/street-13.jpg",
+        "src": "../../assets/images/street/street-13.webp",
         "title": "Street-13",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "page": "street",
+        "metadata": {
+            "focal_length": "N/A",
+            "f_stop": "N/A",
+            "exposure_time": "N/A",
+            "iso_speed": "N/A",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/DCL00726-Enhanced-NR.jpg",
+        "src": "../../assets/images/street/DCL00726-Enhanced-NR.webp",
         "title": "Dcl00726-Enhanced-Nr",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "35mm | F/8.0 | 1/80s | ISO 50",
+        "page": "street",
+        "metadata": {
+            "focal_length": "35",
+            "f_stop": "8.0",
+            "exposure_time": "1/80s",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
     },
     {
-        "src": "../../assets/images/street/20240507_082027-Edit.jpg",
+        "src": "../../assets/images/street/20240507_082027-Edit.webp",
         "title": "20240507 082027-Edit",
         "description": "Enter your description here.",
-        "page": "street"
+        "subtitle": "27mm | F/4.9 | 1/140s | ISO 50",
+        "page": "street",
+        "metadata": {
+            "focal_length": "27",
+            "f_stop": "4.9",
+            "exposure_time": "1/140s",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
     }
 ]

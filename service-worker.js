@@ -14,7 +14,6 @@ const ASSETS_TO_CACHE = [
   "/portal.html",
 ];
 
-// Install event
 self.addEventListener("install", (event) => {
   console.log("Service Worker: Installing...");
   event.waitUntil(
@@ -29,10 +28,9 @@ self.addEventListener("install", (event) => {
       );
     })
   );
-  self.skipWaiting(); // Activate the service worker immediately
+  self.skipWaiting();
 });
 
-// Activate event
 self.addEventListener("activate", (event) => {
   console.log("Service Worker: Activating...");
   const allowedCaches = [CACHE_NAME];
@@ -48,14 +46,12 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
-  self.clients.claim(); // Take control of all open pages
+  self.clients.claim();
 });
 
-// Fetch event
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      // Return cached response or fetch from network
       return (
         response ||
         fetch(event.request).catch(() => {

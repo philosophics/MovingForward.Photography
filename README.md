@@ -11,3 +11,7 @@ Frequently Asked Questions
 3. Why is the layout on a desktop browser so weird?
    The layout is designed to resemble the feeling of randomly throwing photos on a table with no particular order.
    If you were to refresh the page a couple times, you'll see that a few images are selected at random as "featured" to stand out, and the rest are shuffled. This approach ensures that every visit feels fresh, with something new to discover!
+
+4. Why didn't you just one of many templates?
+   Honestly, none of them really spoke to me. Using a pre-built template felt impersonal, like wearing a suit bought from Macy's when you want something tailor-made. Plus, if I had gone with a template, someone else would probably be using the exact same thing, and where’s the fun in that?
+   Building it from scratch gave me the creative freedom to shape something that’s truly unique, with room to evolve as I come up with new ideas. There’s still more in store, especially when it comes to a storefront—stay tuned!

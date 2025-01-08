@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const currentPath = window.location.pathname;
-  const isSubdirectory = currentPath.includes("MovingForward.Photography");
-  const basePath = isSubdirectory
-    ? "/MovingForward.Photography/assets/"
-    : "./assets/";
+  const isLocal =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1";
 
-  const headerPath = `${basePath}pages/header.html`;
-  const footerPath = `${basePath}pages/footer.html`;
-  const imageDataPath = `${basePath}images/image-data.json`;
+  const pathParts = window.location.pathname.split("/");
+  const subDir = isLocal && pathParts.length > 2 ? `/${pathParts[1]}/` : "/";
+
+  const currentPath = window.location.pathname.split("/").pop().split(".")[0]; // Added line
+
+  const headerPath = `${subDir}assets/pages/header.html`;
+  const footerPath = `${subDir}assets/pages/footer.html`;
+  const imageDataPath = `${subDir}assets/images/image-data.json`;
 
   fetch(headerPath)
     .then((response) => response.text())

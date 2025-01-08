@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const depth = pathSegments.length - 3;
   const basePath = "../".repeat(depth);
 
-  const headerPath = `${basePath}assets/pages/header.html`;
-  const footerPath = `${basePath}assets/pages/footer.html`;
-  const imageDataPath = `${basePath}assets/images/image-data.json`;
+  const headerPath = `/assets/pages/header.html`;
+  const footerPath = `/assets/pages/footer.html`;
+  const imageDataPath = `/assets/images/image-data.json`;
 
   fetch(headerPath)
     .then((response) => response.text())

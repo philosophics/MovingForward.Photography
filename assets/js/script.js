@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname;
-  const pathSegments = currentPath.split("/");
-  const depth = pathSegments.length - 3;
-  const basePath = "../".repeat(depth);
+  const isSubdirectory = currentPath.includes("MovingForward.Photography");
+  const basePath = isSubdirectory
+    ? "/MovingForward.Photography/assets/"
+    : "./assets/";
 
-  const headerPath = `/assets/pages/header.html`;
-  const footerPath = `/assets/pages/footer.html`;
-  const imageDataPath = `/assets/images/image-data.json`;
+  const headerPath = `${basePath}pages/header.html`;
+  const footerPath = `${basePath}pages/footer.html`;
+  const imageDataPath = `${basePath}images/image-data.json`;
 
   fetch(headerPath)
     .then((response) => response.text())

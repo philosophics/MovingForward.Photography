@@ -4,6 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.hostname === "localhost" ||
     window.location.hostname === "127.0.0.1";
 
+  const isDevelopment = isLocal;
+
+  function devLog(...args) {
+    if (isDevelopment) {
+      console.log(...args);
+    }
+  }
+
   const pathParts = window.location.pathname.split("/");
   const subDir = isLocal && pathParts.length > 2 ? `/${pathParts[1]}/` : "/";
 
@@ -27,21 +35,39 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((err) => console.error("Error loading footer:", err));
 
+  const isPortfolioPage = currentPath === "portfolio";
   const portfolioGrid = document.querySelector(".portfolio-grid");
 
   if (portfolioGrid) {
-    console.log("Portfolio grid found. Attaching hover behavior...");
+    devLog("Portfolio grid found. Attaching hover behavior...");
     attachHoverBehaviorAfterLoad();
-  } else {
-    console.log("No portfolio grid found. Skipping hover behavior.");
+
+    portfolioGrid.addEventListener("click", async (event) => {
+      const card = event.target.closest(".dynamic-card");
+      if (card) {
+        const cards = getCards();
+        currentIndex = cards.indexOf(card);
+
+        if (currentIndex === -1) {
+          console.error("Clicked card not found in cards array.");
+          return;
+        }
+
+        openExpandedCard(card);
+      }
+    });
+  } else if (isPortfolioPage) {
+    console.warn(
+      "No portfolio grid found. Skipping click handler and hover behavior."
+    );
   }
 
   const dynamicCards = document.querySelectorAll(".dynamic-card");
   if (dynamicCards.length > 0) {
-    console.log("Dynamic cards found. Setting up expanded card logic...");
+    devLog("Dynamic cards found. Setting up expanded card logic...");
     setupExpandedCardLogic();
-  } else {
-    console.log("No dynamic cards found. Skipping expanded card logic.");
+  } else if (isPortfolioPage) {
+    console.warn("No dynamic cards found. Skipping expanded card logic.");
   }
 
   function adjustTitleFontSize() {
@@ -122,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
           window.innerWidth >= 1024 &&
           guaranteedFeaturedIndices.includes(index)
         ) {
-          console.log("Assigning featured class to:", image.title);
+          devLog("Assigning featured class to:", image.title);
           card.classList.add("featured");
           featuredAssigned = true;
         }
@@ -157,10 +183,12 @@ document.addEventListener("DOMContentLoaded", () => {
           cardsPopulated++;
 
           if (cardsPopulated === totalImages) {
-            console.log("All cards fully populated. Applying featured logic.");
-            makeRandomImagesLarger();
-            adjustTitleFontSize();
-            setupHoverExpansion();
+            devLog("All cards fully populated. Applying featured logic.");
+            setTimeout(() => {
+              makeRandomImagesLarger();
+              adjustTitleFontSize();
+              setupHoverExpansion();
+            }, 100);
           }
         };
 
@@ -170,10 +198,12 @@ document.addEventListener("DOMContentLoaded", () => {
           cardsPopulated++;
 
           if (cardsPopulated === totalImages) {
-            console.log("All cards fully populated. Applying featured logic.");
-            makeRandomImagesLarger();
-            adjustTitleFontSize();
-            setupHoverExpansion();
+            devLog("All cards fully populated. Applying featured logic.");
+            setTimeout(() => {
+              makeRandomImagesLarger();
+              adjustTitleFontSize();
+              setupHoverExpansion();
+            }, 100);
           }
         };
       });
@@ -182,11 +212,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function makeRandomImagesLarger() {
     if (window.innerWidth < 1024) {
-      console.log("Skipping featured logic for non-desktop views.");
+      devLog("Skipping featured logic for non-desktop views.");
       return;
     }
 
-    console.log("Running makeRandomImagesLarger...");
+    devLog("Running makeRandomImagesLarger...");
     const featuredCards = portfolioGrid.querySelectorAll(
       ".dynamic-card.featured"
     );
@@ -221,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    console.log("Featured cards adjusted.");
+    devLog("Featured cards adjusted.");
   }
 
   function applySpans(card, img) {
@@ -244,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     card.style.gridRow = `span ${rowSpan}`;
     card.style.gridColumn = `span ${colSpan}`;
 
-    console.log("Set grid spans for featured card:", {
+    devLog("Set grid spans for featured card:", {
       title: card.querySelector(".title")?.innerText,
       width,
       height,
@@ -269,7 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function attachHoverBehaviorAfterLoad() {
-    const portfolioGrid = document.querySelector(".portfolio-grid");
+    if (!portfolioGrid) return;
 
     const observer = new MutationObserver(() => {
       const cards = portfolioGrid.querySelectorAll(
@@ -332,256 +362,262 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  portfolioGrid.addEventListener("click", async (event) => {
-    const card = event.target.closest(".dynamic-card");
-    if (card) {
-      const cards = getCards();
-      currentIndex = cards.indexOf(card);
+  if (portfolioGrid) {
+    devLog("Portfolio grid found. Attaching hover behavior...");
+    attachHoverBehaviorAfterLoad();
 
-      if (currentIndex === -1) {
-        console.error("Clicked card not found in cards array.");
-        return;
+    portfolioGrid.addEventListener("click", async (event) => {
+      const card = event.target.closest(".dynamic-card");
+      if (card) {
+        const cards = getCards();
+        currentIndex = cards.indexOf(card);
+
+        if (currentIndex === -1) {
+          console.error("Clicked card not found in cards array.");
+          return;
+        }
+
+        openExpandedCard(card);
       }
+    });
+  } else if (isPortfolioPage) {
+    console.warn(
+      "No portfolio grid found. Skipping click handler and hover behavior."
+    );
+  }
 
-      openExpandedCard(card);
+  function openExpandedCard(card) {
+    const descriptionText = card.querySelector(".description")?.innerText;
+
+    let overlay = document.querySelector(".overlay");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.classList.add("overlay");
+      document.body.appendChild(overlay);
     }
 
-    function openExpandedCard(card) {
-      const descriptionText = card.querySelector(".description")?.innerText;
+    const cardRect = card.getBoundingClientRect();
+    const expandedCard = card.cloneNode(true);
 
-      let overlay = document.querySelector(".overlay");
-      if (!overlay) {
-        overlay = document.createElement("div");
-        overlay.classList.add("overlay");
-        document.body.appendChild(overlay);
+    expandedCard.classList.add("expanded-card");
+    expandedCard.style.position = "fixed";
+    expandedCard.style.top = `${cardRect.top + window.scrollY}px`;
+    expandedCard.style.left = `${cardRect.left}px`;
+    expandedCard.style.width = `${cardRect.width}px`;
+    expandedCard.style.height = `${cardRect.height}px`;
+    expandedCard.style.zIndex = "1000";
+    expandedCard.style.transition = "all 0.5s ease-in-out";
+
+    overlay.appendChild(expandedCard);
+    overlay.style.display = "flex";
+
+    addNavigationArrows(expandedCard, overlay);
+
+    const expandedImg = expandedCard.querySelector("img");
+    const textWrapperBack = expandedCard.querySelector(".text-wrapper.back");
+    const subtitle = expandedCard.querySelector(".subtitle");
+
+    setTimeout(() => {
+      if (window.innerWidth <= 768 && descriptionText) {
+        showDescription(descriptionText);
+        positionDescription(expandedCard);
       }
+    }, 500);
 
-      const cardRect = card.getBoundingClientRect();
-      const expandedCard = card.cloneNode(true);
+    if (expandedImg) {
+      expandedImg.onload = async () => {
+        const imageRatio = expandedImg.naturalWidth / expandedImg.naturalHeight;
+        const viewportRatio = window.innerWidth / window.innerHeight;
 
-      expandedCard.classList.add("expanded-card");
-      expandedCard.style.position = "fixed";
-      expandedCard.style.top = `${cardRect.top + window.scrollY}px`;
-      expandedCard.style.left = `${cardRect.left}px`;
-      expandedCard.style.width = `${cardRect.width}px`;
-      expandedCard.style.height = `${cardRect.height}px`;
-      expandedCard.style.zIndex = "1000";
-      expandedCard.style.transition = "all 0.5s ease-in-out";
-
-      overlay.appendChild(expandedCard);
-      overlay.style.display = "flex";
-
-      addNavigationArrows(expandedCard, overlay);
-
-      const expandedImg = expandedCard.querySelector("img");
-      const textWrapperBack = expandedCard.querySelector(".text-wrapper.back");
-      const subtitle = expandedCard.querySelector(".subtitle");
-
-      setTimeout(() => {
-        if (window.innerWidth <= 768 && descriptionText) {
-          showDescription(descriptionText);
-          positionDescription(expandedCard);
+        if (imageRatio > viewportRatio) {
+          expandedCard.style.width = "90vw";
+          expandedCard.style.height = "auto";
+        } else {
+          expandedCard.style.width = "auto";
+          expandedCard.style.height = "90vh";
         }
-      }, 500);
 
-      if (expandedImg) {
-        expandedImg.onload = async () => {
-          const imageRatio =
-            expandedImg.naturalWidth / expandedImg.naturalHeight;
-          const viewportRatio = window.innerWidth / window.innerHeight;
-
-          if (imageRatio > viewportRatio) {
-            expandedCard.style.width = "90vw";
-            expandedCard.style.height = "auto";
+        if (textWrapperBack) {
+          if (window.innerWidth <= 768) {
+            textWrapperBack.style.display = "flex";
+            textWrapperBack.style.opacity = "1";
+            textWrapperBack.style.transform = "translateY(0)";
           } else {
-            expandedCard.style.width = "auto";
-            expandedCard.style.height = "90vh";
-          }
-
-          if (textWrapperBack) {
-            if (window.innerWidth <= 768) {
+            expandedCard.addEventListener("mouseenter", () => {
               textWrapperBack.style.display = "flex";
               textWrapperBack.style.opacity = "1";
               textWrapperBack.style.transform = "translateY(0)";
-            } else {
-              expandedCard.addEventListener("mouseenter", () => {
-                textWrapperBack.style.display = "flex";
-                textWrapperBack.style.opacity = "1";
-                textWrapperBack.style.transform = "translateY(0)";
-              });
+            });
 
-              expandedCard.addEventListener("mouseleave", () => {
-                textWrapperBack.style.opacity = "0";
-                textWrapperBack.style.transform = "translateY(10px)";
-                setTimeout(() => {
-                  textWrapperBack.style.display = "none";
-                }, 400);
-              });
-            }
-          } else {
-            console.error("No .text-wrapper.back found in expanded card");
+            expandedCard.addEventListener("mouseleave", () => {
+              textWrapperBack.style.opacity = "0";
+              textWrapperBack.style.transform = "translateY(10px)";
+              setTimeout(() => {
+                textWrapperBack.style.display = "none";
+              }, 400);
+            });
           }
+        } else {
+          console.error("No .text-wrapper.back found in expanded card");
+        }
 
-          if (subtitle && window.innerWidth <= 768) {
-            subtitle.style.opacity = "1";
-            subtitle.style.transform = "translateY(0)";
-            subtitle.style.transition = "none";
-          }
-        };
-      }
-
-      requestAnimationFrame(() => {
-        expandedCard.style.transition = "all 0.5s ease-in-out";
-        expandedCard.style.top = "50%";
-        expandedCard.style.left = "50%";
-        expandedCard.style.transform = "translate(-50%, -50%) scale(1)";
-      });
-
-      const closeBtn = document.createElement("button");
-      closeBtn.classList.add("close-btn");
-      closeBtn.innerHTML = "&times;";
-      closeBtn.addEventListener("click", () =>
-        closeExpandedCard(expandedCard, cardRect, overlay)
-      );
-
-      expandedCard.appendChild(closeBtn);
-      window.addEventListener("keydown", handleKeyNavigation);
+        if (subtitle && window.innerWidth <= 768) {
+          subtitle.style.opacity = "1";
+          subtitle.style.transform = "translateY(0)";
+          subtitle.style.transition = "none";
+        }
+      };
     }
 
-    function addNavigationArrows(expandedCard, overlay) {
-      const prevArrow = document.createElement("button");
-      prevArrow.classList.add("arrow", "prev");
-      prevArrow.innerHTML = `
-        <div class="arrow-inner">
-          <div class="arrow-top"></div>
-          <div class="arrow-bottom"></div>
-        </div>
-      `;
-      prevArrow.addEventListener("click", () => showPreviousImage(overlay));
-
-      const nextArrow = document.createElement("button");
-      nextArrow.classList.add("arrow", "next");
-      nextArrow.innerHTML = `
-        <div class="arrow-inner">
-          <div class="arrow-top"></div>
-          <div class="arrow-bottom"></div>
-        </div>
-      `;
-      nextArrow.addEventListener("click", () => showNextImage(overlay));
-
-      expandedCard.appendChild(prevArrow);
-      expandedCard.appendChild(nextArrow);
-    }
-
-    function showPreviousImage(overlay) {
-      hideDescription();
-      const cards = getCards();
-      currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-      transitionToNewCard(cards[currentIndex], overlay);
-    }
-
-    function showNextImage(overlay) {
-      hideDescription();
-      const cards = getCards();
-      currentIndex = (currentIndex + 1) % cards.length;
-      transitionToNewCard(cards[currentIndex], overlay);
-    }
-
-    function transitionToNewCard(newCard, overlay) {
-      hideDescription();
-      const currentExpandedCard = overlay.querySelector(".expanded-card");
-      if (currentExpandedCard) {
-        currentExpandedCard.style.opacity = "0";
-        setTimeout(() => {
-          overlay.removeChild(currentExpandedCard);
-          openExpandedCard(newCard);
-        }, 300);
-      }
-    }
-
-    function showDescription(descriptionText) {
-      let descriptionContainer = document.querySelector(
-        ".description-container"
-      );
-      if (!descriptionContainer) {
-        descriptionContainer = document.createElement("div");
-        descriptionContainer.classList.add("description-container");
-        document.body.appendChild(descriptionContainer);
-      }
-
-      descriptionContainer.innerText = descriptionText;
-      descriptionContainer.style.display = "block";
-      requestAnimationFrame(() => {
-        descriptionContainer.classList.add("show");
-      });
-    }
-
-    function positionDescription(expandedCard) {
-      const descriptionContainer = document.querySelector(
-        ".description-container"
-      );
-      if (!descriptionContainer) return;
-
-      const expandedCardRect = expandedCard.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const footerTop = document
-        .querySelector("footer")
-        .getBoundingClientRect().top;
-
-      const spaceBelowCard = footerTop - expandedCardRect.bottom;
-      const minPadding = 20;
-      const descriptionTop =
-        expandedCardRect.bottom + Math.max(spaceBelowCard / 2, minPadding);
-
-      descriptionContainer.style.top = `${Math.min(
-        descriptionTop,
-        footerTop - minPadding
-      )}px`;
-      descriptionContainer.style.display = "block";
-    }
-
-    function hideDescription() {
-      const descriptionContainer = document.querySelector(
-        ".description-container"
-      );
-      if (!descriptionContainer) return;
-
-      descriptionContainer.classList.remove("show");
-      descriptionContainer.classList.add("hide");
-
-      setTimeout(() => {
-        descriptionContainer.style.display = "none";
-        descriptionContainer.classList.remove("hide");
-      }, 400);
-    }
-
-    function closeExpandedCard(expandedCard, cardRect, overlay) {
-      hideDescription();
+    requestAnimationFrame(() => {
       expandedCard.style.transition = "all 0.5s ease-in-out";
-      expandedCard.style.top = `${cardRect.top + window.scrollY}px`;
-      expandedCard.style.left = `${cardRect.left}px`;
-      expandedCard.style.width = `${cardRect.width}px`;
-      expandedCard.style.height = `${cardRect.height}px`;
-      expandedCard.style.transform = "none";
+      expandedCard.style.top = "50%";
+      expandedCard.style.left = "50%";
+      expandedCard.style.transform = "translate(-50%, -50%) scale(1)";
+    });
 
+    const closeBtn = document.createElement("button");
+    closeBtn.classList.add("close-btn");
+    closeBtn.innerHTML = "&times;";
+    closeBtn.addEventListener("click", () =>
+      closeExpandedCard(expandedCard, cardRect, overlay)
+    );
+
+    expandedCard.appendChild(closeBtn);
+    window.addEventListener("keydown", handleKeyNavigation);
+  }
+
+  function addNavigationArrows(expandedCard, overlay) {
+    const prevArrow = document.createElement("button");
+    prevArrow.classList.add("arrow", "prev");
+    prevArrow.innerHTML = `
+        <div class="arrow-inner">
+          <div class="arrow-top"></div>
+          <div class="arrow-bottom"></div>
+        </div>
+      `;
+    prevArrow.addEventListener("click", () => showPreviousImage(overlay));
+
+    const nextArrow = document.createElement("button");
+    nextArrow.classList.add("arrow", "next");
+    nextArrow.innerHTML = `
+        <div class="arrow-inner">
+          <div class="arrow-top"></div>
+          <div class="arrow-bottom"></div>
+        </div>
+      `;
+    nextArrow.addEventListener("click", () => showNextImage(overlay));
+
+    expandedCard.appendChild(prevArrow);
+    expandedCard.appendChild(nextArrow);
+  }
+
+  function showPreviousImage(overlay) {
+    hideDescription();
+    const cards = getCards();
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    transitionToNewCard(cards[currentIndex], overlay);
+  }
+
+  function showNextImage(overlay) {
+    hideDescription();
+    const cards = getCards();
+    currentIndex = (currentIndex + 1) % cards.length;
+    transitionToNewCard(cards[currentIndex], overlay);
+  }
+
+  function transitionToNewCard(newCard, overlay) {
+    hideDescription();
+    const currentExpandedCard = overlay.querySelector(".expanded-card");
+    if (currentExpandedCard) {
+      currentExpandedCard.style.opacity = "0";
       setTimeout(() => {
-        overlay.style.display = "none";
-        overlay.innerHTML = "";
-        window.removeEventListener("keydown", handleKeyNavigation);
-      }, 500);
+        overlay.removeChild(currentExpandedCard);
+        openExpandedCard(newCard);
+      }, 300);
+    }
+  }
+
+  function showDescription(descriptionText) {
+    let descriptionContainer = document.querySelector(".description-container");
+    if (!descriptionContainer) {
+      descriptionContainer = document.createElement("div");
+      descriptionContainer.classList.add("description-container");
+      document.body.appendChild(descriptionContainer);
     }
 
-    function handleKeyNavigation(event) {
-      const overlay = document.querySelector(".overlay");
-      if (!overlay) return;
+    descriptionContainer.innerText = descriptionText;
+    descriptionContainer.style.display = "block";
+    requestAnimationFrame(() => {
+      descriptionContainer.classList.add("show");
+    });
+  }
 
-      if (event.key === "ArrowLeft") {
-        showPreviousImage(overlay);
-      } else if (event.key === "ArrowRight") {
-        showNextImage(overlay);
-      } else if (event.key === "Escape") {
-        document.querySelector(".close-btn").click();
-      }
+  function positionDescription(expandedCard) {
+    const descriptionContainer = document.querySelector(
+      ".description-container"
+    );
+    if (!descriptionContainer) return;
+
+    const expandedCardRect = expandedCard.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const footerTop = document
+      .querySelector("footer")
+      .getBoundingClientRect().top;
+
+    const spaceBelowCard = footerTop - expandedCardRect.bottom;
+    const minPadding = 20;
+    const descriptionTop =
+      expandedCardRect.bottom + Math.max(spaceBelowCard / 2, minPadding);
+
+    descriptionContainer.style.top = `${Math.min(
+      descriptionTop,
+      footerTop - minPadding
+    )}px`;
+    descriptionContainer.style.display = "block";
+  }
+
+  function hideDescription() {
+    const descriptionContainer = document.querySelector(
+      ".description-container"
+    );
+    if (!descriptionContainer) return;
+
+    descriptionContainer.classList.remove("show");
+    descriptionContainer.classList.add("hide");
+
+    setTimeout(() => {
+      descriptionContainer.style.display = "none";
+      descriptionContainer.classList.remove("hide");
+    }, 400);
+  }
+
+  function closeExpandedCard(expandedCard, cardRect, overlay) {
+    hideDescription();
+    expandedCard.style.transition = "all 0.5s ease-in-out";
+    expandedCard.style.top = `${cardRect.top + window.scrollY}px`;
+    expandedCard.style.left = `${cardRect.left}px`;
+    expandedCard.style.width = `${cardRect.width}px`;
+    expandedCard.style.height = `${cardRect.height}px`;
+    expandedCard.style.transform = "none";
+
+    setTimeout(() => {
+      overlay.style.display = "none";
+      overlay.innerHTML = "";
+      window.removeEventListener("keydown", handleKeyNavigation);
+    }, 500);
+  }
+
+  function handleKeyNavigation(event) {
+    const overlay = document.querySelector(".overlay");
+    if (!overlay) return;
+
+    if (event.key === "ArrowLeft") {
+      showPreviousImage(overlay);
+    } else if (event.key === "ArrowRight") {
+      showNextImage(overlay);
+    } else if (event.key === "Escape") {
+      document.querySelector(".close-btn").click();
     }
-  });
+  }
 });

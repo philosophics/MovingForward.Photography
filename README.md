@@ -25,4 +25,16 @@ If you were to refresh the page a couple times, you'll see that a few images are
 
 Honestly, none of them really spoke to me. Using a pre-built template felt impersonal, like wearing a suit bought from Macy's when you want something tailor-made. Plus, if I had gone with a template, someone else would probably be using the exact same thing, and where’s the fun in that?
 
-Building it from scratch gave me the creative freedom to shape something that’s truly unique, with room to evolve as I come up with new ideas. There’s still more in store, especially when it comes to a **storefront**—stay tuned!
+Building it from scratch gave me the creative freedom to shape something that’s truly unique, with room to evolve as I come up with new ideas. There’s still more in to come, especially when thinking about a **storefront**—stay tuned!
+
+---
+
+### 5. **The website has such fast loading times—how??**
+
+Lots of optimization! All images are converted to WebP format, drastically reducing the file size without compromising visual quality.
+
+---
+
+### 6. **Why can’t I right click?**
+
+Because I don’t want you to, that’s why! 😏

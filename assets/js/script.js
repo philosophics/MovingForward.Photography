@@ -396,8 +396,14 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.appendChild(overlay);
     }
 
+    const existingExpandedCard = overlay.querySelector(".expanded-card");
+    if (existingExpandedCard) {
+      overlay.removeChild(existingExpandedCard);
+    }
+
     const cardRect = card.getBoundingClientRect();
     const expandedCard = card.cloneNode(true);
+    expandedCard.originalCardRect = cardRect;
 
     expandedCard.classList.add("expanded-card");
     expandedCard.style.position = "fixed";
@@ -412,7 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.style.display = "flex";
 
     addNavigationArrows(expandedCard, overlay);
-
+    // FIXME: https://github.com/philosophics/MovingForward.Photography/issues/1 Investigate why text-wrapper visibility glitches on hover
     const expandedImg = expandedCard.querySelector("img");
     const textWrapperBack = expandedCard.querySelector(".text-wrapper.back");
     const subtitle = expandedCard.querySelector(".subtitle");
@@ -528,14 +534,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function transitionToNewCard(newCard, overlay) {
     hideDescription();
-    const currentExpandedCard = overlay.querySelector(".expanded-card");
-    if (currentExpandedCard) {
-      currentExpandedCard.style.opacity = "0";
-      setTimeout(() => {
-        overlay.removeChild(currentExpandedCard);
-        openExpandedCard(newCard);
-      }, 300);
+
+    const existingExpandedCard = overlay.querySelector(".expanded-card");
+    if (existingExpandedCard) {
+      overlay.removeChild(existingExpandedCard);
     }
+
+    openExpandedCard(newCard);
   }
 
   function showDescription(descriptionText) {

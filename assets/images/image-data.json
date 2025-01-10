@@ -3,7 +3,7 @@
         "src": "../../assets/images/logo.png",
         "title": "Logo",
         "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "subtitle": "N/A | N/A | N/A | ISO N/A",
         "page": "general",
         "metadata": {
             "focal_length": "N/A",
@@ -17,7 +17,7 @@
         "src": "../../assets/images/preview.jpg",
         "title": "Preview",
         "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "subtitle": "N/A | N/A | N/A | ISO N/A",
         "page": "general",
         "metadata": {
             "focal_length": "N/A",
@@ -31,7 +31,7 @@
         "src": "../../assets/images/favicon-16x16.png",
         "title": "Favicon-16X16",
         "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "subtitle": "N/A | N/A | N/A | ISO N/A",
         "page": "general",
         "metadata": {
             "focal_length": "N/A",
@@ -45,7 +45,7 @@
         "src": "../../assets/images/favicon-32x32.png",
         "title": "Favicon-32X32",
         "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "subtitle": "N/A | N/A | N/A | ISO N/A",
         "page": "general",
         "metadata": {
             "focal_length": "N/A",
@@ -59,7 +59,7 @@
         "src": "../../assets/images/icon-192x192.png",
         "title": "Icon-192X192",
         "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "subtitle": "N/A | N/A | N/A | ISO N/A",
         "page": "general",
         "metadata": {
             "focal_length": "N/A",
@@ -73,7 +73,7 @@
         "src": "../../assets/images/icon-512x512.png",
         "title": "Icon-512X512",
         "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "subtitle": "N/A | N/A | N/A | ISO N/A",
         "page": "general",
         "metadata": {
             "focal_length": "N/A",
@@ -87,12 +87,12 @@
         "src": "../../assets/images/abstract/A Sideward Spiral.webp",
         "title": "A Sideward Spiral",
         "description": "Enter your description here.",
-        "subtitle": "24mm | F/5.6 | 15 | ISO 100",
+        "subtitle": "24.0mm | F/5.6 | 15.0s | ISO 100",
         "page": "abstract",
         "metadata": {
-            "focal_length": "24",
-            "f_stop": "5.6",
-            "exposure_time": "15",
+            "focal_length": "24.0mm",
+            "f_stop": "F/5.6",
+            "exposure_time": "15.0s",
             "iso_speed": "100",
             "comments": "N/A"
         }
@@ -101,12 +101,12 @@
         "src": "../../assets/images/abstract/Goblin's Lapse.webp",
         "title": "Goblin'S Lapse",
         "description": "Enter your description here.",
-        "subtitle": "24mm | F/2.8 | 181 | ISO 100",
+        "subtitle": "24.0mm | F/2.8 | 181.0s | ISO 100",
         "page": "abstract",
         "metadata": {
-            "focal_length": "24",
-            "f_stop": "2.8",
-            "exposure_time": "181",
+            "focal_length": "24.0mm",
+            "f_stop": "F/2.8",
+            "exposure_time": "181.0s",
             "iso_speed": "100",
             "comments": "N/A"
         }
@@ -115,11 +115,11 @@
         "src": "../../assets/images/abstract/Splash.webp",
         "title": "Splash",
         "description": "Enter your description here.",
-        "subtitle": "105mm | F/16.0 | 1/15s | ISO 800",
+        "subtitle": "105.0mm | F/16.0 | 1/15s | ISO 800",
         "page": "abstract",
         "metadata": {
-            "focal_length": "105",
-            "f_stop": "16.0",
+            "focal_length": "105.0mm",
+            "f_stop": "F/16.0",
             "exposure_time": "1/15s",
             "iso_speed": "800",
             "comments": "N/A"
@@ -129,11 +129,11 @@
         "src": "../../assets/images/abstract/Triple Collision.webp",
         "title": "Triple Collision",
         "description": "Does this work to add comments?",
-        "subtitle": "105mm | F/18.0 | 1/2s | ISO 400",
+        "subtitle": "105.0mm | F/18.0 | 1/2s | ISO 400",
         "page": "abstract",
         "metadata": {
-            "focal_length": "105",
-            "f_stop": "18.0",
+            "focal_length": "105.0mm",
+            "f_stop": "F/18.0",
             "exposure_time": "1/2s",
             "iso_speed": "400",
             "comments": "Does this work to add comments?"
@@ -143,11 +143,11 @@
         "src": "../../assets/images/abstract/Water Shroom.webp",
         "title": "Water Shroom",
         "description": "Enter your description here.",
-        "subtitle": "105mm | F/16.0 | 1/15s | ISO 800",
+        "subtitle": "105.0mm | F/16.0 | 1/15s | ISO 800",
         "page": "abstract",
         "metadata": {
-            "focal_length": "105",
-            "f_stop": "16.0",
+            "focal_length": "105.0mm",
+            "f_stop": "F/16.0",
             "exposure_time": "1/15s",
             "iso_speed": "800",
             "comments": "N/A"
@@ -157,12 +157,12 @@
         "src": "../../assets/images/abstract/Wet Web.webp",
         "title": "Wet Web",
         "description": "Enter your description here.",
-        "subtitle": "105mm | F/10.0 | 1 | ISO 50",
+        "subtitle": "105.0mm | F/10.0 | 1.0s | ISO 50",
         "page": "abstract",
         "metadata": {
-            "focal_length": "105",
-            "f_stop": "10.0",
-            "exposure_time": "1",
+            "focal_length": "105.0mm",
+            "f_stop": "F/10.0",
+            "exposure_time": "1.0s",
             "iso_speed": "50",
             "comments": "N/A"
         }
@@ -171,12 +171,12 @@
         "src": "../../assets/images/abstract/When Starlink Attacks.webp",
         "title": "When Starlink Attacks",
         "description": "Enter your description here.",
-        "subtitle": "28mm | F/2.8 | 45 | ISO 320",
+        "subtitle": "28.0mm | F/2.8 | 45.0s | ISO 320",
         "page": "abstract",
         "metadata": {
-            "focal_length": "28",
-            "f_stop": "2.8",
-            "exposure_time": "45",
+            "focal_length": "28.0mm",
+            "f_stop": "F/2.8",
+            "exposure_time": "45.0s",
             "iso_speed": "320",
             "comments": "N/A"
         }
@@ -185,11 +185,11 @@
         "src": "../../assets/images/architecture/Palace Foyer.webp",
         "title": "Palace Foyer",
         "description": "Enter your description here.",
-        "subtitle": "18mm | F/14.0 | 1/125s | ISO 200",
+        "subtitle": "18.0mm | F/14.0 | 1/125s | ISO 200",
         "page": "architecture",
         "metadata": {
-            "focal_length": "18",
-            "f_stop": "14.0",
+            "focal_length": "18.0mm",
+            "f_stop": "F/14.0",
             "exposure_time": "1/125s",
             "iso_speed": "200",
             "comments": "N/A"
@@ -199,11 +199,11 @@
         "src": "../../assets/images/architecture/_DSC0316.webp",
         "title": " Dsc0316",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/4.0 | 1/125s | ISO 100",
+        "subtitle": "35.0mm | F/4.0 | 1/125s | ISO 100",
         "page": "architecture",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "4.0",
+            "focal_length": "35.0mm",
+            "f_stop": "F/4.0",
             "exposure_time": "1/125s",
             "iso_speed": "100",
             "comments": "N/A"
@@ -213,11 +213,11 @@
         "src": "../../assets/images/architecture/_DSC0388-2.webp",
         "title": " Dsc0388-2",
         "description": "Enter your description here.",
-        "subtitle": "46mm | F/4.8 | 1/800s | ISO 160",
+        "subtitle": "46.0mm | F/4.8 | 1/800s | ISO 160",
         "page": "architecture",
         "metadata": {
-            "focal_length": "46",
-            "f_stop": "4.8",
+            "focal_length": "46.0mm",
+            "f_stop": "F/4.8",
             "exposure_time": "1/800s",
             "iso_speed": "160",
             "comments": "N/A"
@@ -227,11 +227,11 @@
         "src": "../../assets/images/architecture/_DSC0421-Enhanced-NR.webp",
         "title": " Dsc0421-Enhanced-Nr",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/13.0 | 1/125s | ISO 400",
+        "subtitle": "35.0mm | F/13.0 | 1/125s | ISO 400",
         "page": "architecture",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "13.0",
+            "focal_length": "35.0mm",
+            "f_stop": "F/13.0",
             "exposure_time": "1/125s",
             "iso_speed": "400",
             "comments": "N/A"
@@ -241,11 +241,11 @@
         "src": "../../assets/images/architecture/DCL00624-Enhanced-NR.webp",
         "title": "Dcl00624-Enhanced-Nr",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/4.0 | 1/400s | ISO 50",
+        "subtitle": "35.0mm | F/4.0 | 1/400s | ISO 50",
         "page": "architecture",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "4.0",
+            "focal_length": "35.0mm",
+            "f_stop": "F/4.0",
             "exposure_time": "1/400s",
             "iso_speed": "50",
             "comments": "N/A"
@@ -255,11 +255,11 @@
         "src": "../../assets/images/architecture/_DSC0696.webp",
         "title": " Dsc0696",
         "description": "Enter your description here.",
-        "subtitle": "40mm | F/13.0 | 1/125s | ISO 200",
+        "subtitle": "40.0mm | F/13.0 | 1/125s | ISO 200",
         "page": "architecture",
         "metadata": {
-            "focal_length": "40",
-            "f_stop": "13.0",
+            "focal_length": "40.0mm",
+            "f_stop": "F/13.0",
             "exposure_time": "1/125s",
             "iso_speed": "200",
             "comments": "N/A"
@@ -269,11 +269,11 @@
         "src": "../../assets/images/landscape/Allen's View.webp",
         "title": "Allen'S View",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/10.0 | 1/500s | ISO 200",
+        "subtitle": "35.0mm | F/10.0 | 1/500s | ISO 200",
         "page": "landscape",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "10.0",
+            "focal_length": "35.0mm",
+            "f_stop": "F/10.0",
             "exposure_time": "1/500s",
             "iso_speed": "200",
             "comments": "N/A"
@@ -283,11 +283,11 @@
         "src": "../../assets/images/landscape/Deserted Drought.webp",
         "title": "Deserted Drought",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/16.0 | 1/400s | ISO 200",
+        "subtitle": "35.0mm | F/16.0 | 1/400s | ISO 200",
         "page": "landscape",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "16.0",
+            "focal_length": "35.0mm",
+            "f_stop": "F/16.0",
             "exposure_time": "1/400s",
             "iso_speed": "200",
             "comments": "N/A"
@@ -297,12 +297,12 @@
         "src": "../../assets/images/landscape/Devil's Castle.webp",
         "title": "Devil'S Castle",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/1.4 | 6 | ISO 1600",
+        "subtitle": "35.0mm | F/1.4 | 6.0s | ISO 1600",
         "page": "landscape",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "1.4",
-            "exposure_time": "6",
+            "focal_length": "35.0mm",
+            "f_stop": "F/1.4",
+            "exposure_time": "6.0s",
             "iso_speed": "1600",
             "comments": "N/A"
         }
@@ -311,11 +311,11 @@
         "src": "../../assets/images/landscape/Fire Mountain.webp",
         "title": "Fire Mountain",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/8.0 | 1/320s | ISO 200",
+        "subtitle": "35.0mm | F/8.0 | 1/320s | ISO 200",
         "page": "landscape",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "8.0",
+            "focal_length": "35.0mm",
+            "f_stop": "F/8.0",
             "exposure_time": "1/320s",
             "iso_speed": "200",
             "comments": "N/A"
@@ -325,11 +325,11 @@
         "src": "../../assets/images/landscape/Motorcycle Journey through Mountain Wilderness.webp",
         "title": "Motorcycle Journey Through Mountain Wilderness",
         "description": "Enter your description here.",
-        "subtitle": "106mm | F/6.3 | 1/60s | ISO 50",
+        "subtitle": "106.0mm | F/6.3 | 1/60s | ISO 50",
         "page": "landscape",
         "metadata": {
-            "focal_length": "106",
-            "f_stop": "6.3",
+            "focal_length": "106.0mm",
+            "f_stop": "F/6.3",
             "exposure_time": "1/60s",
             "iso_speed": "50",
             "comments": "N/A"
@@ -339,11 +339,11 @@
         "src": "../../assets/images/landscape/Pond.webp",
         "title": "Pond",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/4.0 | 1/1000s | ISO 200",
+        "subtitle": "35.0mm | F/4.0 | 1/1000s | ISO 200",
         "page": "landscape",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "4.0",
+            "focal_length": "35.0mm",
+            "f_stop": "F/4.0",
             "exposure_time": "1/1000s",
             "iso_speed": "200",
             "comments": "N/A"
@@ -353,11 +353,11 @@
         "src": "../../assets/images/landscape/Stew's Solitude.webp",
         "title": "Stew'S Solitude",
         "description": "Enter your description here.",
-        "subtitle": "19mm | F/4.2 | 1/1000s | ISO 125",
+        "subtitle": "19.0mm | F/4.2 | 1/1000s | ISO 125",
         "page": "landscape",
         "metadata": {
-            "focal_length": "19",
-            "f_stop": "4.2",
+            "focal_length": "19.0mm",
+            "f_stop": "F/4.2",
             "exposure_time": "1/1000s",
             "iso_speed": "125",
             "comments": "N/A"
@@ -367,11 +367,11 @@
         "src": "../../assets/images/landscape/Valley Colors.webp",
         "title": "Valley Colors",
         "description": "Enter your description here.",
-        "subtitle": "50mm | F/8.0 | 1/8s | ISO 200",
+        "subtitle": "50.0mm | F/8.0 | 1/8s | ISO 200",
         "page": "landscape",
         "metadata": {
-            "focal_length": "50",
-            "f_stop": "8.0",
+            "focal_length": "50.0mm",
+            "f_stop": "F/8.0",
             "exposure_time": "1/8s",
             "iso_speed": "200",
             "comments": "N/A"
@@ -381,12 +381,12 @@
         "src": "../../assets/images/landscape/_DSC0620.webp",
         "title": " Dsc0620",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/14.0 | 2 | ISO 200",
+        "subtitle": "35.0mm | F/14.0 | 2.0s | ISO 200",
         "page": "landscape",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "14.0",
-            "exposure_time": "2",
+            "focal_length": "35.0mm",
+            "f_stop": "F/14.0",
+            "exposure_time": "2.0s",
             "iso_speed": "200",
             "comments": "N/A"
         }
@@ -395,11 +395,11 @@
         "src": "../../assets/images/landscape/_DSC0824.webp",
         "title": " Dsc0824",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/10.0 | 1/250s | ISO 200",
+        "subtitle": "35.0mm | F/10.0 | 1/250s | ISO 200",
         "page": "landscape",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "10.0",
+            "focal_length": "35.0mm",
+            "f_stop": "F/10.0",
             "exposure_time": "1/250s",
             "iso_speed": "200",
             "comments": "N/A"
@@ -409,12 +409,12 @@
         "src": "../../assets/images/landscape/DCL00966-Enhanced-NR.webp",
         "title": "Dcl00966-Enhanced-Nr",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/11.0 | 6 | ISO 50",
+        "subtitle": "35.0mm | F/11.0 | 6.0s | ISO 50",
         "page": "landscape",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "11.0",
-            "exposure_time": "6",
+            "focal_length": "35.0mm",
+            "f_stop": "F/11.0",
+            "exposure_time": "6.0s",
             "iso_speed": "50",
             "comments": "N/A"
         }
@@ -423,11 +423,11 @@
         "src": "../../assets/images/landscape/DCL01409-Enhanced-NR.webp",
         "title": "Dcl01409-Enhanced-Nr",
         "description": "Enter your description here.",
-        "subtitle": "40mm | F/16.0 | 1/5s | ISO 50",
+        "subtitle": "40.0mm | F/16.0 | 1/5s | ISO 50",
         "page": "landscape",
         "metadata": {
-            "focal_length": "40",
-            "f_stop": "16.0",
+            "focal_length": "40.0mm",
+            "f_stop": "F/16.0",
             "exposure_time": "1/5s",
             "iso_speed": "50",
             "comments": "N/A"
@@ -437,11 +437,11 @@
         "src": "../../assets/images/landscape/DCL07975-Enhanced-NR.webp",
         "title": "Dcl07975-Enhanced-Nr",
         "description": "Enter your description here.",
-        "subtitle": "69mm | F/18.0 | 1/320s | ISO 100",
+        "subtitle": "69.0mm | F/18.0 | 1/320s | ISO 100",
         "page": "landscape",
         "metadata": {
-            "focal_length": "69",
-            "f_stop": "18.0",
+            "focal_length": "69.0mm",
+            "f_stop": "F/18.0",
             "exposure_time": "1/320s",
             "iso_speed": "100",
             "comments": "N/A"
@@ -451,11 +451,11 @@
         "src": "../../assets/images/landscape/DCL07995-Enhanced-NR-Edit.webp",
         "title": "Dcl07995-Enhanced-Nr-Edit",
         "description": "Enter your description here.",
-        "subtitle": "51mm | F/7.1 | 1/25s | ISO 50",
+        "subtitle": "51.0mm | F/7.1 | 1/25s | ISO 50",
         "page": "landscape",
         "metadata": {
-            "focal_length": "51",
-            "f_stop": "7.1",
+            "focal_length": "51.0mm",
+            "f_stop": "F/7.1",
             "exposure_time": "1/25s",
             "iso_speed": "50",
             "comments": "N/A"
@@ -465,11 +465,11 @@
         "src": "../../assets/images/landscape/DCL08023-Enhanced-NR.webp",
         "title": "Dcl08023-Enhanced-Nr",
         "description": "Enter your description here.",
-        "subtitle": "50mm | F/18.0 | 1/30s | ISO 50",
+        "subtitle": "50.0mm | F/18.0 | 1/30s | ISO 50",
         "page": "landscape",
         "metadata": {
-            "focal_length": "50",
-            "f_stop": "18.0",
+            "focal_length": "50.0mm",
+            "f_stop": "F/18.0",
             "exposure_time": "1/30s",
             "iso_speed": "50",
             "comments": "N/A"
@@ -479,11 +479,11 @@
         "src": "../../assets/images/landscape/DCL08507-Enhanced-NR.webp",
         "title": "Dcl08507-Enhanced-Nr",
         "description": "Enter your description here.",
-        "subtitle": "50mm | F/4.0 | 1/125s | ISO 50",
+        "subtitle": "50.0mm | F/4.0 | 1/125s | ISO 50",
         "page": "landscape",
         "metadata": {
-            "focal_length": "50",
-            "f_stop": "4.0",
+            "focal_length": "50.0mm",
+            "f_stop": "F/4.0",
             "exposure_time": "1/125s",
             "iso_speed": "50",
             "comments": "N/A"
@@ -493,11 +493,11 @@
         "src": "../../assets/images/landscape/DCL08768-Enhanced-NR-Edit.webp",
         "title": "Dcl08768-Enhanced-Nr-Edit",
         "description": "Enter your description here.",
-        "subtitle": "79mm | F/4.0 | 1/1600s | ISO 100",
+        "subtitle": "79.0mm | F/4.0 | 1/1600s | ISO 100",
         "page": "landscape",
         "metadata": {
-            "focal_length": "79",
-            "f_stop": "4.0",
+            "focal_length": "79.0mm",
+            "f_stop": "F/4.0",
             "exposure_time": "1/1600s",
             "iso_speed": "100",
             "comments": "N/A"
@@ -507,11 +507,11 @@
         "src": "../../assets/images/landscape/DCL08911-Enhanced-NR-Edit.webp",
         "title": "Dcl08911-Enhanced-Nr-Edit",
         "description": "Enter your description here.",
-        "subtitle": "35mm | F/11.0 | 1/250s | ISO 100",
+        "subtitle": "35.0mm | F/11.0 | 1/250s | ISO 100",
         "page": "landscape",
         "metadata": {
-            "focal_length": "35",
-            "f_stop": "11.0",
+            "focal_length": "35.0mm",
+            "f_stop": "F/11.0",
             "exposure_time": "1/250s",
             "iso_speed": "100",
             "comments": "N/A"
@@ -521,224 +521,294 @@
         "src": "../../assets/images/landscape/DCL08951-Enhanced-NR-Edit.webp",
         "title": "Dcl08951-Enhanced-Nr-Edit",
         "description": "Enter your description here.",
-        "subtitle": "24mm | F/11.0 | 1/250s | ISO 100",
+        "subtitle": "24.0mm | F/11.0 | 1/250s | ISO 100",
         "page": "landscape",
         "metadata": {
-            "focal_length": "24",
-            "f_stop": "11.0",
+            "focal_length": "24.0mm",
+            "f_stop": "F/11.0",
             "exposure_time": "1/250s",
             "iso_speed": "100",
             "comments": "N/A"
         }
     },
     {
-        "src": "../../assets/images/street/street-1.webp",
-        "title": "Street-1",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "src": "../../assets/images/street/Behind the Red Door.webp",
+        "title": "Behind The Red Door",
+        "description": "8/20/22 - Salt Lake City - Something about this red door caught my eye-the contrast of colors, the texture of the metal screen, and the way the hallway behind it glows in the light. I didn't think much of it at the time, but looking back, it's one of those shots that just works. Sometimes, it's the simple things that stand out.",
+        "subtitle": "35.0mm | F/2.0 | 1/125s | ISO 200",
         "page": "street",
         "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
+            "focal_length": "35.0mm",
+            "f_stop": "F/2.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "200",
+            "comments": "8/20/22 - Salt Lake City - Something about this red door caught my eye-the contrast of colors, the texture of the metal screen, and the way the hallway behind it glows in the light. I didn't think much of it at the time, but looking back, it's one of those shots that just works. Sometimes, it's the simple things that stand out."
         }
     },
     {
-        "src": "../../assets/images/street/street-2.webp",
-        "title": "Street-2",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "src": "../../assets/images/street/Bubbles of the Alley.webp",
+        "title": "Bubbles Of The Alley",
+        "description": "7/9/23 - Seattle - Maybe it was the magic of the moment, but this scene just felt really cool. The way the glass globes hung suspended in the air, almost like bubbles frozen in time, made for a neat view. I didn't get a chance to stick around for the lights to come on, but even without them, the mix of reflections and urban textures created something special. A little moment of whimsy in the city.",
+        "subtitle": "129.0mm | F/8.0 | 1/125s | ISO 1600",
         "page": "street",
         "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
+            "focal_length": "129.0mm",
+            "f_stop": "F/8.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "1600",
+            "comments": "7/9/23 - Seattle - Maybe it was the magic of the moment, but this scene just felt really cool. The way the glass globes hung suspended in the air, almost like bubbles frozen in time, made for a neat view. I didn't get a chance to stick around for the lights to come on, but even without them, the mix of reflections and urban textures created something special. A little moment of whimsy in the city."
         }
     },
     {
-        "src": "../../assets/images/street/street-3.webp",
-        "title": "Street-3",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
+        "src": "../../assets/images/street/Congested Calm.webp",
+        "title": "Congested Calm",
+        "description": "5/7/24 - Alajuela, Costa Rica - What struck me most about this scene was how chaotic it looked-wires crisscrossing everywhere, buildings tightly packed, intersections jammed with cars...and yet, it felt so calm and normal for everyone living there. It's fascinating how what feels overwhelming to an outsider can just be the rhythm of daily life for others. This shot captures that contrast perfectly.",
+        "subtitle": "27.2mm | F/4.9 | 1/140s | ISO 50",
         "page": "street",
         "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/street-4.webp",
-        "title": "Street-4",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
-        "page": "street",
-        "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/street-5.webp",
-        "title": "Street-5",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
-        "page": "street",
-        "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/street-6.webp",
-        "title": "Street-6",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
-        "page": "street",
-        "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/street-7.webp",
-        "title": "Street-7",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
-        "page": "street",
-        "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/street-8.webp",
-        "title": "Street-8",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
-        "page": "street",
-        "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/street-9.webp",
-        "title": "Street-9",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
-        "page": "street",
-        "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/street-10.webp",
-        "title": "Street-10",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
-        "page": "street",
-        "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/street-11.webp",
-        "title": "Street-11",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
-        "page": "street",
-        "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/street-12.webp",
-        "title": "Street-12",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
-        "page": "street",
-        "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/street-13.webp",
-        "title": "Street-13",
-        "description": "Enter your description here.",
-        "subtitle": "N/Amm | F/N/A | N/A | ISO N/A",
-        "page": "street",
-        "metadata": {
-            "focal_length": "N/A",
-            "f_stop": "N/A",
-            "exposure_time": "N/A",
-            "iso_speed": "N/A",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/DCL00726-Enhanced-NR.webp",
-        "title": "Dcl00726-Enhanced-Nr",
-        "description": "Enter your description here.",
-        "subtitle": "35mm | F/8.0 | 1/80s | ISO 50",
-        "page": "street",
-        "metadata": {
-            "focal_length": "35",
-            "f_stop": "8.0",
-            "exposure_time": "1/80s",
-            "iso_speed": "50",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "../../assets/images/street/20240507_082027-Edit.webp",
-        "title": "20240507 082027-Edit",
-        "description": "Enter your description here.",
-        "subtitle": "27mm | F/4.9 | 1/140s | ISO 50",
-        "page": "street",
-        "metadata": {
-            "focal_length": "27",
-            "f_stop": "4.9",
+            "focal_length": "27.2mm",
+            "f_stop": "F/4.9",
             "exposure_time": "1/140s",
             "iso_speed": "50",
-            "comments": "N/A"
+            "comments": "5/7/24 - Alajuela, Costa Rica - What struck me most about this scene was how chaotic it looked-wires crisscrossing everywhere, buildings tightly packed, intersections jammed with cars...and yet, it felt so calm and normal for everyone living there. It's fascinating how what feels overwhelming to an outsider can just be the rhythm of daily life for others. This shot captures that contrast perfectly."
+        }
+    },
+    {
+        "src": "../../assets/images/street/Crossroads.webp",
+        "title": "Crossroads",
+        "description": "8/20/22 - Salt Lake City - We were standing around chatting when I noticed these two sitting down in front of this art installation and I couldn't not shoot it. This is easily one of my favorite photos, everything just clicked. The installation is all about contrasts and choices, and here were these two, dressed like total characters (thanks to the FanX convention going on), perfectly embodying the idea of being yourself wherever you are. The timing was pure happenstance, but it worked out beautifully. This shot even made it to my wall at home!",
+        "subtitle": "34.0mm | F/5.0 | 1/125s | ISO 100",
+        "page": "street",
+        "metadata": {
+            "focal_length": "34.0mm",
+            "f_stop": "F/5.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "100",
+            "comments": "8/20/22 - Salt Lake City - We were standing around chatting when I noticed these two sitting down in front of this art installation and I couldn't not shoot it. This is easily one of my favorite photos, everything just clicked. The installation is all about contrasts and choices, and here were these two, dressed like total characters (thanks to the FanX convention going on), perfectly embodying the idea of being yourself wherever you are. The timing was pure happenstance, but it worked out beautifully. This shot even made it to my wall at home!"
+        }
+    },
+    {
+        "src": "../../assets/images/street/Forgotten Foundations.webp",
+        "title": "Forgotten Foundations",
+        "description": "7/9/23 - Seattle - Everyone hyped up Gas Works Park as the place to visit, but when I got there, it was... well, a dirt mound. Not exactly what I expected. Still, this old industrial site, overgrown and weathered, caught my attention. It's a good reminder of the things that once helped build and shape the city, now left behind and slowly reclaimed by nature. Even if the park didn't meet my expectations, this scene made the trip worth it.",
+        "subtitle": "35.0mm | F/8.0 | 1/250s | ISO 100",
+        "page": "street",
+        "metadata": {
+            "focal_length": "35.0mm",
+            "f_stop": "F/8.0",
+            "exposure_time": "1/250s",
+            "iso_speed": "100",
+            "comments": "7/9/23 - Seattle - Everyone hyped up Gas Works Park as the place to visit, but when I got there, it was... well, a dirt mound. Not exactly what I expected. Still, this old industrial site, overgrown and weathered, caught my attention. It's a good reminder of the things that once helped build and shape the city, now left behind and slowly reclaimed by nature. Even if the park didn't meet my expectations, this scene made the trip worth it."
+        }
+    },
+    {
+        "src": "../../assets/images/street/Guarded Moments.webp",
+        "title": "Guarded Moments",
+        "description": "5/20/23 - Denver - This was one of those shots I almost dismissed until I got home and really looked at it. There's something intriguing about the contrast... one child playing, carefree, while another looks on, guarded and serious. Then there's the dog just staring right at me, like it knows something I don't. It's a scene that captures a lot more than I initially realized. Good stuff!",
+        "subtitle": "150.0mm | F/3.2 | 1/125s | ISO 100",
+        "page": "street",
+        "metadata": {
+            "focal_length": "150.0mm",
+            "f_stop": "F/3.2",
+            "exposure_time": "1/125s",
+            "iso_speed": "100",
+            "comments": "5/20/23 - Denver - This was one of those shots I almost dismissed until I got home and really looked at it. There's something intriguing about the contrast... one child playing, carefree, while another looks on, guarded and serious. Then there's the dog just staring right at me, like it knows something I don't. It's a scene that captures a lot more than I initially realized. Good stuff!"
+        }
+    },
+    {
+        "src": "../../assets/images/street/In the Flow.webp",
+        "title": "In The Flow",
+        "description": "3/11/23 - Salt Lake City - Behind Sugarhouse Coffee, I spotted this artist deep in his process, completely focused on his work. It felt like one of those moments that just needed to be captured-the raw creativity, the vibrant colors, and the way he was fully immersed in the act of creation. Perfect timing for a street shot!",
+        "subtitle": "80.0mm | F/4.0 | 1/100s | ISO 100",
+        "page": "street",
+        "metadata": {
+            "focal_length": "80.0mm",
+            "f_stop": "F/4.0",
+            "exposure_time": "1/100s",
+            "iso_speed": "100",
+            "comments": "3/11/23 - Salt Lake City - Behind Sugarhouse Coffee, I spotted this artist deep in his process, completely focused on his work. It felt like one of those moments that just needed to be captured-the raw creativity, the vibrant colors, and the way he was fully immersed in the act of creation. Perfect timing for a street shot!"
+        }
+    },
+    {
+        "src": "../../assets/images/street/Market Madness.webp",
+        "title": "Market Madness",
+        "description": "7/9/23 - Seattle - This shot takes me right back to the chaos and energy of Pike Place Market. It's wild how many people move through here in a single day! With its multiple floors, winding hallways, countless shops, and a constant sea of people, it?s so easy to get turned around, and I definitely did more than once! This photo captures the hustle, the neon glow, and the bustling vibe perfectly.",
+        "subtitle": "35.0mm | F/4.0 | 1/125s | ISO 800",
+        "page": "street",
+        "metadata": {
+            "focal_length": "35.0mm",
+            "f_stop": "F/4.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "800",
+            "comments": "7/9/23 - Seattle - This shot takes me right back to the chaos and energy of Pike Place Market. It's wild how many people move through here in a single day! With its multiple floors, winding hallways, countless shops, and a constant sea of people, it?s so easy to get turned around, and I definitely did more than once! This photo captures the hustle, the neon glow, and the bustling vibe perfectly."
+        }
+    },
+    {
+        "src": "../../assets/images/street/Neon Directions.webp",
+        "title": "Neon Directions",
+        "description": "8/20/22 - Salt Lake City - Just a random parking sign on Regal St. Something about the retro neon lights and the bold arrow caught my attention. It's simple, but there's a certain charm to it that I really like. Sometimes it's the everyday things that make for cool shots.",
+        "subtitle": "35.0mm | F/10.0 | 1/125s | ISO 400",
+        "page": "street",
+        "metadata": {
+            "focal_length": "35.0mm",
+            "f_stop": "F/10.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "400",
+            "comments": "8/20/22 - Salt Lake City - Just a random parking sign on Regal St. Something about the retro neon lights and the bold arrow caught my attention. It's simple, but there's a certain charm to it that I really like. Sometimes it's the everyday things that make for cool shots."
+        }
+    },
+    {
+        "src": "../../assets/images/street/On a Mission.webp",
+        "title": "On A Mission",
+        "description": "8/20/22 - Salt Lake City - I couldn't help but snap this shot; something about the way she was walking caught my attention. She moved with purpose, like she was on a mission, and she made sure to look good doing it. I love how the selective color highlights her presence amidst the urban scene, it just worked perfectly.",
+        "subtitle": "35.0mm | F/8.0 | 1/125s | ISO 800",
+        "page": "street",
+        "metadata": {
+            "focal_length": "35.0mm",
+            "f_stop": "F/8.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "800",
+            "comments": "8/20/22 - Salt Lake City - I couldn't help but snap this shot; something about the way she was walking caught my attention. She moved with purpose, like she was on a mission, and she made sure to look good doing it. I love how the selective color highlights her presence amidst the urban scene, it just worked perfectly."
+        }
+    },
+    {
+        "src": "../../assets/images/street/Shark Bait.webp",
+        "title": "Shark Bait",
+        "description": "5/20/23 - Denver - I walked past this wall and couldn't help but think, \"Shark Bait!\" The bold blue shark graffiti contrasted perfectly with the chaotic sticker-covered door next to it. It's one of those quirky, random finds that makes street photography fun. Not sure if this one will stick around, but it gave me a laugh at the time!",
+        "subtitle": "63.0mm | F/3.5 | 1/400s | ISO 50",
+        "page": "street",
+        "metadata": {
+            "focal_length": "63.0mm",
+            "f_stop": "F/3.5",
+            "exposure_time": "1/400s",
+            "iso_speed": "50",
+            "comments": "5/20/23 - Denver - I walked past this wall and couldn't help but think, \"Shark Bait!\" The bold blue shark graffiti contrasted perfectly with the chaotic sticker-covered door next to it. It's one of those quirky, random finds that makes street photography fun. Not sure if this one will stick around, but it gave me a laugh at the time!"
+        }
+    },
+    {
+        "src": "../../assets/images/street/Sketch My Soul.webp",
+        "title": "Sketch My Soul",
+        "description": "5/20/23 - Denver - I stumbled across this mural while walking around on Tennyson St. somewhere, and it really hit me because of where I was mentally at the time. This shot wasn't just about capturing street art, it was about capturing a moment that felt personal. Definitely a favorite!",
+        "subtitle": "35.0mm | F/8.0 | 1/80s | ISO 50",
+        "page": "street",
+        "metadata": {
+            "focal_length": "35.0mm",
+            "f_stop": "F/8.0",
+            "exposure_time": "1/80s",
+            "iso_speed": "50",
+            "comments": "5/20/23 - Denver - I stumbled across this mural while walking around on Tennyson St. somewhere, and it really hit me because of where I was mentally at the time. This shot wasn't just about capturing street art, it was about capturing a moment that felt personal. Definitely a favorite!"
+        }
+    },
+    {
+        "src": "../../assets/images/street/Soles of the Street.webp",
+        "title": "Soles Of The Street",
+        "description": "11/11/24 - Salt Lake City - Found in a graffiti alley off 2nd, where artists leave their shoes after finishing murals. There\u2019s something cool about it\u2014like a message or a legacy they\u2019re leaving behind. A reminder that their work lives on, even when they\u2019ve moved on. I thought it made for a great capture against the clear blue sky.",
+        "subtitle": "82.0mm | F/2.8 | 1/2000s | ISO 100",
+        "page": "street",
+        "metadata": {
+            "focal_length": "82.0mm",
+            "f_stop": "F/2.8",
+            "exposure_time": "1/2000s",
+            "iso_speed": "100",
+            "comments": "11/11/24 - Salt Lake City - Found in a graffiti alley off 2nd, where artists leave their shoes after finishing murals. There\u2019s something cool about it\u2014like a message or a legacy they\u2019re leaving behind. A reminder that their work lives on, even when they\u2019ve moved on. I thought it made for a great capture against the clear blue sky."
+        }
+    },
+    {
+        "src": "../../assets/images/street/Stories on the Wall.webp",
+        "title": "Stories On The Wall",
+        "description": "11/27/22 - Salt Lake City - This mural on Main St used to belong to a bookstore that's no longer around, but I'm glad the art has remained. There's something about this wall of classic book spines that keeps drawing me back whenever I'm in the area. It's simple, nostalgic, and a cool little reminder of the stories that live on, even when the place itself is gone.",
+        "subtitle": "28.0mm | F/4.0 | 1/125s | ISO 640",
+        "page": "street",
+        "metadata": {
+            "focal_length": "28.0mm",
+            "f_stop": "F/4.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "640",
+            "comments": "11/27/22 - Salt Lake City - This mural on Main St used to belong to a bookstore that's no longer around, but I'm glad the art has remained. There's something about this wall of classic book spines that keeps drawing me back whenever I'm in the area. It's simple, nostalgic, and a cool little reminder of the stories that live on, even when the place itself is gone."
+        }
+    },
+    {
+        "src": "../../assets/images/street/Street Swagger.webp",
+        "title": "Street Swagger",
+        "description": "4/29/23 - Salt Lake City - While on another random street photo walk, this sharp-looking chap asked if I could take his photo. The composition turned out more interesting than I expected, with the low angle and framing giving it a bold, confident vibe. Sometimes, it's these spontaneous encounters that lead to the coolest shots.",
+        "subtitle": "35.0mm | F/3.2 | 1/400s | ISO 2000",
+        "page": "street",
+        "metadata": {
+            "focal_length": "35.0mm",
+            "f_stop": "F/3.2",
+            "exposure_time": "1/400s",
+            "iso_speed": "2000",
+            "comments": "4/29/23 - Salt Lake City - While on another random street photo walk, this sharp-looking chap asked if I could take his photo. The composition turned out more interesting than I expected, with the low angle and framing giving it a bold, confident vibe. Sometimes, it's these spontaneous encounters that lead to the coolest shots."
+        }
+    },
+    {
+        "src": "../../assets/images/street/The Hidden Door.webp",
+        "title": "The Hidden Door",
+        "description": "4/29/23 - Salt Lake City - I was wandering through a back alley downtown, shooting something else, when I noticed this door tucked away in a deeper alley behind a chain link fence. The faint outline of the fence adds a subtle layer to the composition without taking away from the scene. The textures and colors of the brick walls almost give the whole shot a painted feel. Definitely one of those unexpected moments that turned into a cool capture. I dig it!",
+        "subtitle": "35.0mm | F/4.0 | 1/60s | ISO 500",
+        "page": "street",
+        "metadata": {
+            "focal_length": "35.0mm",
+            "f_stop": "F/4.0",
+            "exposure_time": "1/60s",
+            "iso_speed": "500",
+            "comments": "4/29/23 - Salt Lake City - I was wandering through a back alley downtown, shooting something else, when I noticed this door tucked away in a deeper alley behind a chain link fence. The faint outline of the fence adds a subtle layer to the composition without taking away from the scene. The textures and colors of the brick walls almost give the whole shot a painted feel. Definitely one of those unexpected moments that turned into a cool capture. I dig it!"
+        }
+    },
+    {
+        "src": "../../assets/images/street/Under the Aurora.webp",
+        "title": "Under The Aurora",
+        "description": "7/9/23 - Seattle - Along the way to Gas Works Park, I captured this shot of the George Washington Memorial Bridge. Towering steel arches and urban landscape beneath made for a striking composition. It was one of those spontaneous moments that perfectly encapsulated the city's blend of natural beauty and industrial design.",
+        "subtitle": "35.0mm | F/8.0 | 1/125s | ISO 200",
+        "page": "street",
+        "metadata": {
+            "focal_length": "35.0mm",
+            "f_stop": "F/8.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "200",
+            "comments": "7/9/23 - Seattle - Along the way to Gas Works Park, I captured this shot of the George Washington Memorial Bridge. Towering steel arches and urban landscape beneath made for a striking composition. It was one of those spontaneous moments that perfectly encapsulated the city's blend of natural beauty and industrial design."
+        }
+    },
+    {
+        "src": "../../assets/images/street/Urban Relic.webp",
+        "title": "Urban Relic",
+        "description": "8/20/22 - Salt Lake City - Sure, it's just a fire hydrant, but something about the chipped paint, bold colors, and the random stickers made it a cool shot. It's like this little piece of urban life telling its own story-worn, weathered, and full of character. Sometimes, that's all it takes to catch my eye.",
+        "subtitle": "45.0mm | F/6.3 | 1/125s | ISO 250",
+        "page": "street",
+        "metadata": {
+            "focal_length": "45.0mm",
+            "f_stop": "F/6.3",
+            "exposure_time": "1/125s",
+            "iso_speed": "250",
+            "comments": "8/20/22 - Salt Lake City - Sure, it's just a fire hydrant, but something about the chipped paint, bold colors, and the random stickers made it a cool shot. It's like this little piece of urban life telling its own story-worn, weathered, and full of character. Sometimes, that's all it takes to catch my eye."
+        }
+    },
+    {
+        "src": "../../assets/images/street/Wheelie on the Fly.webp",
+        "title": "Wheelie On The Fly",
+        "description": "8/20/22 - Salt Lake City - A spontaneous moment during a street shoot. A kid spotted my camera, gave me one shot to catch his wheelie, and I nailed it! Capturing motion in a split second, thanks to recalling settings I had recently learned in class.",
+        "subtitle": "35.0mm | F/5.6 | 1/800s | ISO 1250",
+        "page": "street",
+        "metadata": {
+            "focal_length": "35.0mm",
+            "f_stop": "F/5.6",
+            "exposure_time": "1/800s",
+            "iso_speed": "1250",
+            "comments": "8/20/22 - Salt Lake City - A spontaneous moment during a street shoot. A kid spotted my camera, gave me one shot to catch his wheelie, and I nailed it! Capturing motion in a split second, thanks to recalling settings I had recently learned in class."
+        }
+    },
+    {
+        "src": "../../assets/images/street/You Are Here.webp",
+        "title": "You Are Here",
+        "description": "8/20/22 - Salt Lake City - I took this shot in front of the Salt Palace Convention Center. Amid a sea of contrasting signs, the bold \"YOU ARE HERE\" symbol anchors the chaos. While this installation has been photographed countless times, it creates a cool contrast that I couldn't pass up capturing!",
+        "subtitle": "18.0mm | F/5.0 | 1/125s | ISO 100",
+        "page": "street",
+        "metadata": {
+            "focal_length": "18.0mm",
+            "f_stop": "F/5.0",
+            "exposure_time": "1/125s",
+            "iso_speed": "100",
+            "comments": "8/20/22 - Salt Lake City - I took this shot in front of the Salt Palace Convention Center. Amid a sea of contrasting signs, the bold \"YOU ARE HERE\" symbol anchors the chaos. While this installation has been photographed countless times, it creates a cool contrast that I couldn't pass up capturing!"
         }
     }
 ]

@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <li><a href="abstract.html">Abstract</a></li>
               <li><a href="architecture.html">Architecture</a></li>
               <li><a href="landscape.html">Landscape</a></li>
-              <li><a href="street.html">Street</a></li>-->
+              <li><a href="street.html">Street</a></li>
             </ul>
     
             <label class="hamburger" for="menu-toggle">
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <span class="bar bottom"></span>
             </label>
             <ul class="mobile-nav">
-              <!--<li><a href="../../index.html">Home</a></li>
+              <li><a href="../../index.html">Home</a></li>
               <li><a href="abstract.html">Abstract</a></li>
               <li><a href="architecture.html">Architecture</a></li>
               <li><a href="landscape.html">Landscape</a></li>

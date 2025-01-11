@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Unica One";
+  src: url("../../assets/fonts/Unica_One/UnicaOne-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -41,6 +50,11 @@ main.index-content {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+h1,
+.header-title {
+  font-family: "Unica One", sans-serif;
 }
 
 header {
@@ -94,26 +108,241 @@ header {
   }
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
+nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 1000;
+  padding: 10px 0;
   display: flex;
   justify-content: center;
-  background-color: #222;
 }
 
-nav ul li {
-  margin: 0 15px;
+nav.nav-visible {
+  transform: translateY(0);
 }
 
-nav ul li a {
+ul.desktop-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+ul.desktop-nav li a {
+  color: white;
   text-decoration: none;
-  color: #fff;
+  font-size: 18px;
   font-weight: bold;
 }
 
-nav ul li a:hover {
-  color: #00aaff;
+/* Mobile nav styles */
+label.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 15;
+}
+
+label.hamburger input {
+  display: none;
+}
+
+label.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+ul.mobile-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+ul.mobile-nav.open {
+  display: flex;
+}
+
+ul.mobile-nav li a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  label.hamburger {
+    display: block;
+  }
+
+  ul.desktop-nav {
+    display: none;
+  }
+}
+
+.home-card-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 600px;
+  justify-items: center;
+  align-items: start;
+  padding: 20px 0;
+}
+
+.home-card {
+  width: 190px;
+  height: 254px;
+  background-color: #424242;
+  border-radius: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.home-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: transform 0.4s ease;
+  border-radius: 20px;
+}
+
+.home-card div {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.4s ease;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.home-card:hover img {
+  transform: translateY(-30px);
+}
+
+.home-card:hover div {
+  transform: translateY(-30px);
+}
+
+.home-card::before {
+  content: attr(data-text);
+  letter-spacing: 0.2em;
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 0.8em;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.home-card:hover::before {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .home-card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    padding: 5px;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  .home-card {
+    width: 150px;
+    height: 200px;
+    background-color: #424242;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .home-card img {
+    position: relative;
+    z-index: 1;
+    width: 150px;
+    height: 200px;
+    transform: none;
+    border-radius: 10px;
+  }
+
+  .home-card::before {
+    content: attr(data-text);
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+    white-space: nowrap;
+    opacity: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+
+  .home-card:hover::before {
+    opacity: 1;
+  }
+
+  .home-card div {
+    display: none;
+  }
+
+  .home-card:hover img {
+    transform: none;
+  }
+
+  .home-card:hover div {
+    transform: none;
+  }
 }
 
 .card {
@@ -456,6 +685,7 @@ nav ul li a:hover {
 }
 
 .text-wrapper .title {
+  /* FIXME https://github.com/philosophics/MovingForward.Photography/issues/3 */
   font-size: 1rem;
   font-weight: bold;
   margin-top: 2;

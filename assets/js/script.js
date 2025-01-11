@@ -18,15 +18,123 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname.split("/").pop().split(".")[0];
 
   const headerPath = `${subDir}assets/pages/header.html`;
-  const footerPath = `${subDir}assets/pages/footer.html`;
-  const imageDataPath = `${subDir}assets/images/image-data.json`;
 
   fetch(headerPath)
-    .then((response) => response.text())
+    .then((response) => {
+      if (!response.ok)
+        throw new Error(`Failed to load header: ${response.status}`);
+      return response.text();
+    })
     .then((data) => {
-      document.querySelector("header").innerHTML = data;
+      const headerElement = document.querySelector("header");
+      headerElement.insertAdjacentHTML("beforeend", data);
+
+      handleNavLogic(headerElement);
     })
     .catch((err) => console.error("Error loading header:", err));
+
+  function handleNavLogic(headerElement) {
+    const isHomePage =
+      window.location.pathname.endsWith("index.html") ||
+      window.location.pathname === "/";
+
+    if (!isHomePage) {
+      const navHTML = `
+          <nav>
+            <ul class="desktop-nav">
+              <!--<li><a href="../../index.html">Home</a></li>
+              <li><a href="abstract.html">Abstract</a></li>
+              <li><a href="architecture.html">Architecture</a></li>
+              <li><a href="landscape.html">Landscape</a></li>
+              <li><a href="street.html">Street</a></li>-->
+            </ul>
+    
+            <label class="hamburger" for="menu-toggle">
+              <input type="checkbox" id="menu-toggle" />
+              <span class="bar top"></span>
+              <span class="bar middle"></span>
+              <span class="bar bottom"></span>
+            </label>
+            <ul class="mobile-nav">
+              <!--<li><a href="../../index.html">Home</a></li>
+              <li><a href="abstract.html">Abstract</a></li>
+              <li><a href="architecture.html">Architecture</a></li>
+              <li><a href="landscape.html">Landscape</a></li>
+              <li><a href="street.html">Street</a></li>-->
+            </ul>
+          </nav>
+        `;
+
+      let nav = headerElement.querySelector("nav");
+
+      if (!nav) {
+        headerElement.insertAdjacentHTML("beforeend", navHTML);
+        nav = headerElement.querySelector("nav");
+
+        if (localStorage.getItem("nav-visible") === "true") {
+          if (localStorage.getItem("nav-initial-animation") === "true") {
+            requestAnimationFrame(() => {
+              setTimeout(() => nav.classList.add("nav-visible"), 50);
+            });
+            localStorage.setItem("nav-initial-animation", "false");
+            devLog("Navigation inserted and animated.");
+          } else {
+            nav.classList.add("nav-visible");
+            devLog("Navigation inserted without animation (persisted state).");
+          }
+        } else {
+          requestAnimationFrame(() => {
+            setTimeout(() => nav.classList.add("nav-visible"), 50);
+          });
+          localStorage.setItem("nav-visible", "true");
+          localStorage.setItem("nav-initial-animation", "false");
+          devLog("Navigation inserted and animated for the first time.");
+        }
+      } else {
+        devLog("Navigation already exists and visible.");
+      }
+
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileNav = headerElement.querySelector(".mobile-nav");
+
+      if (
+        menuToggle &&
+        mobileNav &&
+        !menuToggle.hasAttribute("data-listener")
+      ) {
+        menuToggle.addEventListener("change", () => {
+          if (menuToggle.checked) {
+            mobileNav.classList.add("open");
+          } else {
+            mobileNav.classList.remove("open");
+          }
+        });
+        menuToggle.setAttribute("data-listener", "true");
+      }
+
+      const navLinks = headerElement.querySelectorAll("nav a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const targetUrl = link.getAttribute("href");
+
+          if (targetUrl.includes("index.html") || targetUrl === "../../") {
+            event.preventDefault();
+
+            nav.classList.remove("nav-visible");
+
+            setTimeout(() => {
+              window.location.href = targetUrl;
+            }, 100);
+          }
+        });
+      });
+    } else {
+      localStorage.removeItem("nav-visible");
+      localStorage.setItem("nav-initial-animation", "true");
+    }
+  }
+
+  const footerPath = `${subDir}assets/pages/footer.html`;
 
   fetch(footerPath)
     .then((response) => response.text())
@@ -35,6 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((err) => console.error("Error loading footer:", err));
 
+  const imageDataPath = `${subDir}assets/images/image-data.json`;
   const isPortfolioPage = currentPath === "portfolio";
   const portfolioGrid = document.querySelector(".portfolio-grid");
 
@@ -124,7 +233,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((images) => {
       const currentPage = currentPath.split("/").pop().split(".")[0];
       const filteredImages = images.filter(
-        (image) => image.page === currentPage
+        (image) =>
+          image.page === currentPage && !image.src.includes("/homecard/")
       );
 
       shuffleArray(filteredImages);
@@ -206,6 +316,28 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 100);
           }
         };
+      });
+
+      const sections = ["abstract", "architecture", "landscape", "street"];
+
+      sections.forEach((section) => {
+        const sectionImages = images.filter(
+          (image) => image.page === section && image.src.includes("/homecard/")
+        );
+
+        if (sectionImages.length > 0) {
+          const randomIndex = Math.floor(Math.random() * sectionImages.length);
+          const randomImage = sectionImages[randomIndex].src;
+
+          const card = document.querySelector(
+            `.home-card[data-text="${section}"] img`
+          );
+          if (card) {
+            card.src = `${subDir}${randomImage}`;
+          }
+        } else {
+          console.warn(`No homecard images found for section: ${section}`);
+        }
       });
     })
     .catch((error) => console.error("Error loading images:", error));

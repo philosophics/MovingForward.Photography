@@ -112,6 +112,11 @@
         }
     },
     {
+        "src": "/assets/images/abstract/homecard/abstract1.webp",
+        "title": "Abstract1",
+        "page": "abstract"
+    },
+    {
         "src": "../../assets/images/architecture/Palace Foyer.webp",
         "title": "Palace Foyer",
         "description": "Description Pending.",
@@ -194,6 +199,11 @@
             "iso_speed": "200",
             "comments": "N/A"
         }
+    },
+    {
+        "src": "/assets/images/architecture/homecard/architecture1.webp",
+        "title": "Architecture1",
+        "page": "architecture"
     },
     {
         "src": "../../assets/images/landscape/Allen's View.webp",
@@ -460,6 +470,11 @@
             "iso_speed": "100",
             "comments": "N/A"
         }
+    },
+    {
+        "src": "/assets/images/landscape/homecard/landscape1.webp",
+        "title": "Landscape1",
+        "page": "landscape"
     },
     {
         "src": "../../assets/images/street/Behind the Red Door.webp",
@@ -740,5 +755,10 @@
             "iso_speed": "100",
             "comments": "8/20/22 - Salt Lake City - I took this shot in front of the Salt Palace Convention Center. Amid a sea of contrasting signs, the bold \"YOU ARE HERE\" symbol anchors the chaos. While this installation has been photographed countless times, it creates a cool contrast that I couldn't pass up capturing!"
         }
+    },
+    {
+        "src": "/assets/images/street/homecard/street1.webp",
+        "title": "Street1",
+        "page": "street"
     }
 ]

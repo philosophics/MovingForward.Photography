@@ -87,6 +87,12 @@ function loadContent(path) {
       if (contentPlaceholder) {
         contentPlaceholder.innerHTML = html;
       }
+
+        const headerElement = document.querySelector("header");
+      if (headerElement) {
+        handleNavLogic(headerElement);
+      }
+      
       if (appState.currentPage === "home") {
         document.dispatchEvent(new Event("homeLoaded"));
       } else if (appState.currentPage) {

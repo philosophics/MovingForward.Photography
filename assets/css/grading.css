@@ -19,9 +19,16 @@ html {
 }
 
 body {
-  margin: 0;
   padding: 0;
   background-color: #808080;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 body.index {
@@ -197,7 +204,7 @@ ul.mobile-nav li a {
 
 .home-card-container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin: 0 auto;
   max-width: 600px;
@@ -276,7 +283,7 @@ ul.mobile-nav li a {
 @media screen and (max-width: 768px) {
   .home-card-container {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     width: 100%;
     max-width: 400px;
@@ -432,12 +439,25 @@ ul.mobile-nav li a {
 .portfolio-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-flow: row dense;
   grid-auto-rows: min-content;
+  width: 100%;
+  max-width: none;
   gap: 8px;
   padding: 16px;
   overflow-y: auto;
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+#content-placeholder {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 }
 
 @media (min-width: 1025px) {
@@ -966,11 +986,16 @@ footer {
   background-color: #141414;
   color: gray;
   padding: 10px 20px;
+  transition: transform 0.5s ease-in-out;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+}
+
+.footer-hidden {
+  transform: translateY(100%);
 }
 
 .footer-left {

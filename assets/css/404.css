@@ -1,4 +1,3 @@
-/* General Body Styling */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +5,6 @@
   font-family: "Inter", "Roboto", "Open Sans", Arial, sans-serif;
 }
 
-html,
 body {
   background: linear-gradient(180deg, #000428 0%, #00427b 80%);
   background-color: #000428;
@@ -20,9 +18,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 0;
 }
 
-/* Heading Style */
 h1 {
   color: #ffffff;
   text-align: center;
@@ -30,57 +28,6 @@ h1 {
   bottom: 10%;
   font-size: 1.9rem;
   z-index: 11;
-}
-
-.static-header,
-.static-footer {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background: #000; /* Ensure a solid background for the header and footer */
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120px; /* Adjust based on desired header height */
-  z-index: 1000;
-  overflow: hidden; /* Ensures no overflow from child elements */
-}
-
-.header-background {
-  width: 100%;
-  height: 100%;
-  background-image: repeating-radial-gradient(
-    #0c0a0a 80%,
-    #2f312f 90%,
-    #3f4549 90%
-  );
-  background-size: 65px 65px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-#home-title {
-  background: linear-gradient(45deg, #a8dadc, #f1faee); /* Soft and calming */
-  background-clip: text; /* Standard property */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Makes gradient visible on text */
-  font-family: "Unica One", sans-serif;
-  font-size: 3rem; /* Default size for larger screens */
-  color: #222; /* Dark text for contrast */
-  text-align: center; /* Center align the title */
-  text-transform: uppercase; /* Make it bold and impactful */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-  letter-spacing: 1px; /* Add some spacing for elegance */
-  margin: 20px 0; /* Add spacing around the title */
-  white-space: nowrap; /* Prevent stacking */
 }
 
 /* Astronaut Animation */
@@ -446,142 +393,7 @@ header {
   border-bottom: 10px solid #b0cfe4;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #141414;
-  color: gray;
-  padding: 10px 20px;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-/* Left Content (Powered by Cloudflare) */
-.footer-left {
-  flex: 1;
-  text-align: left;
-}
-
-/* Center Content (Copyright) */
-.footer-center {
-  flex: 1;
-  text-align: center;
-}
-
-/* Right Content (Footer Buttons) */
-.footer-buttons {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* Button Styles */
-.button {
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-  width: 48px; /* Adjust width for proportional scaling */
-  height: 48px; /* Match height to width */
-  border-radius: 12px; /* Softer rounded corners */
-  background-color: #2d2e32;
-  border: 2px solid #2d2e32;
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button svg {
-  width: 22px; /* Proper scaling for the SVG */
-  height: 22px;
-  margin: auto;
-}
-
-.button:hover {
-  transform: scale(1.1); /* Subtle scaling effect on hover */
-  background-color: #fff;
-  color: #2d2e32;
-}
-
-.button:hover .btn-svg {
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg)
-    brightness(103%) contrast(103%);
-}
-
-/* Text Styling */
-footer p {
-  margin: 0;
-  font-size: 14px; /* Keep text compact */
-}
-
-/* Links */
-footer a {
-  color: #007bff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #ffa000;
-}
-
 @media screen and (max-width: 768px) {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    height: 100%; /* Ensure it matches its parent */
-  }
-
-  html,
-  body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-
-  header,
-  footer {
-    flex-shrink: 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    width: 100vw; /* Prevent overflow */
-  }
-
-  header {
-    top: 0;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #home-title {
-    font-size: 1.8rem;
-    color: #fff;
-    margin: 0;
-    text-align: center;
-    word-wrap: break-word;
-  }
-
   .oops-text {
     position: relative; /* Remove absolute positioning */
     margin: auto; /* Center within the flex container */
@@ -836,19 +648,5 @@ footer a:hover {
     100% {
       transform: translateY(100vh);
     }
-  }
-
-  footer {
-    bottom: 0;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .footer-buttons {
-    display: none;
-    border: 1px solid red;
   }
 }

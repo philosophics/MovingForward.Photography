@@ -1,6 +1,6 @@
 [
   {
-    "src": "../../assets/images/preview.jpg",
+    "src": "/assets/images/./preview.jpg",
     "title": "Preview",
     "description": "Description Pending.",
     "subtitle": "N/A | N/A | N/A | N/A",
@@ -14,7 +14,7 @@
     }
   },
   {
-    "src": "../../assets/images/abstract/A Sideward Spiral.webp",
+    "src": "/assets/images/abstract/A Sideward Spiral.webp",
     "title": "A Sideward Spiral",
     "description": "Description Pending.",
     "subtitle": "24mm | F/5.6 | 15.0s | 100",
@@ -28,7 +28,7 @@
     }
   },
   {
-    "src": "../../assets/images/abstract/Goblin's Lapse.webp",
+    "src": "/assets/images/abstract/Goblin's Lapse.webp",
     "title": "Goblin'S Lapse",
     "description": "Description Pending.",
     "subtitle": "24mm | F/2.8 | 181.0s | 100",
@@ -42,7 +42,7 @@
     }
   },
   {
-    "src": "../../assets/images/abstract/Splash.webp",
+    "src": "/assets/images/abstract/Splash.webp",
     "title": "Splash",
     "description": "Description Pending.",
     "subtitle": "105mm | F/16 | 1/15s | 800",
@@ -56,7 +56,7 @@
     }
   },
   {
-    "src": "../../assets/images/abstract/Triple Collision.webp",
+    "src": "/assets/images/abstract/Triple Collision.webp",
     "title": "Triple Collision",
     "description": "Does this work to add comments?",
     "subtitle": "105mm | F/18 | 1/2s | 400",
@@ -70,7 +70,7 @@
     }
   },
   {
-    "src": "../../assets/images/abstract/Water Shroom.webp",
+    "src": "/assets/images/abstract/Water Shroom.webp",
     "title": "Water Shroom",
     "description": "Description Pending.",
     "subtitle": "105mm | F/16 | 1/15s | 800",
@@ -84,7 +84,7 @@
     }
   },
   {
-    "src": "../../assets/images/abstract/Wet Web.webp",
+    "src": "/assets/images/abstract/Wet Web.webp",
     "title": "Wet Web",
     "description": "Description Pending.",
     "subtitle": "105mm | F/10 | 1.0s | 50",
@@ -98,7 +98,7 @@
     }
   },
   {
-    "src": "../../assets/images/abstract/When Starlink Attacks.webp",
+    "src": "/assets/images/abstract/When Starlink Attacks.webp",
     "title": "When Starlink Attacks",
     "description": "Description Pending.",
     "subtitle": "28mm | F/2.8 | 45.0s | 320",
@@ -117,7 +117,7 @@
     "page": "abstract"
   },
   {
-    "src": "../../assets/images/architecture/Palace Foyer.webp",
+    "src": "/assets/images/architecture/Palace Foyer.webp",
     "title": "Palace Foyer",
     "description": "Description Pending.",
     "subtitle": "18mm | F/14 | 1/125s | 200",
@@ -131,7 +131,7 @@
     }
   },
   {
-    "src": "../../assets/images/architecture/_DSC0316.webp",
+    "src": "/assets/images/architecture/_DSC0316.webp",
     "title": " Dsc0316",
     "description": "Description Pending.",
     "subtitle": "35mm | F/4 | 1/125s | 100",
@@ -145,7 +145,7 @@
     }
   },
   {
-    "src": "../../assets/images/architecture/_DSC0388-2.webp",
+    "src": "/assets/images/architecture/_DSC0388-2.webp",
     "title": " Dsc0388-2",
     "description": "Description Pending.",
     "subtitle": "46mm | F/4.8 | 1/800s | 160",
@@ -159,7 +159,7 @@
     }
   },
   {
-    "src": "../../assets/images/architecture/_DSC0421-Enhanced-NR.webp",
+    "src": "/assets/images/architecture/_DSC0421-Enhanced-NR.webp",
     "title": " Dsc0421-Enhanced-Nr",
     "description": "Description Pending.",
     "subtitle": "35mm | F/13 | 1/125s | 400",
@@ -173,7 +173,7 @@
     }
   },
   {
-    "src": "../../assets/images/architecture/DCL00624-Enhanced-NR.webp",
+    "src": "/assets/images/architecture/DCL00624-Enhanced-NR.webp",
     "title": "Dcl00624-Enhanced-Nr",
     "description": "Description Pending.",
     "subtitle": "35mm | F/4 | 1/400s | 50",
@@ -187,7 +187,7 @@
     }
   },
   {
-    "src": "../../assets/images/architecture/_DSC0696.webp",
+    "src": "/assets/images/architecture/_DSC0696.webp",
     "title": " Dsc0696",
     "description": "Description Pending.",
     "subtitle": "40mm | F/13 | 1/125s | 200",
@@ -206,7 +206,7 @@
     "page": "architecture"
   },
   {
-    "src": "../../assets/images/landscape/Allen's View.webp",
+    "src": "/assets/images/landscape/Allen's View.webp",
     "title": "Allen'S View",
     "description": "Description Pending.",
     "subtitle": "35mm | F/10 | 1/500s | 200",
@@ -220,7 +220,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/Deserted Drought.webp",
+    "src": "/assets/images/landscape/Deserted Drought.webp",
     "title": "Deserted Drought",
     "description": "Description Pending.",
     "subtitle": "35mm | F/16 | 1/400s | 200",
@@ -234,7 +234,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/Devil's Castle.webp",
+    "src": "/assets/images/landscape/Devil's Castle.webp",
     "title": "Devil'S Castle",
     "description": "Description Pending.",
     "subtitle": "35mm | F/1.4 | 6.0s | 1600",
@@ -248,7 +248,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/Fire Mountain.webp",
+    "src": "/assets/images/landscape/Fire Mountain.webp",
     "title": "Fire Mountain",
     "description": "Description Pending.",
     "subtitle": "35mm | F/8 | 1/320s | 200",
@@ -262,7 +262,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/Motorcycle Journey through Mountain Wilderness.webp",
+    "src": "/assets/images/landscape/Motorcycle Journey through Mountain Wilderness.webp",
     "title": "Motorcycle Journey Through Mountain Wilderness",
     "description": "Description Pending.",
     "subtitle": "106mm | F/6.3 | 1/60s | 50",
@@ -276,7 +276,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/Pond.webp",
+    "src": "/assets/images/landscape/Pond.webp",
     "title": "Pond",
     "description": "Description Pending.",
     "subtitle": "35mm | F/4 | 1/1000s | 200",
@@ -290,7 +290,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/Stew's Solitude.webp",
+    "src": "/assets/images/landscape/Stew's Solitude.webp",
     "title": "Stew'S Solitude",
     "description": "Description Pending.",
     "subtitle": "19mm | F/4.2 | 1/1000s | 125",
@@ -304,7 +304,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/Valley Colors.webp",
+    "src": "/assets/images/landscape/Valley Colors.webp",
     "title": "Valley Colors",
     "description": "Description Pending.",
     "subtitle": "50mm | F/8 | 1/8s | 200",
@@ -318,7 +318,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/_DSC0620.webp",
+    "src": "/assets/images/landscape/_DSC0620.webp",
     "title": " Dsc0620",
     "description": "Description Pending.",
     "subtitle": "35mm | F/14 | 2.0s | 200",
@@ -332,7 +332,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/_DSC0824.webp",
+    "src": "/assets/images/landscape/_DSC0824.webp",
     "title": " Dsc0824",
     "description": "Description Pending.",
     "subtitle": "35mm | F/10 | 1/250s | 200",
@@ -346,7 +346,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/DCL00966-Enhanced-NR.webp",
+    "src": "/assets/images/landscape/DCL00966-Enhanced-NR.webp",
     "title": "Dcl00966-Enhanced-Nr",
     "description": "Description Pending.",
     "subtitle": "35mm | F/11 | 6.0s | 50",
@@ -360,7 +360,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/DCL01409-Enhanced-NR.webp",
+    "src": "/assets/images/landscape/DCL01409-Enhanced-NR.webp",
     "title": "Dcl01409-Enhanced-Nr",
     "description": "Description Pending.",
     "subtitle": "40mm | F/16 | 1/5s | 50",
@@ -374,7 +374,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/DCL07975-Enhanced-NR.webp",
+    "src": "/assets/images/landscape/DCL07975-Enhanced-NR.webp",
     "title": "Dcl07975-Enhanced-Nr",
     "description": "Description Pending.",
     "subtitle": "69mm | F/18 | 1/320s | 100",
@@ -388,7 +388,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/DCL07995-Enhanced-NR-Edit.webp",
+    "src": "/assets/images/landscape/DCL07995-Enhanced-NR-Edit.webp",
     "title": "Dcl07995-Enhanced-Nr-Edit",
     "description": "Description Pending.",
     "subtitle": "51mm | F/7.1 | 1/25s | 50",
@@ -402,7 +402,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/DCL08023-Enhanced-NR.webp",
+    "src": "/assets/images/landscape/DCL08023-Enhanced-NR.webp",
     "title": "Dcl08023-Enhanced-Nr",
     "description": "Description Pending.",
     "subtitle": "50mm | F/18 | 1/30s | 50",
@@ -416,7 +416,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/DCL08507-Enhanced-NR.webp",
+    "src": "/assets/images/landscape/DCL08507-Enhanced-NR.webp",
     "title": "Dcl08507-Enhanced-Nr",
     "description": "Description Pending.",
     "subtitle": "50mm | F/4 | 1/125s | 50",
@@ -430,7 +430,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/DCL08768-Enhanced-NR-Edit.webp",
+    "src": "/assets/images/landscape/DCL08768-Enhanced-NR-Edit.webp",
     "title": "Dcl08768-Enhanced-Nr-Edit",
     "description": "Description Pending.",
     "subtitle": "79mm | F/4 | 1/1600s | 100",
@@ -444,7 +444,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/DCL08911-Enhanced-NR-Edit.webp",
+    "src": "/assets/images/landscape/DCL08911-Enhanced-NR-Edit.webp",
     "title": "Dcl08911-Enhanced-Nr-Edit",
     "description": "Description Pending.",
     "subtitle": "35mm | F/11 | 1/250s | 100",
@@ -458,7 +458,7 @@
     }
   },
   {
-    "src": "../../assets/images/landscape/DCL08951-Enhanced-NR-Edit.webp",
+    "src": "/assets/images/landscape/DCL08951-Enhanced-NR-Edit.webp",
     "title": "Dcl08951-Enhanced-Nr-Edit",
     "description": "Description Pending.",
     "subtitle": "24mm | F/11 | 1/250s | 100",
@@ -477,7 +477,7 @@
     "page": "landscape"
   },
   {
-    "src": "../../assets/images/street/Behind the Red Door.webp",
+    "src": "/assets/images/street/Behind the Red Door.webp",
     "title": "Behind The Red Door",
     "description": "8/20/22 - Salt Lake City - Something about this red door caught my eye-the contrast of colors, the texture of the metal screen, and the way the hallway behind it glows in the light. I didn't think much of it at the time, but looking back, it's one of those shots that just works. Sometimes, it's the simple things that stand out.",
     "subtitle": "35mm | F/2 | 1/125s | 200",
@@ -491,7 +491,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Bubbles of the Alley.webp",
+    "src": "/assets/images/street/Bubbles of the Alley.webp",
     "title": "Bubbles Of The Alley",
     "description": "7/9/23 - Seattle - Maybe it was the magic of the moment, but this scene just felt really cool. The way the glass globes hung suspended in the air, almost like bubbles frozen in time, made for a neat view. I didn't get a chance to stick around for the lights to come on, but even without them, the mix of reflections and urban textures created something special. A little moment of whimsy in the city.",
     "subtitle": "129mm | F/8 | 1/125s | 1600",
@@ -505,7 +505,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Congested Calm.webp",
+    "src": "/assets/images/street/Congested Calm.webp",
     "title": "Congested Calm",
     "description": "5/7/24 - Alajuela, Costa Rica - What struck me most about this scene was how chaotic it looked-wires crisscrossing everywhere, buildings tightly packed, intersections jammed with cars...and yet, it felt so calm and normal for everyone living there. It's fascinating how what feels overwhelming to an outsider can just be the rhythm of daily life for others. This shot captures that contrast perfectly.",
     "subtitle": "27mm | F/4.9 | 1/140s | 50",
@@ -519,7 +519,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Crossroads.webp",
+    "src": "/assets/images/street/Crossroads.webp",
     "title": "Crossroads",
     "description": "8/20/22 - Salt Lake City - We were standing around chatting when I noticed these two sitting down in front of this art installation and I couldn't not shoot it. This is easily one of my favorite photos, everything just clicked. The installation is all about contrasts and choices, and here were these two, dressed like total characters (thanks to the FanX convention going on), perfectly embodying the idea of being yourself wherever you are. The timing was pure happenstance, but it worked out beautifully. This shot even made it to my wall at home!",
     "subtitle": "34mm | F/5 | 1/125s | 100",
@@ -533,7 +533,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Forgotten Foundations.webp",
+    "src": "/assets/images/street/Forgotten Foundations.webp",
     "title": "Forgotten Foundations",
     "description": "7/9/23 - Seattle - Everyone hyped up Gas Works Park as the place to visit, but when I got there, it was... well, a dirt mound. Not exactly what I expected. Still, this old industrial site, overgrown and weathered, caught my attention. It's a good reminder of the things that once helped build and shape the city, now left behind and slowly reclaimed by nature. Even if the park didn't meet my expectations, this scene made the trip worth it.",
     "subtitle": "35mm | F/8 | 1/250s | 100",
@@ -547,7 +547,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Guarded Moments.webp",
+    "src": "/assets/images/street/Guarded Moments.webp",
     "title": "Guarded Moments",
     "description": "5/20/23 - Denver - This was one of those shots I almost dismissed until I got home and really looked at it. There's something intriguing about the contrast... one child playing, carefree, while another looks on, guarded and serious. Then there's the dog just staring right at me, like it knows something I don't. It's a scene that captures a lot more than I initially realized. Good stuff!",
     "subtitle": "150mm | F/3.2 | 1/125s | 100",
@@ -561,7 +561,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/In the Flow.webp",
+    "src": "/assets/images/street/In the Flow.webp",
     "title": "In The Flow",
     "description": "3/11/23 - Salt Lake City - Behind Sugarhouse Coffee, I spotted this artist deep in his process, completely focused on his work. It felt like one of those moments that just needed to be captured-the raw creativity, the vibrant colors, and the way he was fully immersed in the act of creation. Perfect timing for a street shot!",
     "subtitle": "80mm | F/4 | 1/100s | 100",
@@ -575,7 +575,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Market Madness.webp",
+    "src": "/assets/images/street/Market Madness.webp",
     "title": "Market Madness",
     "description": "7/9/23 - Seattle - This shot takes me right back to the chaos and energy of Pike Place Market. It's wild how many people move through here in a single day! With its multiple floors, winding hallways, countless shops, and a constant sea of people, it?s so easy to get turned around, and I definitely did more than once! This photo captures the hustle, the neon glow, and the bustling vibe perfectly.",
     "subtitle": "35mm | F/4 | 1/125s | 800",
@@ -589,7 +589,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Neon Directions.webp",
+    "src": "/assets/images/street/Neon Directions.webp",
     "title": "Neon Directions",
     "description": "8/20/22 - Salt Lake City - Just a random parking sign on Regal St. Something about the retro neon lights and the bold arrow caught my attention. It's simple, but there's a certain charm to it that I really like. Sometimes it's the everyday things that make for cool shots.",
     "subtitle": "35mm | F/10 | 1/125s | 400",
@@ -603,7 +603,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/On a Mission.webp",
+    "src": "/assets/images/street/On a Mission.webp",
     "title": "On A Mission",
     "description": "8/20/22 - Salt Lake City - I couldn't help but snap this shot; something about the way she was walking caught my attention. She moved with purpose, like she was on a mission, and she made sure to look good doing it. I love how the selective color highlights her presence amidst the urban scene, it just worked perfectly.",
     "subtitle": "35mm | F/8 | 1/125s | 800",
@@ -617,7 +617,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Shark Bait.webp",
+    "src": "/assets/images/street/Shark Bait.webp",
     "title": "Shark Bait",
     "description": "5/20/23 - Denver - I walked past this wall and couldn't help but think, \"Shark Bait!\" The bold blue shark graffiti contrasted perfectly with the chaotic sticker-covered door next to it. It's one of those quirky, random finds that makes street photography fun. Not sure if this one will stick around, but it gave me a laugh at the time!",
     "subtitle": "63mm | F/3.5 | 1/400s | 50",
@@ -631,7 +631,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Sketch My Soul.webp",
+    "src": "/assets/images/street/Sketch My Soul.webp",
     "title": "Sketch My Soul",
     "description": "5/20/23 - Denver - I stumbled across this mural while walking around on Tennyson St. somewhere, and it really hit me because of where I was mentally at the time. This shot wasn't just about capturing street art, it was about capturing a moment that felt personal. Definitely a favorite!",
     "subtitle": "35mm | F/8 | 1/80s | 50",
@@ -645,7 +645,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Soles of the Street.webp",
+    "src": "/assets/images/street/Soles of the Street.webp",
     "title": "Soles Of The Street",
     "description": "11/11/24 - Salt Lake City - Found in a graffiti alley off 2nd, where artists leave their shoes after finishing murals. There\u2019s something cool about it\u2014like a message or a legacy they\u2019re leaving behind. A reminder that their work lives on, even when they\u2019ve moved on. I thought it made for a great capture against the clear blue sky.",
     "subtitle": "82mm | F/2.8 | 1/2000s | 100",
@@ -659,7 +659,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Stories on the Wall.webp",
+    "src": "/assets/images/street/Stories on the Wall.webp",
     "title": "Stories On The Wall",
     "description": "11/27/22 - Salt Lake City - This mural on Main St used to belong to a bookstore that's no longer around, but I'm glad the art has remained. There's something about this wall of classic book spines that keeps drawing me back whenever I'm in the area. It's simple, nostalgic, and a cool little reminder of the stories that live on, even when the place itself is gone.",
     "subtitle": "28mm | F/4 | 1/125s | 640",
@@ -673,7 +673,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Street Swagger.webp",
+    "src": "/assets/images/street/Street Swagger.webp",
     "title": "Street Swagger",
     "description": "4/29/23 - Salt Lake City - While on another random street photo walk, this sharp-looking chap asked if I could take his photo. The composition turned out more interesting than I expected, with the low angle and framing giving it a bold, confident vibe. Sometimes, it's these spontaneous encounters that lead to the coolest shots.",
     "subtitle": "35mm | F/3.2 | 1/400s | 2000",
@@ -687,7 +687,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/The Hidden Door.webp",
+    "src": "/assets/images/street/The Hidden Door.webp",
     "title": "The Hidden Door",
     "description": "4/29/23 - Salt Lake City - I was wandering through a back alley downtown, shooting something else, when I noticed this door tucked away in a deeper alley behind a chain link fence. The faint outline of the fence adds a subtle layer to the composition without taking away from the scene. The textures and colors of the brick walls almost give the whole shot a painted feel. Definitely one of those unexpected moments that turned into a cool capture. I dig it!",
     "subtitle": "35mm | F/4 | 1/60s | 500",
@@ -701,7 +701,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Under the Aurora.webp",
+    "src": "/assets/images/street/Under the Aurora.webp",
     "title": "Under The Aurora",
     "description": "7/9/23 - Seattle - Along the way to Gas Works Park, I captured this shot of the George Washington Memorial Bridge. Towering steel arches and urban landscape beneath made for a striking composition. It was one of those spontaneous moments that perfectly encapsulated the city's blend of natural beauty and industrial design.",
     "subtitle": "35mm | F/8 | 1/125s | 200",
@@ -715,7 +715,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Urban Relic.webp",
+    "src": "/assets/images/street/Urban Relic.webp",
     "title": "Urban Relic",
     "description": "8/20/22 - Salt Lake City - Sure, it's just a fire hydrant, but something about the chipped paint, bold colors, and the random stickers made it a cool shot. It's like this little piece of urban life telling its own story-worn, weathered, and full of character. Sometimes, that's all it takes to catch my eye.",
     "subtitle": "45mm | F/6.3 | 1/125s | 250",
@@ -729,7 +729,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/Wheelie on the Fly.webp",
+    "src": "/assets/images/street/Wheelie on the Fly.webp",
     "title": "Wheelie On The Fly",
     "description": "8/20/22 - Salt Lake City - A spontaneous moment during a street shoot. A kid spotted my camera, gave me one shot to catch his wheelie, and I nailed it! Capturing motion in a split second, thanks to recalling settings I had recently learned in class.",
     "subtitle": "35mm | F/5.6 | 1/800s | 1250",
@@ -743,7 +743,7 @@
     }
   },
   {
-    "src": "../../assets/images/street/You Are Here.webp",
+    "src": "/assets/images/street/You Are Here.webp",
     "title": "You Are Here",
     "description": "8/20/22 - Salt Lake City - I took this shot in front of the Salt Palace Convention Center. Amid a sea of contrasting signs, the bold \"YOU ARE HERE\" symbol anchors the chaos. While this installation has been photographed countless times, it creates a cool contrast that I couldn't pass up capturing!",
     "subtitle": "18mm | F/5 | 1/125s | 100",
@@ -757,7 +757,7 @@
     }
   },
   {
-    "src": "assets/images/street/homecard/street1.webp",
+    "src": "/assets/images/street/homecard/street1.webp",
     "title": "Street1",
     "page": "street"
   }

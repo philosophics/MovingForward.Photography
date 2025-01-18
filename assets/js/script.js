@@ -140,7 +140,7 @@ function loadHomeCards(images) {
         `.home-card[data-text="${section}"] img`
       );
       if (card) {
-        card.src = `${basePath}/${randomImage.src.replace(/^\/+/, "")}`;
+        card.src = `${randomImage.src.replace(/^\/+/, "")}`;
       }
     }
   });
@@ -217,7 +217,7 @@ function loadPortfolioImages(images, currentPage) {
     card.classList.add("dynamic-card");
 
     const img = new Image();
-    img.src = `${basePath}/${image.src.replace(/^\/+/, "")}`;
+    img.src = `${image.src.replace(/^\/+/, "")}`;
     devLog(`Loading image: ${img.src}`);
     img.setAttribute("loading", "lazy");
 

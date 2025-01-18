@@ -2,14 +2,14 @@ const isLocal =
   window.location.hostname === "localhost" ||
   window.location.hostname === "127.0.0.1";
 const isDevelopment = isLocal;
-const basePath = "/MovingForward.Photography";
+const basePath = "";
 
 const routes = {
-  "/": `${basePath}/assets/pages/home.html`,
-  "/abstract": `${basePath}/assets/pages/abstract.html`,
-  "/architecture": `${basePath}/assets/pages/architecture.html`,
-  "/landscape": `${basePath}/assets/pages/landscape.html`,
-  "/street": `${basePath}/assets/pages/street.html`,
+  "/": `assets/pages/home.html`,
+  "/abstract": `assets/pages/abstract.html`,
+  "/architecture": `assets/pages/architecture.html`,
+  "/landscape": `assets/pages/landscape.html`,
+  "/street": `assets/pages/street.html`,
 };
 
 const pageMappings = {
@@ -37,7 +37,7 @@ if (!isDevelopment) {
   console.warn = window.devLog;
 }
 
-const imageDataPath = `${basePath}/assets/images/image-data.json`;
+const imageDataPath = `assets/images/image-data.json`;
 
 const contentCache = {};
 

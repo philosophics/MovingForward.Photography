@@ -1,6 +1,28 @@
+![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fimg.shields.io%2Fbadge%2FLicense-All--Rights--Reserved-blue?style=for-the-badge&label=License)
+
+# License
+
+Copyright © 2024-2025 Philosophics. **All Rights Reserved**.
+
+- **Photographs and Media**
+
+  All photographs and media content included in this repository are copyrighted by the owner, **Philosophics**, and are protected under applicable copyright laws. **All Rights Reserved.**
+  You may not copy, modify, distribute, or use the photographs or media content in any form without explicit written permission from the copyright holder.
+
+- **Website Code**
+
+  The source code for this website is proprietary and is the exclusive property of **Philosophics**.
+  You are not permitted to copy, modify, distribute, or use the code in any form without explicit written permission from the copyright holder.
+
+- **Future Considerations**
+
+  The website's source code may be transitioned to an open-source license in the future. Any such changes will be clearly documented and reflected.
+
+For permissions or inquiries, please contact: [moving.forward.photos@gmail.com](mailto:moving.forward.photos@gmail.com)
+
 # Frequently Asked Questions
 
-### 1. **Instagram/Facebook/etc. exist, why make a website anyway?**
+#### 1. **Instagram/Facebook/etc. exist, why make a website anyway?**
 
 Over the course of my life, I’ve learned that not everyone has **the thing**! So, I built a website!
 
@@ -10,7 +32,7 @@ But, if you don’t have internet access to check out my site... I’m not sure 
 
 ---
 
-### 2. **Why didn't you just use one of the many available templates?**
+#### 2. **Why didn't you just use one of the many available templates?**
 
 Honestly, none of them really spoke to me. Using a pre-built template felt impersonal, like wearing a suit bought from Macy's when you want something tailor-made. Plus, if I had gone with a template, someone else would probably be using the exact same thing, and where’s the fun in that?
 
@@ -18,26 +40,26 @@ Building it from scratch gave me the creative freedom to shape something that’
 
 ---
 
-### 3. **So which device provides the best experience?**
+#### 3. **So which device provides the best experience?**
 
 **Desktop** is the best choice for a full, immersive experience. While it works on mobile, desktop offers better layout, performance, and visual fidelity.
 
 ---
 
-### 4. **Did you forget to add a background?**
+#### 4. **Did you forget to add a background?**
 
 No, that's intentional. The gray background represents a **gray card** used for exposure adjustment—consider it a playful easter egg! 😉
 
 ---
 
-### 5. **Why is the layout on a desktop browser so weird?**
+#### 5. **Why is the layout on desktop so weird?**
 
 The layout is designed to resemble the feeling of **randomly throwing photos on a table** with no particular order.
 If you were to refresh the page a couple times, you'll see that a few images are selected at random as **"featured"** to stand out, and the rest are shuffled. This approach ensures that every visit feels fresh, with something new to discover!
 
 ---
 
-### 6. **The website is so fast—how??**
+#### 6. **The website is so fast—how??**
 
 It’s all about optimization! Here’s what I did:
 
@@ -51,6 +73,6 @@ So, with lighter images and this clever way of loading new stuff, the website fe
 
 ---
 
-### 7. **Why can’t I right click?**
+#### 7. **Why can’t I right click?**
 
 Because I don’t want you to, that’s why! 😏

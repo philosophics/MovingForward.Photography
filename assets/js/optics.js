@@ -10,6 +10,8 @@ const routes = {
   "/architecture": `assets/pages/architecture.html`,
   "/landscape": `assets/pages/landscape.html`,
   "/street": `assets/pages/street.html`,
+  "/about": `assets/pages/about.html`,
+  "/404": `assets/pages/404.html`,
 };
 
 const pageMappings = {
@@ -17,6 +19,8 @@ const pageMappings = {
   "/abstract": "abstract",
   "/architecture": "architecture",
   "/landscape": "landscape",
+  "/about": "about",
+  "/404": "404",
 };
 
 window.appState = {
@@ -43,12 +47,19 @@ const contentCache = {};
 
 function clearContent() {
   const contentPlaceholder = document.querySelector("#content-placeholder");
-  if (contentPlaceholder) {
+  if (contentPlaceholder && contentPlaceholder.childElementCount > 0) {
     while (contentPlaceholder.firstChild) {
       contentPlaceholder.removeChild(contentPlaceholder.firstChild);
     }
     devLog("Cleared content placeholder.");
+  } else {
+    devLog("Content placeholder is already empty.");
   }
+}
+
+function isPageLoaded(page) {
+  const portfolioGrid = document.querySelector(".portfolio-grid");
+  return appState.loadedPages.has(page) || portfolioGrid?.dataset.loaded === "true";
 }
 
 function loadContent(path) {
@@ -66,7 +77,8 @@ function loadContent(path) {
   const hideFooterOnPages = ["street", "abstract", "architecture", "landscape"];
   toggleFooterVisibility(hideFooterOnPages.includes(appState.currentPage));
 
-  clearContent();
+  if (document.querySelector("#content-placeholder").childElementCount > 0) {
+    clearContent();}
 
   if (normalizedPath !== "/" && document.querySelector(".portfolio-grid")) {
     clearPortfolioGrid();
@@ -77,6 +89,7 @@ function loadContent(path) {
     document.querySelector("#content-placeholder").innerHTML =
       contentCache[normalizedPath];
     handlePageSpecificLogic();
+    triggerPageEvents();
     return;
   }
 
@@ -87,6 +100,18 @@ function loadContent(path) {
       if (contentPlaceholder) {
         contentPlaceholder.innerHTML = html;
       }
+
+        const headerElement = document.querySelector("header");
+      if (headerElement) {
+        handleNavLogic(headerElement);
+
+        if (appState.currentPage === "404") {
+          apply404Background();
+        } else {
+          resetBackground();
+        }
+      }
+      
       if (appState.currentPage === "home") {
         document.dispatchEvent(new Event("homeLoaded"));
       } else if (appState.currentPage) {
@@ -101,20 +126,26 @@ function loadContent(path) {
 
 function clearPortfolioGrid() {
   const portfolioGrid = document.querySelector(".portfolio-grid");
-  if (portfolioGrid) {
+  if (portfolioGrid && portfolioGrid.childElementCount > 0) {
     while (portfolioGrid.firstChild) {
       portfolioGrid.removeChild(portfolioGrid.firstChild);
     }
     portfolioGrid.dataset.loaded = "false";
     devLog("Portfolio grid cleared.");
+  } else {
+    devLog("Portfolio grid was already cleared.");
   }
 }
 
 function redirectToHome() {
   const redirectPath = isDevelopment ? basePath : "/";
-  console.warn(`Redirecting to home: ${redirectPath}`);
-  history.replaceState(null, "", redirectPath);
-  loadContent("/");
+  if (appState.currentPath !== "/") {
+    console.warn(`Redirecting to home: ${redirectPath}`);
+    history.replaceState(null, "", redirectPath);
+    loadContent("/");
+  } else {
+    devLog("Already at home. Skipping redirect.");
+  }
 }
 
 function fetchContent(filePath, contentPlaceholder) {
@@ -151,45 +182,101 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const initialPath = window.location.pathname.replace(basePath, "") || "/";
+  if (appState)
   appState.currentPath = initialPath;
   appState.currentPage =
     initialPath === "/" ? "home" : pageMappings[initialPath] || null;
 
+    if (!routes[initialPath]) {
+      redirectToHome();
+    } else {
+      loadContent(initialPath);
+    }
+
   const hideFooterOnPages = ["street", "abstract", "architecture", "landscape"];
   toggleFooterVisibility(hideFooterOnPages.includes(appState.currentPage));
 
-  if (!routes[initialPath]) {
-    redirectToHome();
-  } else {
-    loadContent(initialPath);
-  }
 });
+
+function triggerPageEvents() {
+  if (appState.currentPage === "home" && !isPageLoaded("home")) {
+    appState.loadedPages.add("home");
+    document.dispatchEvent(new Event("homeLoaded"));
+  } else if (appState.currentPage && !isPageLoaded(appState.currentPage)) {
+    appState.loadedPages.add(appState.currentPage);
+    document.dispatchEvent(new Event("portfolioLoaded"));
+    loadPortfolioImages(appState.images, appState.currentPage);
+  }
+}
 
 window.addEventListener("popstate", () => {
-  const path = window.location.pathname.replace(basePath, "");
-  if (routes[path]) {
+  const path = window.location.pathname.replace(basePath, "") || "/";
+  devLog("Popstate triggered:", path);
+
+  if (!routes[path]) {
+    devLog(`Invalid path detected during popstate: ${path}`);
+    redirectToHome();
+    return;
+  }
+
+  if (appState.currentPath !== path) {
+    devLog(`Navigating to: ${path}`);
+    appState.currentPath = path;
+    appState.currentPage = path === "/" ? "home" : pageMappings[path] || null;
+
     loadContent(path);
   } else {
-    redirectToHome();
+    devLog(`Popstate triggered for the same path (${path}). Re-triggering events.`);
+    triggerPageEvents();
   }
 });
 
-let navigationInProgress = false;
+let isNavigating = false;
 
 document.addEventListener("click", (event) => {
   const link = event.target.closest("a[data-link]");
-  if (link && !navigationInProgress) {
+  if (link) {
     event.preventDefault();
-    navigationInProgress = true;
+
+    if (isNavigating) {
+      devLog("Navigation in progress, ignoring click.");
+      return;
+    }
+    isNavigating = true;
 
     const path = link.getAttribute("href").replace(basePath, "");
-    if (routes[path]) {
+
+    if (!routes[path]) {
+      console.warn(`Invalid route: ${path}. Redirecting to home.`);
+      history.replaceState(null, "", "/");
+      loadContent("/");
+    } else if (appState.currentPath !== path) {
+      devLog(`Navigating to: ${path}`);
       history.pushState(null, "", path);
       loadContent(path);
+
+      if (["abstract", "architecture", "landscape", "street"].includes(pageMappings[path])) {
+        devLog(`Ensuring portfolioLoaded for ${path}.`);
+        document.dispatchEvent(new Event("portfolioLoaded"));
+      }
     } else {
-      redirectToHome();
+      devLog(`Already on ${path}, skipping navigation.`);
+      triggerPageEvents();
     }
 
-    setTimeout(() => (navigationInProgress = false), 500);
+    setTimeout(() => (isNavigating = false), 300);
   }
 });
+
+function apply404Background() {
+  const body = document.body;
+  body.style.background = "linear-gradient(180deg, #000428 0%, #00427b 80%)";
+  body.style.backgroundColor = "#000428";
+  devLog("Applied 404 background");
+}
+
+function resetBackground() {
+  const body = document.body;
+  body.style.background = "";
+  body.style.backgroundColor = "";
+}

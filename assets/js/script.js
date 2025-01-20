@@ -2,6 +2,7 @@ document.addEventListener("contextmenu", (event) => event.preventDefault());
 
 function handleNavLogic(headerElement) {
   const isHomePage = appState.currentPage === "home";
+  const is404Page = appState.currentPage === "404";
   let nav = headerElement.querySelector("nav");
 
   if (!nav) {
@@ -33,7 +34,7 @@ function handleNavLogic(headerElement) {
     nav = headerElement.querySelector("nav");
   }
 
-  if (isHomePage) {
+  if (isHomePage || is404Page) {
     nav.classList.remove("nav-visible");
   } else {
     nav.classList.add("nav-visible");
@@ -66,49 +67,32 @@ function updateNavigationVisibility() {
   if (!nav || !footer) return;
 
   if (appState.currentPage === "home") {
-    nav.classList.remove("nav-visible"); // Slide out navigation
-    footer.classList.add("footer-visible"); // Slide in footer
+    nav.classList.remove("nav-visible");
+    footer.classList.add("footer-visible");
   } else {
-    nav.classList.add("nav-visible"); // Slide in navigation
-    footer.classList.remove("footer-visible"); // Slide out footer
+    nav.classList.add("nav-visible");
+    footer.classList.remove("footer-visible");
   }
 }
-
-let isNavigating = false;
-
-document.addEventListener("click", (event) => {
-  const link = event.target.closest("a[data-link]");
-  if (link && !isNavigating) {
-    event.preventDefault();
-    isNavigating = true;
-
-    const path = link.getAttribute("href").replace(basePath, "");
-    if (routes[path]) {
-      history.pushState(null, "", path);
-      loadContent(path);
-    } else {
-      console.warn(`Invalid route: ${path}. Redirecting to home.`);
-      history.replaceState(null, "", "/");
-      loadContent("/");
-    }
-
-    setTimeout(() => (isNavigating = false), 300);
-  }
-});
 
 let images = [];
 let imagesLoaded = false;
 
 document.addEventListener("imagesReady", () => {
+  if (appState.imagesHandled) {
+    devLog("Images already handled for this page. Skipping.");
+    return;
+  }
   if (appState.currentPage === "home") {
     devLog("Importing needed images");
     loadHomeCards(appState.images);
   } else if (appState.currentPage) {
     devLog(`Images ready for portfolio page: ${appState.currentPage}.`);
-    loadPortfolioImages(appState.images, appState.currentPage);
+    document.dispatchEvent(new Event("portfolioLoaded"));
   } else {
     console.warn("No valid path or page to load images.");
   }
+  appState.imagesHandled = true;
 });
 
 document.addEventListener("homeLoaded", () => {
@@ -116,6 +100,12 @@ document.addEventListener("homeLoaded", () => {
     devLog("Homecards loaded");
     loadHomeCards(appState.images);
     toggleFooterVisibility(false);
+    throwInHomecards();
+
+    const homecardsContainer = document.querySelector('.homecards-container');
+    if (homecardsContainer) {
+        homecardsContainer.addEventListener('click', scatterHomecards, { once: true });
+    }
   } else {
     devLog("Waiting for images to be ready...");
     document.addEventListener(
@@ -147,13 +137,33 @@ function loadHomeCards(images) {
 }
 
 document.addEventListener("portfolioLoaded", () => {
-  if (appState.imagesLoaded && appState.currentPage) {
-    devLog(`Loading portfolio images for ${appState.currentPage}.`);
+  if (!appState.imagesLoaded || !appState.currentPage) {
+    devLog("Waiting for images to be ready...");
+    document.addEventListener(
+      "imagesReady",
+      () => {
+        devLog("Images ready event triggered. Loading portfolio images.");
+        loadPortfolioImages(appState.images, appState.currentPage);
+      },
+      { once: true }
+    );
+    return;
+  }
+
+  devLog(`Loading portfolio images for ${appState.currentPage}.`);
+
+  const portfolioGrid = document.querySelector(".portfolio-grid");
+
+  if (portfolioGrid) {
+    if (portfolioGrid.dataset.loaded === "true") {
+      devLog(`Portfolio already loaded for ${appState.currentPage}.`);
+      return;
+    }
+
     loadPortfolioImages(appState.images, appState.currentPage);
+    portfolioGrid.dataset.loaded = "true";
 
-    const portfolioGrid = document.querySelector(".portfolio-grid");
-
-    if (portfolioGrid && !portfolioGrid.dataset.listenerAttached) {
+    if (!portfolioGrid.dataset.listenerAttached) {
       devLog("Attaching gallery functions");
       attachHoverBehaviorAfterLoad();
 
@@ -173,22 +183,14 @@ document.addEventListener("portfolioLoaded", () => {
       });
 
       portfolioGrid.dataset.listenerAttached = "true";
-    } else if (!portfolioGrid) {
-      console.warn(
-        "Portfolio grid not found. Skipping click handler and hover behavior."
-      );
     }
   } else {
-    devLog("Waiting for images to be ready...");
-    document.addEventListener(
-      "imagesReady",
-      () => {
-        loadPortfolioImages(appState.images, appState.currentPage);
-      },
-      { once: true }
+    console.warn(
+      "Portfolio grid not found. Skipping click handler and hover behavior."
     );
   }
 });
+
 
 function loadPortfolioImages(images, currentPage) {
   const portfolioGrid = document.querySelector(".portfolio-grid");
@@ -218,7 +220,6 @@ function loadPortfolioImages(images, currentPage) {
 
     const img = new Image();
     img.src = `${image.src.replace(/^\/+/, "")}`;
-    devLog(`Loading image: ${img.src}`);
     img.setAttribute("loading", "lazy");
 
     if (index < 4) {
@@ -254,6 +255,8 @@ function loadPortfolioImages(images, currentPage) {
       console.error(`Failed to load image: ${img.src}`);
     };
   });
+
+  portfolioGrid.dataset.loaded = "true";
 
   function finalizePortfolioGrid() {
     devLog("Finalizing portfolio grid layout...");
@@ -377,6 +380,7 @@ function applySpans(card, img) {
     colSpan = 1;
   }
 
+  card.style.transition = "all 0.5s ease-in-out";
   card.style.gridRow = `span ${rowSpan}`;
   card.style.gridColumn = `span ${colSpan}`;
 }
@@ -411,6 +415,7 @@ function attachHoverBehaviorAfterLoad() {
   });
 
   observer.observe(portfolioGrid, { childList: true, subtree: true });
+  portfolioGrid.dataset.hoverAttached = "true";
 }
 
 function adjustCardHoverBehaviorForCard(card) {
@@ -457,30 +462,6 @@ let currentIndex = 0;
 function getCards() {
   return Array.from(document.querySelectorAll(".dynamic-card")).filter(
     (card) => card.offsetParent !== null
-  );
-}
-
-if (portfolioGrid) {
-  devLog("Portfolio grid found. Attaching hover behavior...");
-  attachHoverBehaviorAfterLoad();
-
-  portfolioGrid.addEventListener("click", async (event) => {
-    const card = event.target.closest(".dynamic-card");
-    if (card) {
-      const cards = getCards();
-      currentIndex = cards.indexOf(card);
-
-      if (currentIndex === -1) {
-        console.error("Clicked card not found in cards array.");
-        return;
-      }
-
-      openExpandedCard(card);
-    }
-  });
-} else if (isPortfolioPage) {
-  console.warn(
-    "No portfolio grid found. Skipping click handler and hover behavior."
   );
 }
 
@@ -717,6 +698,47 @@ function handleKeyNavigation(event) {
     showNextImage(overlay);
   } else if (event.key === "Escape") {
     document.querySelector(".close-btn").click();
+  }
+}
+
+function throwInHomecards() {
+  const homecards = document.querySelectorAll('.homecard');
+
+  homecards.forEach((card, index) => {
+      card.style.transform = 'translateY(100vh)';
+      card.style.opacity = '0';
+      setTimeout(() => {
+          card.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+          card.style.transform = 'translateY(0)';
+          card.style.opacity = '1';
+      }, index * 100);
+  });
+}
+
+function scatterHomecards() {
+  const homecards = document.querySelectorAll('.homecard');
+  homecards.forEach((card) => {
+      card.style.transform = `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) rotate(${Math.random() * 360}deg)`;
+      card.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+      card.style.opacity = '0';
+  });
+
+  setTimeout(() => {
+      stackInPortfolioGrid();
+  }, 600);
+}
+
+function stackInPortfolioGrid() {
+  const portfolioGrid = document.querySelector('.portfolioGrid');
+  if (portfolioGrid) {
+      portfolioGrid.style.opacity = '0';
+      portfolioGrid.style.transform = 'translateY(100vh)';
+      portfolioGrid.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+
+      setTimeout(() => {
+          portfolioGrid.style.transform = 'translateY(0)';
+          portfolioGrid.style.opacity = '1';
+      }, 100);
   }
 }
 

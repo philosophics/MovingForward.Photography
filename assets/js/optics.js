@@ -227,37 +227,24 @@ document.addEventListener("click", (event) => {
   if (link) {
     event.preventDefault();
 
-    if (isNavigating) {
-      devLog("Navigation in progress, ignoring click.");
-      return;
-    }
-    isNavigating = true;
-
     const path = link.getAttribute("href").replace(basePath, "");
-
-    if (!routes[path]) {
-      console.warn(`Invalid route: ${path}. Redirecting to home.`);
-      history.replaceState(null, "", "/");
-      loadContent("/");
-    } else if (appState.currentPath !== path) {
+    if (path !== appState.currentPath) {
       devLog(`Navigating to: ${path}`);
-      history.pushState(null, "", path);
-      loadContent(path);
+      appState.currentPath = path;
+      appState.currentPage = pageMappings[path] || null;
 
-      if (
-        ["abstract", "architecture", "landscape", "street"].includes(
-          pageMappings[path]
-        )
-      ) {
-        devLog(`Ensuring portfolioLoaded for ${path}.`);
-        document.dispatchEvent(new Event("portfolioLoaded"));
+      if (["street", "abstract", "architecture", "landscape"].includes(appState.currentPage)) {
+        loadedImagePaths.clear();
       }
+
+      loadContent(path);
+      setTimeout(() => {
+        triggerPageEvents();
+      }, 0);
     } else {
       devLog(`Already on ${path}, skipping navigation.`);
       triggerPageEvents();
     }
-
-    setTimeout(() => (isNavigating = false), 300);
   }
 });
 

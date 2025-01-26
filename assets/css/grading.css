@@ -229,7 +229,7 @@ ul.mobile-nav li a {
 
 .home-card {
   width: 220px;
-  height: 294px;
+  height: 294px; /* Homecard Image size */
   background-color: #424242;
   border-radius: 20px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);

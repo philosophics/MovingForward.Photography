@@ -321,10 +321,11 @@ ul.mobile-nav li a {
   }
 
   .home-card img {
+    width: 100%;
+    height: 100%;
     position: relative;
+    object-fit: cover;
     z-index: 1;
-    width: 150px;
-    height: 200px;
     transform: none;
     border-radius: 10px;
   }

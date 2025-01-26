@@ -59,7 +59,9 @@ function clearContent() {
 
 function isPageLoaded(page) {
   const portfolioGrid = document.querySelector(".portfolio-grid");
-  return appState.loadedPages.has(page) || portfolioGrid?.dataset.loaded === "true";
+  return (
+    appState.loadedPages.has(page) || portfolioGrid?.dataset.loaded === "true"
+  );
 }
 
 function loadContent(path) {
@@ -78,19 +80,7 @@ function loadContent(path) {
   toggleFooterVisibility(hideFooterOnPages.includes(appState.currentPage));
 
   if (document.querySelector("#content-placeholder").childElementCount > 0) {
-    clearContent();}
-
-  if (normalizedPath !== "/" && document.querySelector(".portfolio-grid")) {
-    clearPortfolioGrid();
-  }
-
-  if (contentCache[normalizedPath]) {
-    devLog(`Using cached content for ${normalizedPath}`);
-    document.querySelector("#content-placeholder").innerHTML =
-      contentCache[normalizedPath];
-    handlePageSpecificLogic();
-    triggerPageEvents();
-    return;
+    clearContent();
   }
 
   fetch(filePath)
@@ -101,7 +91,7 @@ function loadContent(path) {
         contentPlaceholder.innerHTML = html;
       }
 
-        const headerElement = document.querySelector("header");
+      const headerElement = document.querySelector("header");
       if (headerElement) {
         handleNavLogic(headerElement);
 
@@ -111,7 +101,7 @@ function loadContent(path) {
           resetBackground();
         }
       }
-      
+
       if (appState.currentPage === "home") {
         document.dispatchEvent(new Event("homeLoaded"));
       } else if (appState.currentPage) {
@@ -182,20 +172,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const initialPath = window.location.pathname.replace(basePath, "") || "/";
-  if (appState)
-  appState.currentPath = initialPath;
+  if (appState) appState.currentPath = initialPath;
   appState.currentPage =
     initialPath === "/" ? "home" : pageMappings[initialPath] || null;
 
-    if (!routes[initialPath]) {
-      redirectToHome();
-    } else {
-      loadContent(initialPath);
-    }
+  if (!routes[initialPath]) {
+    redirectToHome();
+  } else {
+    loadContent(initialPath);
+  }
 
   const hideFooterOnPages = ["street", "abstract", "architecture", "landscape"];
   toggleFooterVisibility(hideFooterOnPages.includes(appState.currentPage));
-
 });
 
 function triggerPageEvents() {
@@ -205,7 +193,6 @@ function triggerPageEvents() {
   } else if (appState.currentPage && !isPageLoaded(appState.currentPage)) {
     appState.loadedPages.add(appState.currentPage);
     document.dispatchEvent(new Event("portfolioLoaded"));
-    loadPortfolioImages(appState.images, appState.currentPage);
   }
 }
 
@@ -226,7 +213,9 @@ window.addEventListener("popstate", () => {
 
     loadContent(path);
   } else {
-    devLog(`Popstate triggered for the same path (${path}). Re-triggering events.`);
+    devLog(
+      `Popstate triggered for the same path (${path}). Re-triggering events.`
+    );
     triggerPageEvents();
   }
 });
@@ -255,7 +244,11 @@ document.addEventListener("click", (event) => {
       history.pushState(null, "", path);
       loadContent(path);
 
-      if (["abstract", "architecture", "landscape", "street"].includes(pageMappings[path])) {
+      if (
+        ["abstract", "architecture", "landscape", "street"].includes(
+          pageMappings[path]
+        )
+      ) {
         devLog(`Ensuring portfolioLoaded for ${path}.`);
         document.dispatchEvent(new Event("portfolioLoaded"));
       }

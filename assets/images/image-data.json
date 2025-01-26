@@ -771,8 +771,18 @@
         }
     },
     {
-        "src": "/assets/images/street/homecard/street1.webp",
-        "title": "Street1",
+        "src": "/assets/images/street/homecard/homecard1.webp",
+        "title": "Homecard1",
+        "page": "street"
+    },
+    {
+        "src": "/assets/images/street/homecard/homecard2.webp",
+        "title": "Homecard2",
+        "page": "street"
+    },
+    {
+        "src": "/assets/images/street/homecard/homecard3.webp",
+        "title": "Homecard3",
         "page": "street"
     }
 ]

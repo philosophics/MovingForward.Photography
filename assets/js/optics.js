@@ -31,6 +31,8 @@ window.appState = {
   loadedPages: new Set(),
 };
 
+console.log("window.appState is set:", window.appState);
+
 window.devLog = (...args) => {
   if (isDevelopment) {
     console.log(...args);
@@ -42,6 +44,8 @@ if (!isDevelopment) {
 }
 
 const imageDataPath = `assets/images/image-data.json`;
+
+import { ensureHomecardsExist } from "./base.js";
 
 const contentCache = {};
 
@@ -65,6 +69,8 @@ function isPageLoaded(page) {
 }
 
 function loadContent(path) {
+  console.log(`🛠️ Loading content for: ${path}`);
+
   const normalizedPath =
     path === "/" || path === "/index.html" ? "/" : path.replace(basePath, "");
   const filePath = routes[normalizedPath] || routes["/"];
@@ -73,63 +79,95 @@ function loadContent(path) {
   appState.currentPage =
     normalizedPath === "/" ? "home" : pageMappings[normalizedPath] || null;
 
-  devLog("Current Path:", appState.currentPath);
-  devLog("Current Page:", appState.currentPage);
-
-  const hideFooterOnPages = ["street", "abstract", "architecture", "landscape"];
-  toggleFooterVisibility(hideFooterOnPages.includes(appState.currentPage));
-
-  if (document.querySelector("#content-placeholder").childElementCount > 0) {
-    clearContent();
-  }
+  console.log(`🛠️ Fetching file: ${filePath}`);
 
   fetch(filePath)
     .then((response) => response.text())
     .then((html) => {
+      console.log("✅ Content fetched. Preview:");
+      console.log(html);
+
       const contentPlaceholder = document.querySelector("#content-placeholder");
       if (contentPlaceholder) {
+        console.log(
+          "🔄 Clearing and replacing inner HTML of #content-placeholder..."
+        );
+
+        // ✅ Clear and replace content
         contentPlaceholder.innerHTML = html;
-      }
+        console.log(
+          "✅ Content successfully inserted into #content-placeholder"
+        );
 
-      const headerElement = document.querySelector("header");
-      if (headerElement) {
-        handleNavLogic(headerElement);
+        // ✅ Wait for homecards after content is inserted
+        if (appState.currentPage === "home") {
+          console.log("🏠 Home detected, ensuring homecards exist first...");
 
-        if (appState.currentPage === "404") {
-          apply404Background();
+          ensureHomecardsExist(); // ✅ Make sure this function exists!
+
+          function waitForHomecardContainer(attempts = 0) {
+            const homecards = document.querySelectorAll(".home-card img");
+
+            if (homecards.length >= 4) {
+              console.log(`✅ Homecards detected in DOM: ${homecards.length}`);
+              document.dispatchEvent(new Event("homeLoaded"));
+            } else if (attempts < 20) {
+              console.warn(
+                `⏳ Waiting for homecards to appear... Attempt ${attempts + 1}`
+              );
+              setTimeout(() => waitForHomecardContainer(attempts + 1), 100);
+            } else {
+              console.error("❌ Homecards did not load in time.");
+            }
+          }
+
+          waitForHomecardContainer();
         } else {
-          resetBackground();
+          console.log(
+            "📂 Portfolio page detected, triggering portfolioLoaded."
+          );
+          document.dispatchEvent(new Event("portfolioLoaded"));
         }
-      }
-
-      if (appState.currentPage === "home") {
-        document.dispatchEvent(new Event("homeLoaded"));
-      } else if (appState.currentPage) {
-        document.dispatchEvent(new Event("portfolioLoaded"));
+      } else {
+        console.error("❌ #content-placeholder not found.");
       }
     })
     .catch((err) => {
-      console.error("Error loading content:", err);
+      console.error("❌ Error loading content:", err);
       redirectToHome();
     });
 }
 
-function clearPortfolioGrid() {
-  const portfolioGrid = document.querySelector(".portfolio-grid");
-  if (portfolioGrid && portfolioGrid.childElementCount > 0) {
-    while (portfolioGrid.firstChild) {
-      portfolioGrid.removeChild(portfolioGrid.firstChild);
+function observeHomecardsAndDispatch() {
+  const observer = new MutationObserver((mutationsList, observer) => {
+    const homecards = document.querySelectorAll(".home-card");
+    if (homecards.length >= 4) {
+      console.log(`✅ Homecards detected in DOM: ${homecards.length}`);
+      document.dispatchEvent(new Event("homeLoaded"));
+      observer.disconnect(); // Stop observing once the event fires
     }
-    portfolioGrid.dataset.loaded = "false";
-    devLog("Portfolio grid cleared.");
-  } else {
-    devLog("Portfolio grid was already cleared.");
-  }
+  });
+
+  observer.observe(document.querySelector("#content-placeholder"), {
+    childList: true,
+    subtree: true,
+  });
+}
+
+if (appState.currentPage === "home") {
+  console.log("🏠 Home detected, waiting for homecards...");
+  observeHomecardsAndDispatch();
+} else {
+  console.log("📂 Portfolio page detected, triggering portfolioLoaded.");
+  document.dispatchEvent(new Event("portfolioLoaded"));
 }
 
 function redirectToHome() {
   const redirectPath = isDevelopment ? basePath : "/";
-  if (appState.currentPath !== "/") {
+  const normalizedPath =
+    appState.currentPath === "/index.html" ? "/" : appState.currentPath;
+
+  if (normalizedPath !== "/") {
     console.warn(`Redirecting to home: ${redirectPath}`);
     history.replaceState(null, "", redirectPath);
     loadContent("/");
@@ -158,23 +196,50 @@ function fetchContent(filePath, contentPlaceholder) {
 fetch(imageDataPath)
   .then((response) => response.json())
   .then((images) => {
+    console.log(`📸 Loaded ${images.length} images into appState`);
     appState.images = images;
     appState.imagesLoaded = true;
-    devLog(`Prepared ${images.length} images.`);
     document.dispatchEvent(new Event("imagesReady"));
   })
-  .catch((error) => console.error("Error loading images:", error));
+  .catch((error) => console.error("❌ Error loading images:", error));
 
 document.addEventListener("DOMContentLoaded", () => {
   const headerElement = document.querySelector("header");
+
   if (headerElement) {
-    handleNavLogic(headerElement);
+    let attempts = 0;
+    const maxAttempts = 10;
+
+    function waitForHandleNavLogic() {
+      if (typeof window.handleNavLogic === "function") {
+        console.log("✅ handleNavLogic is now available!");
+        window.handleNavLogic(headerElement);
+      } else if (attempts < maxAttempts) {
+        console.warn(
+          `⏳ Waiting for handleNavLogic... Attempt ${attempts + 1}`
+        );
+        attempts++;
+        setTimeout(waitForHandleNavLogic, 50);
+      } else {
+        console.error("❌ handleNavLogic failed to load.");
+      }
+    }
+
+    waitForHandleNavLogic();
   }
 
+  // Ensure appState initializes correctly
   const initialPath = window.location.pathname.replace(basePath, "") || "/";
-  if (appState) appState.currentPath = initialPath;
-  appState.currentPage =
-    initialPath === "/" ? "home" : pageMappings[initialPath] || null;
+  if (window.appState) {
+    window.appState.currentPath = initialPath;
+
+    // ✅ Ensure home page is correctly set
+    if (initialPath === "/" || initialPath === "/index.html") {
+      window.appState.currentPage = "home";
+    } else {
+      window.appState.currentPage = pageMappings[initialPath] || null;
+    }
+  }
 
   if (!routes[initialPath]) {
     redirectToHome();
@@ -183,7 +248,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const hideFooterOnPages = ["street", "abstract", "architecture", "landscape"];
-  toggleFooterVisibility(hideFooterOnPages.includes(appState.currentPage));
+
+  function waitForToggleFooterVisibility(attempts = 0, maxAttempts = 10) {
+    if (typeof window.toggleFooterVisibility === "function") {
+      console.log("✅ toggleFooterVisibility is now available!");
+      window.toggleFooterVisibility(
+        hideFooterOnPages.includes(window.appState.currentPage)
+      );
+    } else if (attempts < maxAttempts) {
+      console.warn(
+        `⏳ Waiting for toggleFooterVisibility... Attempt ${attempts + 1}`
+      );
+      setTimeout(
+        () => waitForToggleFooterVisibility(attempts + 1, maxAttempts),
+        100
+      );
+    } else {
+      console.error(
+        "❌ toggleFooterVisibility failed to load after multiple attempts."
+      );
+    }
+  }
+
+  waitForToggleFooterVisibility();
 });
 
 function triggerPageEvents() {
@@ -233,7 +320,11 @@ document.addEventListener("click", (event) => {
       appState.currentPath = path;
       appState.currentPage = pageMappings[path] || null;
 
-      if (["street", "abstract", "architecture", "landscape"].includes(appState.currentPage)) {
+      if (
+        ["street", "abstract", "architecture", "landscape"].includes(
+          appState.currentPage
+        )
+      ) {
         loadedImagePaths.clear();
       }
 

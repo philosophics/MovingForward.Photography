@@ -45,11 +45,6 @@ export async function loadPage(path) {
       console.warn(`❌ Invalid path detected: ${path}, redirecting to /404.`);
       history.replaceState({}, '', '/404');
       console.log('🚨 404 Page Detected, Applying 404 Styles');
-      setTimeout(() => {
-        apply404Background();
-      }, 50);
-    } else {
-      resetBackground();
     }
 
     const isPortfolioPage =

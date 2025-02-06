@@ -57,6 +57,10 @@ function getUrlParam(param) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.pathname.includes('404')) {
+    console.log('🚨 Direct 404 Page Load Detected!');
+    apply404Background();
+  }
   const imageParam = getUrlParam('image');
   if (imageParam) {
     console.log(`Opening gallery for image: ${imageParam}`);

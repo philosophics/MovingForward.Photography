@@ -23,7 +23,7 @@ self.addEventListener('install', (event) => {
         '/assets/js/images.js',
         '/assets/js/nav.js',
         '/assets/js/portfolio.js',
-        '/assets/js/router.js',
+        '/assets/js/optics.js',
         '/assets/js/transitions.js',
         '/assets/images/logo.png',
         '/assets/pages/offline.html',

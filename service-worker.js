@@ -68,9 +68,8 @@ self.addEventListener('activate', (event) => {
       .then(() => self.clients.claim()),
   );
 
-  // Unregister old service workers
   self.registration.unregister().then(() => {
-    console.log('Old service worker unregistered.');
+    devLog('Old service worker unregistered.');
   });
 });
 

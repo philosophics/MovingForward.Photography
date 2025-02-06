@@ -47,7 +47,7 @@ if ('serviceWorker' in navigator) {
     !window.location.hostname.includes('127.0.0.1')
   ) {
     navigator.serviceWorker
-      .register('/service-worker.js')
+      .register('/ExposureControl.js')
       .then(() => console.log('✅ Service Worker Registered'))
       .catch((error) => console.error('❌ Service Worker Registration Failed:', error));
   } else {

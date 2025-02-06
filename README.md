@@ -75,4 +75,4 @@ So, with lighter images and this clever way of loading new stuff, the website fe
 
 #### 7. **Why can’t I right click?**
 
-Becseause I don’t want you to, that’s why! 😏
+Because I don’t want you to, that’s why! 😏

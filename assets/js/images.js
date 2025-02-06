@@ -181,6 +181,9 @@ export function loadPortfolioImages(images, currentPage, portfolioGrid) {
 
   shuffleArray(filteredImages);
 
+  const numFeatured = getRandomInt(1, Math.min(4, filteredImages.length));
+  console.log(`🎲 Selecting ${numFeatured} featured images`);
+
   filteredImages.forEach((image, index) => {
     const img = new Image();
     img.src = image.src.replace(/^\/+/, '');
@@ -188,7 +191,7 @@ export function loadPortfolioImages(images, currentPage, portfolioGrid) {
     const card = document.createElement('div');
     card.classList.add('dynamic-card');
 
-    if (index < 4) {
+    if (index < numFeatured) {
       card.classList.add('featured');
       console.log(`🌟 Featuring: ${image.title}`);
     }
@@ -230,6 +233,10 @@ export function loadPortfolioImages(images, currentPage, portfolioGrid) {
       }
     };
   });
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function shuffleArray(array) {

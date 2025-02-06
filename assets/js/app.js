@@ -4,6 +4,8 @@ import { setupImages } from './images.js';
 import { setupNavigation } from './nav.js';
 import './portfolio.js';
 
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
 setupDebugging();
 
 if (!window.appState) {

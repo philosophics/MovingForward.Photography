@@ -56,10 +56,11 @@ self.addEventListener('activate', (event) => {
           }),
         );
       })
-      .then(() => self.clients.claim()),
+      .then(() => {
+        console.log('✅ Appication READY.');
+        return self.clients.claim();
+      }),
   );
-
-  console.log('✅ Application READY.');
 });
 
 self.addEventListener('fetch', (event) => {

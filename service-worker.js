@@ -12,8 +12,6 @@ if (self.location.hostname.includes('localhost') || self.location.hostname.inclu
       console.warn('⚠️ Service Worker unregistered in development.');
     }
   });
-
-  return;
 }
 
 const CACHE_NAME = 'mfp-cache-v1';

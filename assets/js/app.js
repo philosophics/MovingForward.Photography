@@ -42,20 +42,13 @@ if (!window.appInitialized) {
 }
 
 if ('serviceWorker' in navigator) {
-  if (
-    !window.location.hostname.includes('localhost') &&
-    !window.location.hostname.includes('127.0.0.1')
-  ) {
-    navigator.serviceWorker
-      .register('/ExposureControl.js')
-      .then(() => console.log('✅ Service Worker Registered'))
-      .catch((error) => console.error('❌ Service Worker Registration Failed:', error));
-  } else {
-    console.log('⚠️ Service Worker Disabled in Development Mode');
-    navigator.serviceWorker.getRegistrations().then((registrations) => {
-      registrations.forEach((registration) => registration.unregister());
-    });
-  }
+  navigator.serviceWorker
+    .register('/ExposureControl.js')
+    .then((registration) => {
+      console.log('✅ ExposureControl Registered:', registration);
+      registration.update();
+    })
+    .catch((error) => console.error('❌ Service Worker Registration Failed:', error));
 }
 
 function getUrlParam(param) {

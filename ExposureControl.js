@@ -1,23 +1,7 @@
-if (self.location.hostname.includes('localhost') || self.location.hostname.includes('127.0.0.1')) {
-  console.warn('⚠️ Service Worker is disabled in development.');
-
-  self.addEventListener('install', () => self.skipWaiting());
-  self.addEventListener('activate', () => self.clients.claim());
-  self.addEventListener('fetch', (event) => event.respondWith(fetch(event.request)));
-
-  self.addEventListener('activate', async () => {
-    const registration = await navigator.serviceWorker.getRegistration();
-    if (registration) {
-      registration.unregister();
-      console.warn('⚠️ Service Worker unregistered in development.');
-    }
-  });
-}
-
 const CACHE_NAME = 'mfp-cache-v1';
 
 self.addEventListener('install', (event) => {
-  console.log('🔄 Installing new version of ExposureControl.js...');
+  console.log('🔄 Checking for updates...');
 
   event.waitUntil(
     caches
@@ -52,7 +36,9 @@ self.addEventListener('install', (event) => {
 
         return cache.addAll(filesToCache);
       })
-      .then(() => self.skipWaiting()),
+      .then(() => {
+        self.skipWaiting();
+      }),
   );
 });
 
@@ -73,7 +59,7 @@ self.addEventListener('activate', (event) => {
       .then(() => self.clients.claim()),
   );
 
-  console.log('✅ ExposureControl.js activated and ready.');
+  console.log('✅ Application READY.');
 });
 
 self.addEventListener('fetch', (event) => {

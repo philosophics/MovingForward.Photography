@@ -1,353 +1,106 @@
-const isLocal =
-  window.location.hostname === "localhost" ||
-  window.location.hostname === "127.0.0.1";
-const isDevelopment = isLocal;
-const basePath = "";
+import { devLog, devWarn, devError } from './develop.js';
+import { ensureHomecardsExist } from './base.js';
+import { loadHomeCards, waitForHomecardImages } from './images.js';
+import {
+  handleNavVisibility,
+  handleFooterVisibility,
+  resetBackground,
+  apply404Background,
+} from './transitions.js';
 
-const routes = {
-  "/": `assets/pages/home.html`,
-  "/abstract": `assets/pages/abstract.html`,
-  "/architecture": `assets/pages/architecture.html`,
-  "/landscape": `assets/pages/landscape.html`,
-  "/street": `assets/pages/street.html`,
-  "/about": `assets/pages/about.html`,
-  "/404": `assets/pages/404.html`,
+export const routes = {
+  '/': 'assets/pages/home.html',
+  '/abstract': 'assets/pages/abstract.html',
+  '/architecture': 'assets/pages/architecture.html',
+  '/landscape': 'assets/pages/landscape.html',
+  '/street': 'assets/pages/street.html',
+  '/about': 'assets/pages/about.html',
+  '/404': 'assets/pages/404.html',
 };
 
-const pageMappings = {
-  "/street": "street",
-  "/abstract": "abstract",
-  "/architecture": "architecture",
-  "/landscape": "landscape",
-  "/about": "about",
-  "/404": "404",
-};
+export async function loadPage(path) {
+  const contentPlaceholder = document.querySelector('#content-placeholder');
 
-window.appState = {
-  images: [],
-  imagesLoaded: false,
-  currentPath: window.location.pathname.replace(basePath, "") || "/",
-  currentPage: null,
-  loadedPages: new Set(),
-};
-
-console.log("window.appState is set:", window.appState);
-
-window.devLog = (...args) => {
-  if (isDevelopment) {
-    console.log(...args);
-  }
-};
-
-if (!isDevelopment) {
-  console.warn = window.devLog;
-}
-
-const imageDataPath = `assets/images/image-data.json`;
-
-import { ensureHomecardsExist } from "./base.js";
-
-const contentCache = {};
-
-function clearContent() {
-  const contentPlaceholder = document.querySelector("#content-placeholder");
-  if (contentPlaceholder && contentPlaceholder.childElementCount > 0) {
-    while (contentPlaceholder.firstChild) {
-      contentPlaceholder.removeChild(contentPlaceholder.firstChild);
-    }
-    devLog("Cleared content placeholder.");
-  } else {
-    devLog("Content placeholder is already empty.");
-  }
-}
-
-function isPageLoaded(page) {
-  const portfolioGrid = document.querySelector(".portfolio-grid");
-  return (
-    appState.loadedPages.has(page) || portfolioGrid?.dataset.loaded === "true"
-  );
-}
-
-function loadContent(path) {
-  console.log(`🛠️ Loading content for: ${path}`);
-
-  const normalizedPath =
-    path === "/" || path === "/index.html" ? "/" : path.replace(basePath, "");
-  const filePath = routes[normalizedPath] || routes["/"];
-
-  appState.currentPath = normalizedPath;
-  appState.currentPage =
-    normalizedPath === "/" ? "home" : pageMappings[normalizedPath] || null;
-
-  console.log(`🛠️ Fetching file: ${filePath}`);
-
-  fetch(filePath)
-    .then((response) => response.text())
-    .then((html) => {
-      console.log("✅ Content fetched. Preview:");
-      console.log(html);
-
-      const contentPlaceholder = document.querySelector("#content-placeholder");
-      if (contentPlaceholder) {
-        console.log(
-          "🔄 Clearing and replacing inner HTML of #content-placeholder..."
-        );
-
-        // ✅ Clear and replace content
-        contentPlaceholder.innerHTML = html;
-        console.log(
-          "✅ Content successfully inserted into #content-placeholder"
-        );
-
-        // ✅ Wait for homecards after content is inserted
-        if (appState.currentPage === "home") {
-          console.log("🏠 Home detected, ensuring homecards exist first...");
-
-          ensureHomecardsExist(); // ✅ Make sure this function exists!
-
-          function waitForHomecardContainer(attempts = 0) {
-            const homecards = document.querySelectorAll(".home-card img");
-
-            if (homecards.length >= 4) {
-              console.log(`✅ Homecards detected in DOM: ${homecards.length}`);
-              document.dispatchEvent(new Event("homeLoaded"));
-            } else if (attempts < 20) {
-              console.warn(
-                `⏳ Waiting for homecards to appear... Attempt ${attempts + 1}`
-              );
-              setTimeout(() => waitForHomecardContainer(attempts + 1), 100);
-            } else {
-              console.error("❌ Homecards did not load in time.");
-            }
-          }
-
-          waitForHomecardContainer();
-        } else {
-          console.log(
-            "📂 Portfolio page detected, triggering portfolioLoaded."
-          );
-          document.dispatchEvent(new Event("portfolioLoaded"));
-        }
-      } else {
-        console.error("❌ #content-placeholder not found.");
-      }
-    })
-    .catch((err) => {
-      console.error("❌ Error loading content:", err);
-      redirectToHome();
-    });
-}
-
-function observeHomecardsAndDispatch() {
-  const observer = new MutationObserver((mutationsList, observer) => {
-    const homecards = document.querySelectorAll(".home-card");
-    if (homecards.length >= 4) {
-      console.log(`✅ Homecards detected in DOM: ${homecards.length}`);
-      document.dispatchEvent(new Event("homeLoaded"));
-      observer.disconnect(); // Stop observing once the event fires
-    }
-  });
-
-  observer.observe(document.querySelector("#content-placeholder"), {
-    childList: true,
-    subtree: true,
-  });
-}
-
-if (appState.currentPage === "home") {
-  console.log("🏠 Home detected, waiting for homecards...");
-  observeHomecardsAndDispatch();
-} else {
-  console.log("📂 Portfolio page detected, triggering portfolioLoaded.");
-  document.dispatchEvent(new Event("portfolioLoaded"));
-}
-
-function redirectToHome() {
-  const redirectPath = isDevelopment ? basePath : "/";
-  const normalizedPath =
-    appState.currentPath === "/index.html" ? "/" : appState.currentPath;
-
-  if (normalizedPath !== "/") {
-    console.warn(`Redirecting to home: ${redirectPath}`);
-    history.replaceState(null, "", redirectPath);
-    loadContent("/");
-  } else {
-    devLog("Already at home. Skipping redirect.");
-  }
-}
-
-function fetchContent(filePath, contentPlaceholder) {
-  fetch(filePath)
-    .then((response) => response.text())
-    .then((html) => {
-      if (contentPlaceholder) {
-        contentPlaceholder.innerHTML = html;
-        contentPlaceholder.classList.remove("fade-out");
-        contentPlaceholder.classList.add("fade-in");
-      }
-      triggerPageEvents();
-    })
-    .catch((err) => {
-      console.error("Error loading content:", err);
-      redirectToHome();
-    });
-}
-
-fetch(imageDataPath)
-  .then((response) => response.json())
-  .then((images) => {
-    console.log(`📸 Loaded ${images.length} images into appState`);
-    appState.images = images;
-    appState.imagesLoaded = true;
-    document.dispatchEvent(new Event("imagesReady"));
-  })
-  .catch((error) => console.error("❌ Error loading images:", error));
-
-document.addEventListener("DOMContentLoaded", () => {
-  const headerElement = document.querySelector("header");
-
-  if (headerElement) {
-    let attempts = 0;
-    const maxAttempts = 10;
-
-    function waitForHandleNavLogic() {
-      if (typeof window.handleNavLogic === "function") {
-        console.log("✅ handleNavLogic is now available!");
-        window.handleNavLogic(headerElement);
-      } else if (attempts < maxAttempts) {
-        console.warn(
-          `⏳ Waiting for handleNavLogic... Attempt ${attempts + 1}`
-        );
-        attempts++;
-        setTimeout(waitForHandleNavLogic, 50);
-      } else {
-        console.error("❌ handleNavLogic failed to load.");
-      }
-    }
-
-    waitForHandleNavLogic();
-  }
-
-  // Ensure appState initializes correctly
-  const initialPath = window.location.pathname.replace(basePath, "") || "/";
-  if (window.appState) {
-    window.appState.currentPath = initialPath;
-
-    // ✅ Ensure home page is correctly set
-    if (initialPath === "/" || initialPath === "/index.html") {
-      window.appState.currentPage = "home";
-    } else {
-      window.appState.currentPage = pageMappings[initialPath] || null;
-    }
-  }
-
-  if (!routes[initialPath]) {
-    redirectToHome();
-  } else {
-    loadContent(initialPath);
-  }
-
-  const hideFooterOnPages = ["street", "abstract", "architecture", "landscape"];
-
-  function waitForToggleFooterVisibility(attempts = 0, maxAttempts = 10) {
-    if (typeof window.toggleFooterVisibility === "function") {
-      console.log("✅ toggleFooterVisibility is now available!");
-      window.toggleFooterVisibility(
-        hideFooterOnPages.includes(window.appState.currentPage)
-      );
-    } else if (attempts < maxAttempts) {
-      console.warn(
-        `⏳ Waiting for toggleFooterVisibility... Attempt ${attempts + 1}`
-      );
-      setTimeout(
-        () => waitForToggleFooterVisibility(attempts + 1, maxAttempts),
-        100
-      );
-    } else {
-      console.error(
-        "❌ toggleFooterVisibility failed to load after multiple attempts."
-      );
-    }
-  }
-
-  waitForToggleFooterVisibility();
-});
-
-function triggerPageEvents() {
-  if (appState.currentPage === "home" && !isPageLoaded("home")) {
-    appState.loadedPages.add("home");
-    document.dispatchEvent(new Event("homeLoaded"));
-  } else if (appState.currentPage && !isPageLoaded(appState.currentPage)) {
-    appState.loadedPages.add(appState.currentPage);
-    document.dispatchEvent(new Event("portfolioLoaded"));
-  }
-}
-
-window.addEventListener("popstate", () => {
-  const path = window.location.pathname.replace(basePath, "") || "/";
-  devLog("Popstate triggered:", path);
-
-  if (!routes[path]) {
-    devLog(`Invalid path detected during popstate: ${path}`);
-    redirectToHome();
+  if (!contentPlaceholder) {
+    devError('❌ #content-placeholder not found in the DOM.');
     return;
   }
 
-  if (appState.currentPath !== path) {
-    devLog(`Navigating to: ${path}`);
-    appState.currentPath = path;
-    appState.currentPage = path === "/" ? "home" : pageMappings[path] || null;
+  const is404Page = !routes[path];
+  const filePath = routes[path] || '/assets/pages/404.html';
+  if (!filePath.endsWith('.html')) filePath += '.html';
 
-    loadContent(path);
-  } else {
-    devLog(
-      `Popstate triggered for the same path (${path}). Re-triggering events.`
-    );
-    triggerPageEvents();
-  }
-});
+  devLog(`📄 Loading content for: ${path} → ${filePath}`);
 
-let isNavigating = false;
+  try {
+    const response = await fetch(filePath, { cache: 'no-store' });
+    const content = await response.text();
+    contentPlaceholder.innerHTML = content;
+    devLog(`✅ Content loaded for ${path}`);
 
-document.addEventListener("click", (event) => {
-  const link = event.target.closest("a[data-link]");
-  if (link) {
-    event.preventDefault();
+    window.appState.currentPage = is404Page ? '404' : path === '/' ? 'home' : path.replace('/', '');
+    console.log(`✅ Preparing functions for ${window.appState.currentPage}`);
 
-    const path = link.getAttribute("href").replace(basePath, "");
-    if (path !== appState.currentPath) {
-      devLog(`Navigating to: ${path}`);
-      appState.currentPath = path;
-      appState.currentPage = pageMappings[path] || null;
-
-      if (
-        ["street", "abstract", "architecture", "landscape"].includes(
-          appState.currentPage
-        )
-      ) {
-        loadedImagePaths.clear();
-      }
-
-      loadContent(path);
+    if (is404Page) {
+      console.warn(`❌ Invalid path detected: ${path}, redirecting to /404.`);
+      history.replaceState({}, '', '/404');
+      console.log('🚨 404 Page Detected, Applying 404 Styles');
       setTimeout(() => {
-        triggerPageEvents();
-      }, 0);
+        apply404Background();
+      }, 50);
     } else {
-      devLog(`Already on ${path}, skipping navigation.`);
-      triggerPageEvents();
+      resetBackground();
     }
-  }
-});
 
-function apply404Background() {
-  const body = document.body;
-  body.style.background = "linear-gradient(180deg, #000428 0%, #00427b 80%)";
-  body.style.backgroundColor = "#000428";
-  devLog("Applied 404 background");
+    const isPortfolioPage =
+      routes[path] && ['/abstract', '/architecture', '/landscape', '/street'].includes(path);
+
+    handleNavVisibility(isPortfolioPage);
+    handleFooterVisibility(!isPortfolioPage);
+
+    if (isPortfolioPage) {
+      import('./images.js')
+        .then((module) => {
+          module.setupPortfolio();
+          console.log(`🎨 Portfolio loaded for ${path}`);
+        })
+        .catch((error) => console.error(`❌ Failed to load portfolio.js:`, error));
+    }
+
+    if (path === '/') {
+      console.log('🏠 Setting up homecards...');
+      ensureHomecardsExist();
+      document.dispatchEvent(new Event('homeLoaded'));
+      window.appState.homeLoaded = true;
+    }
+
+    if (!response.ok) {
+      devWarn(`⚠️ Fetch failed for ${filePath}, trying to load fallback.`);
+      contentPlaceholder.innerHTML = '<h1>404 - Page Not Found</h1>';
+      history.replaceState({}, '', '/404');
+      apply404Background();
+      return;
+    }
+  } catch (error) {
+    devError(`❌ Failed to load ${path}:`, error);
+    contentPlaceholder.innerHTML = '<h1>404 - Page Not Found</h1>';
+  }
 }
 
-function resetBackground() {
-  const body = document.body;
-  body.style.background = "";
-  body.style.backgroundColor = "";
+export async function setupRouter() {
+  if (window.appState.routerInitialized) {
+    devLog('⚠️ Router already initialized, skipping duplicate setup.');
+    return;
+  }
+
+  window.appState.routerInitialized = true;
+
+  let initialPath = window.location.pathname.toLowerCase();
+  if (initialPath.endsWith('/index.html')) {
+    initialPath = '/';
+  }
+
+  devLog(`🌍 Initial path detected: ${initialPath}`);
+
+  await loadPage(initialPath);
 }

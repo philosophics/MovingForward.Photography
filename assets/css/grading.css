@@ -1,7 +1,6 @@
 @font-face {
-  font-family: "Unica One";
-  src: url("../../assets/fonts/Unica_One/UnicaOne-Regular.ttf")
-    format("truetype");
+  font-family: 'Unica One';
+  src: url('../../assets/fonts/Unica_One/UnicaOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
@@ -11,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", "Roboto", "Open Sans", Arial, sans-serif;
+  font-family: 'Inter', 'Roboto', 'Open Sans', Arial, sans-serif;
 }
 
 html {
@@ -69,7 +68,7 @@ h1 {
 }
 
 .header-title {
-  font-family: "Unica One", sans-serif;
+  font-family: 'Unica One', sans-serif;
 }
 
 header {
@@ -86,11 +85,7 @@ header {
 .header-background {
   width: 100%;
   height: 100%;
-  background-image: repeating-radial-gradient(
-    #0c0a0a 80%,
-    #2f312f 90%,
-    #3f4549 90%
-  );
+  background-image: repeating-radial-gradient(#0c0a0a 80%, #2f312f 90%, #3f4549 90%);
   background-size: 65px 65px;
   display: flex;
   flex-direction: column;
@@ -104,7 +99,7 @@ header {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Unica One", sans-serif;
+  font-family: 'Unica One', sans-serif;
   font-size: 3rem;
   color: #222;
   text-align: center;
@@ -209,10 +204,25 @@ ul.mobile-nav li a {
 @media screen and (max-width: 768px) {
   label.hamburger {
     display: block;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
   }
 
   ul.desktop-nav {
     display: none;
+  }
+
+  nav {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
   }
 }
 
@@ -229,7 +239,7 @@ ul.mobile-nav li a {
 
 .home-card {
   width: 220px;
-  height: 294px; /* Homecard Image size */
+  height: 294px;
   background-color: #424242;
   border-radius: 20px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
@@ -526,7 +536,8 @@ ul.mobile-nav li a {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  transition: transform 0.5s ease, grid-row 0.5s ease, grid-column 0.5s ease;
+  transform: translateY(100px) scale(0.95);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
   animation: stackIn 0.6s ease both;
 }
 
@@ -732,7 +743,7 @@ ul.mobile-nav li a {
 }
 
 .text-wrapper .title::after {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
   height: 1px;
@@ -1135,8 +1146,7 @@ footer {
 }
 
 .button:hover .btn-svg {
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg)
-    brightness(103%) contrast(103%);
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg) brightness(103%) contrast(103%);
 }
 
 footer p {
@@ -1317,7 +1327,7 @@ footer a:hover {
 }
 
 .star:before {
-  content: "";
+  content: '';
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -1330,7 +1340,7 @@ footer a:hover {
 }
 
 .star:after {
-  content: "";
+  content: '';
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -1403,37 +1413,25 @@ footer a:hover {
   height: 80px;
   position: absolute;
   z-index: 3;
-  background: -webkit-linear-gradient(
-    left,
-    #e3e8eb 0%,
-    #e3e8eb 50%,
-    #fbfdfa 50%,
-    #fbfdfa 100%
-  );
+  background: -webkit-linear-gradient(left, #e3e8eb 0%, #e3e8eb 50%, #fbfdfa 50%, #fbfdfa 100%);
   border-radius: 50%;
   top: 34px;
   left: calc(50% - 47.5px);
 }
 
 .head:after {
-  content: "";
+  content: '';
   width: 60px;
   height: 50px;
   position: absolute;
   top: calc(50% - 25px);
   left: calc(50% - 30px);
-  background: -webkit-linear-gradient(
-    top,
-    #15aece 0%,
-    #15aece 50%,
-    #0391bf 50%,
-    #0391bf 100%
-  );
+  background: -webkit-linear-gradient(top, #15aece 0%, #15aece 50%, #0391bf 50%, #0391bf 100%);
   border-radius: 15px;
 }
 
 .head:before {
-  content: "";
+  content: '';
   width: 12px;
   height: 25px;
   position: absolute;
@@ -1453,13 +1451,7 @@ footer a:hover {
   border-radius: 40px / 20px;
   top: 105px;
   left: calc(50% - 41px);
-  background: -webkit-linear-gradient(
-    left,
-    #e3e8eb 0%,
-    #e3e8eb 50%,
-    #fbfdfa 50%,
-    #fbfdfa 100%
-  );
+  background: -webkit-linear-gradient(left, #e3e8eb 0%, #e3e8eb 50%, #fbfdfa 50%, #fbfdfa 100%);
 }
 
 .panel {
@@ -1472,7 +1464,7 @@ footer a:hover {
 }
 
 .panel:before {
-  content: "";
+  content: '';
   width: 30px;
   height: 5px;
   position: absolute;
@@ -1483,7 +1475,7 @@ footer a:hover {
 }
 
 .panel:after {
-  content: "";
+  content: '';
   width: 8px;
   height: 8px;
   position: absolute;
@@ -1516,7 +1508,7 @@ footer a:hover {
 
 .arm-left:before,
 .arm-right:before {
-  content: "";
+  content: '';
   width: 30px;
   height: 70px;
   position: absolute;
@@ -1537,7 +1529,7 @@ footer a:hover {
 
 .arm-left:after,
 .arm-right:after {
-  content: "";
+  content: '';
   width: 30px;
   height: 10px;
   position: absolute;
@@ -1576,7 +1568,7 @@ footer a:hover {
 
 .leg-left:before,
 .leg-right:before {
-  content: "";
+  content: '';
   width: 50px;
   height: 25px;
   position: absolute;
@@ -1633,37 +1625,25 @@ footer a:hover {
     height: 50px;
     position: absolute;
     z-index: 3;
-    background: -webkit-linear-gradient(
-      left,
-      #e3e8eb 0%,
-      #e3e8eb 50%,
-      #fbfdfa 50%,
-      #fbfdfa 100%
-    );
+    background: -webkit-linear-gradient(left, #e3e8eb 0%, #e3e8eb 50%, #fbfdfa 50%, #fbfdfa 100%);
     border-radius: 50%;
     top: 18px;
     left: calc(50% - 30px);
   }
 
   .head:after {
-    content: "";
+    content: '';
     width: 40px;
     height: 30px;
     position: absolute;
     top: calc(50% - 15px);
     left: calc(50% - 20px);
-    background: -webkit-linear-gradient(
-      top,
-      #15aece 0%,
-      #15aece 50%,
-      #0391bf 50%,
-      #0391bf 100%
-    );
+    background: -webkit-linear-gradient(top, #15aece 0%, #15aece 50%, #0391bf 50%, #0391bf 100%);
     border-radius: 15px;
   }
 
   .head:before {
-    content: "";
+    content: '';
     width: 8px;
     height: 15px;
     position: absolute;
@@ -1683,13 +1663,7 @@ footer a:hover {
     border-radius: 30px / 15px;
     top: 70px;
     left: calc(50% - 30px);
-    background: -webkit-linear-gradient(
-      left,
-      #e3e8eb 0%,
-      #e3e8eb 50%,
-      #fbfdfa 50%,
-      #fbfdfa 100%
-    );
+    background: -webkit-linear-gradient(left, #e3e8eb 0%, #e3e8eb 50%, #fbfdfa 50%, #fbfdfa 100%);
   }
 
   .panel {
@@ -1702,7 +1676,7 @@ footer a:hover {
   }
 
   .panel:before {
-    content: "";
+    content: '';
     width: 20px;
     height: 3px;
     position: absolute;
@@ -1713,7 +1687,7 @@ footer a:hover {
   }
 
   .panel:after {
-    content: "";
+    content: '';
     width: 6px;
     height: 6px;
     position: absolute;
@@ -1746,7 +1720,7 @@ footer a:hover {
 
   .arm-left:before,
   .arm-right:before {
-    content: "";
+    content: '';
     width: 20px;
     height: 40px;
     position: absolute;
@@ -1767,7 +1741,7 @@ footer a:hover {
 
   .arm-left:after,
   .arm-right:after {
-    content: "";
+    content: '';
     width: 15px;
     height: 5px;
     position: absolute;
@@ -1806,7 +1780,7 @@ footer a:hover {
 
   .leg-left:before,
   .leg-right:before {
-    content: "";
+    content: '';
     width: 30px;
     height: 15px;
     position: absolute;

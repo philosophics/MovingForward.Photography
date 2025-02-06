@@ -69,7 +69,7 @@ self.addEventListener('activate', (event) => {
   );
 
   self.registration.unregister().then(() => {
-    devLog('Old service worker unregistered.');
+    console.log('Site Content Updated.');
   });
 });
 

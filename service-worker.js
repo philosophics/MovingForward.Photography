@@ -3,7 +3,6 @@ if (self.location.hostname.includes('localhost') || self.location.hostname.inclu
   self.addEventListener('install', () => self.skipWaiting());
   self.addEventListener('activate', () => self.clients.claim());
   self.addEventListener('fetch', (event) => event.respondWith(fetch(event.request)));
-  return;
 }
 
 const CACHE_NAME = 'mfp-cache-v1';

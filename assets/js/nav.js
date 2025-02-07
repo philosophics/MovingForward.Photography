@@ -227,8 +227,6 @@ document.addEventListener('DOMContentLoaded', updateNavigationForPage);
 window.addEventListener('popstate', updateNavigationForPage);
 
 export function attachPortfolioNavigation() {
-  devLog('📸 Attaching portfolio navigation...');
-
   document.body.addEventListener('click', (event) => {
     const target = event.target;
 

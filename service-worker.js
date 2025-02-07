@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mfp-cache-v1';
+const CACHE_NAME = 'mfp-cache-v1.1';
 
 self.addEventListener('install', (event) => {
   console.log('🔄 Checking for updates...');

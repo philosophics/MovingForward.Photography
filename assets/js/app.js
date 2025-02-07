@@ -43,7 +43,7 @@ if (!window.appInitialized) {
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-    .register('/ExposureControl.js')
+    .register('/service-worker.js')
     .then((registration) => {
       console.log('✅ ExposureControl Registered:', registration);
       registration.update();

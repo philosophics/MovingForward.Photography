@@ -58,8 +58,6 @@ export function handleFooterVisibility(isVisible) {
 }
 
 export function throwInHomecards() {
-  console.log('🎬 Throwing in homecards...');
-
   const homecards = document.querySelectorAll('.home-card');
 
   if (!homecards.length) {
@@ -276,17 +274,26 @@ export function adjustCardHoverBehaviorForCard(card) {
   }
 }
 
-export function openExpandedCard(card) {
-  function handleOrientationChange() {
-    const description = expandedCard.querySelector('.description');
-    const closeBtn = expandedCard.querySelector('.close-btn');
-    const navArrows = expandedCard.querySelectorAll('.nav-arrow');
+function handleOrientationChange() {
+  const expandedCard = document.querySelector('.expanded-card');
 
-    if (!description || !closeBtn || !navArrows.length) return;
+  if (!expandedCard) {
+    if (screen.orientation && screen.orientation.lock) {
+      screen.orientation.lock('portrait').catch(() => {});
+    }
+    return;
+  }
 
-    if (window.matchMedia('(orientation: landscape)').matches) {
-      description.style.display = 'none';
+  const description = expandedCard.querySelector('.description');
+  const closeBtn = expandedCard.querySelector('.close-btn');
+  const navArrows = expandedCard.querySelectorAll('.nav-arrow');
 
+  if (!description || !closeBtn || !navArrows.length) return;
+
+  if (window.matchMedia('(orientation: landscape)').matches) {
+    description.style.display = 'none';
+
+    if (!document.fullscreenElement) {
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
       } else if (document.documentElement.mozRequestFullScreen) {
@@ -296,25 +303,27 @@ export function openExpandedCard(card) {
       } else if (document.documentElement.msRequestFullscreen) {
         document.documentElement.msRequestFullscreen();
       }
+    }
 
-      closeBtn.style.position = 'absolute';
-      closeBtn.style.top = '10px';
-      closeBtn.style.right = '10px';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '10px';
+    closeBtn.style.right = '10px';
 
-      navArrows.forEach((arrow) => {
-        arrow.style.position = 'absolute';
-        arrow.style.top = '50%';
-        arrow.style.transform = 'translateY(-50%)';
-      });
+    navArrows.forEach((arrow) => {
+      arrow.style.position = 'absolute';
+      arrow.style.top = '50%';
+      arrow.style.transform = 'translateY(-50%)';
+    });
 
-      const prevArrow = expandedCard.querySelector('.nav-arrow.prev');
-      const nextArrow = expandedCard.querySelector('.nav-arrow.next');
+    const prevArrow = expandedCard.querySelector('.nav-arrow.prev');
+    const nextArrow = expandedCard.querySelector('.nav-arrow.next');
 
-      if (prevArrow) prevArrow.style.left = '10px';
-      if (nextArrow) nextArrow.style.right = '10px';
-    } else {
-      description.style.display = '';
+    if (prevArrow) prevArrow.style.left = '10px';
+    if (nextArrow) nextArrow.style.right = '10px';
+  } else {
+    description.style.display = '';
 
+    if (document.fullscreenElement) {
       if (document.exitFullscreen) {
         document.exitFullscreen();
       } else if (document.mozCancelFullScreen) {
@@ -324,25 +333,32 @@ export function openExpandedCard(card) {
       } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
       }
+    }
 
-      closeBtn.style.position = '';
-      closeBtn.style.top = '';
-      closeBtn.style.right = '';
+    closeBtn.style.position = '';
+    closeBtn.style.top = '';
+    closeBtn.style.right = '';
 
-      navArrows.forEach((arrow) => {
-        arrow.style.position = '';
-        arrow.style.top = '';
-        arrow.style.transform = '';
-      });
+    navArrows.forEach((arrow) => {
+      arrow.style.position = '';
+      arrow.style.top = '';
+      arrow.style.transform = '';
+    });
+  }
+}
+
+window.addEventListener('resize', handleOrientationChange);
+window.addEventListener('orientationchange', handleOrientationChange);
+
+function cleanupOrientationLock() {
+  if (!document.querySelector('.expanded-card')) {
+    if (screen.orientation && screen.orientation.lock) {
+      screen.orientation.lock('portrait').catch(() => {});
     }
   }
+}
 
-  function cleanupOrientationLock() {
-    window.removeEventListener('resize', handleOrientationChange);
-    window.removeEventListener('orientationchange', handleOrientationChange);
-    screen.orientation.lock('portrait').catch(() => {});
-  }
-
+export function openExpandedCard(card) {
   const descriptionText = card.querySelector('.description')?.innerText;
 
   let overlay = document.querySelector('.overlay');
@@ -449,8 +465,6 @@ export function openExpandedCard(card) {
   expandedCard.appendChild(closeBtn);
 
   window.addEventListener('keydown', portfolioNavigation);
-  window.addEventListener('resize', handleOrientationChange);
-  window.addEventListener('orientationchange', handleOrientationChange);
   handleOrientationChange();
 
   if (screen.orientation && screen.orientation.lock) {
@@ -492,6 +506,8 @@ export function closeExpandedCard(
       overlay.style.display = 'none';
       overlay.innerHTML = '';
     }
+
+    cleanupOrientationLock();
 
     window.removeEventListener('keydown', portfolioNavigation);
   }, 500);

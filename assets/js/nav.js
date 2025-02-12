@@ -88,6 +88,22 @@ export function setupNavigation() {
       return;
     }
 
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (!menuToggle || !mobileNav) {
+      return;
+    }
+
+    if (
+      !mobileNav.contains(event.target) &&
+      !menuToggle.contains(event.target) &&
+      !event.target.closest('.hamburger')
+    ) {
+      menuToggle.checked = false;
+      mobileNav.classList.remove('open');
+    }
+
     const link = target.closest('a[data-link]');
     if (link) {
       event.preventDefault();

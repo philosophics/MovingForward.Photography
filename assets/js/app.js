@@ -61,8 +61,41 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🚨 Direct 404 Page Load Detected!');
     apply404Background();
   }
+
   const imageParam = getUrlParam('image');
   if (imageParam) {
     console.log(`Opening gallery for image: ${imageParam}`);
   }
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const header = document.querySelector('header');
+  const navLinks = document.querySelectorAll('.mobile-nav a');
+
+  menuToggle.addEventListener('change', function () {
+    if (this.checked) {
+      mobileNav.style.display = 'block';
+      setTimeout(() => {
+        mobileNav.classList.add('open');
+        header.classList.add('menu-open');
+      }, 10);
+    } else {
+      mobileNav.classList.remove('open');
+      setTimeout(() => {
+        mobileNav.style.display = 'none';
+      }, 400);
+      header.classList.remove('menu-open');
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      menuToggle.checked = false;
+      mobileNav.classList.remove('open');
+      setTimeout(() => {
+        mobileNav.style.display = 'none';
+      }, 400);
+      header.classList.remove('menu-open');
+    });
+  });
 });

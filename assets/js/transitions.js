@@ -274,41 +274,51 @@ export function adjustCardHoverBehaviorForCard(card) {
   }
 }
 
-function handleOrientationChange() {
+async function handleOrientationChange() {
   const expandedCard = document.querySelector('.expanded-card');
 
   if (!expandedCard) {
+    // Lock back to portrait when no expanded cards are open
     if (screen.orientation && screen.orientation.lock) {
-      screen.orientation.lock('portrait').catch(() => {});
+      try {
+        await screen.orientation.lock('portrait-primary');
+      } catch (err) {
+        console.warn('Orientation lock failed:', err);
+      }
     }
     return;
   }
 
-  const description = expandedCard.querySelector('.description');
-  const closeBtn = expandedCard.querySelector('.close-btn');
-  const navArrows = expandedCard.querySelectorAll('.nav-arrow');
-
-  if (!description || !closeBtn || !navArrows.length) return;
-
+  // If an expanded card is open, attempt to unlock landscape mode
   if (window.matchMedia('(orientation: landscape)').matches) {
-    description.style.display = 'none';
+    const description = expandedCard.querySelector('.description');
+    const textWrapper = expandedCard.querySelector('.text-wrapper');
 
-    if (!document.fullscreenElement) {
-      if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-      } else if (document.documentElement.mozRequestFullScreen) {
-        document.documentElement.mozRequestFullScreen();
-      } else if (document.documentElement.webkitRequestFullscreen) {
-        document.documentElement.webkitRequestFullscreen();
-      } else if (document.documentElement.msRequestFullscreen) {
-        document.documentElement.msRequestFullscreen();
+    if (window.matchMedia('(orientation: landscape)').matches) {
+      if (description) description.style.display = 'none';
+      if (textWrapper) textWrapper.style.display = 'none';
+    } else {
+      if (description) description.style.display = '';
+      if (textWrapper) textWrapper.style.display = '';
+    }
+
+    // Ensure close button stays inside expanded card
+    const closeBtn = expandedCard.querySelector('.close-btn');
+    if (closeBtn) {
+      if (window.matchMedia('(orientation: landscape)').matches) {
+        closeBtn.style.position = 'fixed';
+        closeBtn.style.top = '15px';
+        closeBtn.style.right = '15px';
+        closeBtn.style.zIndex = '1001';
+      } else {
+        closeBtn.style.position = '';
+        closeBtn.style.top = '';
+        closeBtn.style.right = '';
       }
     }
 
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '10px';
-    closeBtn.style.right = '10px';
-
+    // Ensure navigation arrows stay inside expanded card
+    const navArrows = expandedCard.querySelectorAll('.nav-arrow');
     navArrows.forEach((arrow) => {
       arrow.style.position = 'absolute';
       arrow.style.top = '50%';
@@ -321,29 +331,32 @@ function handleOrientationChange() {
     if (prevArrow) prevArrow.style.left = '10px';
     if (nextArrow) nextArrow.style.right = '10px';
   } else {
-    description.style.display = '';
+    expandedCard.querySelector('.description').style.display = '';
 
-    if (document.fullscreenElement) {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      }
+    // Reset close button position
+    const closeBtn = expandedCard.querySelector('.close-btn');
+    if (closeBtn) {
+      closeBtn.style.position = '';
+      closeBtn.style.top = '';
+      closeBtn.style.right = '';
     }
 
-    closeBtn.style.position = '';
-    closeBtn.style.top = '';
-    closeBtn.style.right = '';
-
+    // Reset navigation arrows position
+    const navArrows = expandedCard.querySelectorAll('.nav-arrow');
     navArrows.forEach((arrow) => {
       arrow.style.position = '';
       arrow.style.top = '';
       arrow.style.transform = '';
     });
+  }
+
+  // Try to override orientation, but ensure it's in a user-triggered event
+  if (screen.orientation && screen.orientation.lock) {
+    try {
+      await screen.orientation.lock('landscape');
+    } catch (err) {
+      console.warn('Orientation lock failed:', err);
+    }
   }
 }
 
@@ -377,7 +390,7 @@ export function openExpandedCard(card) {
   const expandedCard = card.cloneNode(true);
   expandedCard.originalCardRect = cardRect;
 
-  expandedCard.classList.add('expanded-card');
+  expandedCard.classList.add('expanded-card', 'dynamic-card');
   expandedCard.style.position = 'fixed';
   expandedCard.style.top = `${cardRect.top + window.scrollY}px`;
   expandedCard.style.left = `${cardRect.left}px`;
@@ -467,6 +480,29 @@ export function openExpandedCard(card) {
   window.addEventListener('keydown', portfolioNavigation);
   handleOrientationChange();
 
+  expandedCard.addEventListener('click', async () => {
+    if (screen.orientation && screen.orientation.lock) {
+      try {
+        await screen.orientation.lock('landscape');
+      } catch (err) {
+        console.warn('Orientation lock failed:', err);
+
+        // Fallback: Force full-screen mode to hide the address bar
+        if (!document.fullscreenElement) {
+          if (document.documentElement.requestFullscreen) {
+            await document.documentElement.requestFullscreen();
+          } else if (document.documentElement.mozRequestFullScreen) {
+            await document.documentElement.mozRequestFullScreen();
+          } else if (document.documentElement.webkitRequestFullscreen) {
+            await document.documentElement.webkitRequestFullscreen();
+          } else if (document.documentElement.msRequestFullscreen) {
+            await document.documentElement.msRequestFullscreen();
+          }
+        }
+      }
+    }
+  });
+
   if (screen.orientation && screen.orientation.lock) {
     screen.orientation.lock('natural').catch(() => {});
   }
@@ -508,6 +544,10 @@ export function closeExpandedCard(
     }
 
     cleanupOrientationLock();
+
+    if (screen.orientation && screen.orientation.lock) {
+      screen.orientation.lock('portrait-primary').catch(() => {});
+    }
 
     window.removeEventListener('keydown', portfolioNavigation);
   }, 500);

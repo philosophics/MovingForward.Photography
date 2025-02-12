@@ -46,6 +46,7 @@ main {
   flex-direction: column;
   height: calc(100vh - 110px - 70px);
   overflow: hidden;
+  z-index: 1;
 }
 
 main::-webkit-scrollbar {
@@ -121,8 +122,22 @@ header {
 @media screen and (max-width: 768px) {
   #home-title {
     font-size: 1.95rem;
+    text-align: center;
+    display: block;
+    line-height: 1.2;
     white-space: normal;
+  }
+
+  #home-title .home-link {
+    display: block;
+    text-align: center;
+    max-width: fit-content;
+    margin: auto;
+  }
+
+  #home-title .home-link {
     word-break: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -178,28 +193,45 @@ label.hamburger span {
 }
 
 ul.mobile-nav {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: none;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.9);
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 100%;
-  z-index: 9;
+  left: 10px;
+  width: max-content;
+  min-width: 180px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 6px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  max-height: 0;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, max-height 0.2s ease-in-out;
+  z-index: 9999;
 }
 
 ul.mobile-nav.open {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  left: 16px;
+  top: 110%;
+  transform: translateY(0);
+  max-height: none;
+  padding: 10px 20px;
+}
+
+ul.mobile-nav li {
+  text-align: left;
 }
 
 ul.mobile-nav li a {
-  color: white;
+  display: block;
+  text-align: left;
   padding: 10px 20px;
   text-decoration: none;
   font-size: 16px;
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
@@ -224,6 +256,24 @@ ul.mobile-nav li a {
     display: flex;
     align-items: center;
     padding: 0 15px;
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: none;
+    z-index: 9999;
+  }
+
+  .mobile-nav.open {
+    display: block;
+  }
+
+  header.menu-open {
+    overflow: visible;
   }
 }
 

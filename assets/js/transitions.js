@@ -294,10 +294,19 @@ async function handleOrientationChange() {
     const description = expandedCard.querySelector('.description');
     const textWrapper = expandedCard.querySelector('.text-wrapper');
 
-    if (window.matchMedia('(orientation: landscape)').matches) {
-      if (description) description.style.display = 'none';
-      if (textWrapper) textWrapper.style.display = 'none';
+    const isMobile = /Mobi/i.test(navigator.userAgent);
+    const isLandscape = window.matchMedia('(orientation: landscape)').matches;
+
+    if (isMobile && expandedCard) {
+      if (isLandscape) {
+        if (description) description.style.display = 'none';
+        if (textWrapper) textWrapper.style.display = 'none';
+      } else {
+        if (description) description.style.display = '';
+        if (textWrapper) textWrapper.style.display = '';
+      }
     } else {
+      // On desktop, ensure description & text wrapper are always visible
       if (description) description.style.display = '';
       if (textWrapper) textWrapper.style.display = '';
     }
@@ -351,9 +360,9 @@ async function handleOrientationChange() {
   }
 
   // Try to override orientation, but ensure it's in a user-triggered event
-  if (screen.orientation && screen.orientation.lock) {
+  if (screen.orientation && screen.orientation.lock && /Mobi/i.test(navigator.userAgent)) {
     try {
-      await screen.orientation.lock('landscape');
+      await screen.orientation.lock('portrait-primary');
     } catch (err) {
       console.warn('Orientation lock failed:', err);
     }

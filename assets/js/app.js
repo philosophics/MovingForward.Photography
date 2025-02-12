@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNav = document.querySelector('.mobile-nav');
   const header = document.querySelector('header');
   const navLinks = document.querySelectorAll('.mobile-nav a');
+  const hamburger = document.querySelector('.hamburger');
 
   menuToggle.addEventListener('change', function () {
     if (this.checked) {
@@ -98,4 +99,31 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('menu-open');
     });
   });
+
+  document.addEventListener('click', (event) => {
+    if (
+      !mobileNav.contains(event.target) &&
+      !menuToggle.contains(event.target) &&
+      !event.target.closest('.hamburger')
+    ) {
+      menuToggle.checked = false;
+      mobileNav.classList.remove('open');
+      setTimeout(() => {
+        mobileNav.style.display = 'none';
+      }, 400);
+      header.classList.remove('menu-open');
+    }
+  });
+
+  function checkPageForHamburger() {
+    const isMobilePage = window.innerWidth <= 768;
+    if (!isMobilePage) {
+      hamburger.style.display = 'none';
+    } else {
+      hamburger.style.display = 'block';
+    }
+  }
+
+  checkPageForHamburger();
+  window.addEventListener('resize', checkPageForHamburger);
 });

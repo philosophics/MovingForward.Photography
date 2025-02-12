@@ -278,7 +278,6 @@ async function handleOrientationChange() {
   const expandedCard = document.querySelector('.expanded-card');
 
   if (!expandedCard) {
-    // Lock back to portrait when no expanded cards are open
     if (screen.orientation && screen.orientation.lock) {
       try {
         await screen.orientation.lock('portrait-primary');
@@ -289,7 +288,6 @@ async function handleOrientationChange() {
     return;
   }
 
-  // If an expanded card is open, attempt to unlock landscape mode
   if (window.matchMedia('(orientation: landscape)').matches) {
     const description = expandedCard.querySelector('.description');
     const textWrapper = expandedCard.querySelector('.text-wrapper');
@@ -306,12 +304,10 @@ async function handleOrientationChange() {
         if (textWrapper) textWrapper.style.display = '';
       }
     } else {
-      // On desktop, ensure description & text wrapper are always visible
       if (description) description.style.display = '';
       if (textWrapper) textWrapper.style.display = '';
     }
 
-    // Ensure close button stays inside expanded card
     const closeBtn = expandedCard.querySelector('.close-btn');
     if (closeBtn) {
       if (window.matchMedia('(orientation: landscape)').matches) {
@@ -326,7 +322,6 @@ async function handleOrientationChange() {
       }
     }
 
-    // Ensure navigation arrows stay inside expanded card
     const navArrows = expandedCard.querySelectorAll('.nav-arrow');
     navArrows.forEach((arrow) => {
       arrow.style.position = 'absolute';
@@ -342,7 +337,6 @@ async function handleOrientationChange() {
   } else {
     expandedCard.querySelector('.description').style.display = '';
 
-    // Reset close button position
     const closeBtn = expandedCard.querySelector('.close-btn');
     if (closeBtn) {
       closeBtn.style.position = '';
@@ -350,7 +344,6 @@ async function handleOrientationChange() {
       closeBtn.style.right = '';
     }
 
-    // Reset navigation arrows position
     const navArrows = expandedCard.querySelectorAll('.nav-arrow');
     navArrows.forEach((arrow) => {
       arrow.style.position = '';
@@ -359,7 +352,6 @@ async function handleOrientationChange() {
     });
   }
 
-  // Try to override orientation, but ensure it's in a user-triggered event
   if (screen.orientation && screen.orientation.lock && /Mobi/i.test(navigator.userAgent)) {
     try {
       await screen.orientation.lock('portrait-primary');
@@ -496,7 +488,6 @@ export function openExpandedCard(card) {
       } catch (err) {
         console.warn('Orientation lock failed:', err);
 
-        // Fallback: Force full-screen mode to hide the address bar
         if (!document.fullscreenElement) {
           if (document.documentElement.requestFullscreen) {
             await document.documentElement.requestFullscreen();

@@ -66,9 +66,9 @@ export function throwInHomecards() {
   }
 
   homecards.forEach((card, index) => {
-    const startX = (Math.random() - 0.5) * window.innerWidth * 1.5;
-    const startY = -window.innerHeight * (1 + Math.random() * 0.5);
-    const startRotation = (Math.random() - 0.5) * 60;
+    const startX = (Math.random() - 0.5) * window.innerWidth * 2;
+    const startY = -window.innerHeight * (1.2 + Math.random() * 0.8);
+    const startRotation = (Math.random() - 0.5) * 90;
 
     card.style.transition = 'none';
     card.style.transform = 'translate(0, 0) rotate(0deg)';
@@ -78,14 +78,14 @@ export function throwInHomecards() {
       card.style.transform = `translate(${startX}px, ${startY}px) rotate(${startRotation}deg)`;
       card.style.opacity = '0.01';
 
-      card.getBoundingClientRect();
+      void card.offsetWidth;
 
       setTimeout(() => {
         card.style.transition =
-          'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease-out';
+          'transform 0.8s cubic-bezier(0.2, 1.2, 0.3, 1), opacity 0.5s ease-out';
         card.style.transform = 'translate(0, 0) rotate(0deg)';
         card.style.opacity = '1';
-      }, index * 150);
+      }, index * 120 + Math.random() * 100);
     });
   });
 }

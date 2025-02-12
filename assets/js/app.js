@@ -1,7 +1,7 @@
 import { setupRouter } from './optics.js';
 import { setupDebugging } from './develop.js';
 import { setupImages } from './images.js';
-import { setupNavigation } from './nav.js';
+import { setupNavigation } from './osd.js';
 import './portfolio.js';
 
 document.addEventListener('contextmenu', (event) => event.preventDefault());
@@ -45,7 +45,7 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('/service-worker.js')
     .then((registration) => {
-      console.log('✅ ExposureControl Registered:', registration);
+      console.log('✅ ExposureControl Registered');
       registration.update();
     })
     .catch((error) => console.error('❌ Service Worker Registration Failed:', error));

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mfp-cache-v1.1';
+const CACHE_NAME = 'mfp-cache-v1.2';
 
 self.addEventListener('install', (event) => {
   console.log('🔄 Checking for updates...');
@@ -19,11 +19,11 @@ self.addEventListener('install', (event) => {
         '/assets/js/base.js',
         '/assets/js/develop.js',
         '/assets/js/foot.js',
+        '/assets/js/frames.js',
         '/assets/js/images.js',
-        '/assets/js/nav.js',
         '/assets/js/portfolio.js',
         '/assets/js/optics.js',
-        '/assets/js/transitions.js',
+        '/assets/js/osd.js',
         '/assets/images/logo.png',
         '/assets/pages/offline.html',
       ]);

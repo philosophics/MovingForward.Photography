@@ -1,6 +1,6 @@
 import { loadPage, routes } from './optics.js';
 import { devLog, devWarn, devError } from './develop.js';
-import { handleNavVisibility, openExpandedCard, closeExpandedCard } from './transitions.js';
+import { handleNavVisibility, openExpandedCard, closeExpandedCard } from './frames.js';
 import { ensureHomecardsExist } from './base.js';
 import { loadHomeCards } from './images.js';
 import { showDescription, positionDescription, hideDescription } from './portfolio.js';

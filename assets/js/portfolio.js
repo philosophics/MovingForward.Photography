@@ -1,11 +1,11 @@
 import { devLog, devWarn, devError } from './develop.js';
-import { attachPortfolioNavigation, addNavigationArrows } from './nav.js';
+import { attachPortfolioNavigation, addNavigationArrows } from './osd.js';
 import { setupPortfolio, loadPortfolioImages } from './images.js';
 import {
   adjustCardHoverBehaviorForCard,
   makeRandomImagesLarger,
   setupHoverExpansion,
-} from './transitions.js';
+} from './frames.js';
 
 let lastClearedPage = null;
 

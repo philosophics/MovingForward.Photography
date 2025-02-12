@@ -1,8 +1,8 @@
 import { devLog, devWarn, devError } from './develop.js';
 import { clearPortfolioGrid, finalizePortfolioGrid } from './portfolio.js';
 import { ensureHomecardsExist } from './base.js';
-import { attachPortfolioNavigation } from './nav.js';
-import { throwInHomecards, stackInPortfolioImages } from './transitions.js';
+import { attachPortfolioNavigation } from './osd.js';
+import { throwInHomecards, stackInPortfolioImages } from './frames.js';
 
 export function waitForAppState(callback, attempts = 0) {
   if (window.appState && window.appState.imagesLoaded) {

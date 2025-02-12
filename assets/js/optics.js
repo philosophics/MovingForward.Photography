@@ -6,7 +6,7 @@ import {
   handleFooterVisibility,
   resetBackground,
   apply404Background,
-} from './transitions.js';
+} from './frames.js';
 
 export const routes = {
   '/': 'assets/pages/home.html',

@@ -1,5 +1,5 @@
 import { devLog } from './develop.js';
-import { addNavigationArrows, portfolioNavigation } from './nav.js';
+import { addNavigationArrows, portfolioNavigation } from './osd.js';
 import { hideDescription, showDescription, positionDescription } from './portfolio.js';
 
 export function setupTransitions() {

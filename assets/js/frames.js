@@ -91,30 +91,79 @@ export function throwInHomecards() {
 }
 
 export function stackInPortfolioImages() {
-  const portfolioCards = document.querySelectorAll('.dynamic-card');
+  const portfolioCards = Array.from(document.querySelectorAll('.dynamic-card'));
+  const header = document.querySelector('header');
+  const headerBottom = header ? header.offsetHeight : 100;
 
   if (!portfolioCards.length) {
     console.warn('⚠️ No portfolio images found.');
     return;
   }
 
-  portfolioCards.forEach((card, index) => {
-    const startX = (Math.random() - 0.5) * 100;
-    const startY = 100 + Math.random() * 50;
-    const startRotation = (Math.random() - 0.5) * 10;
+  const isDesktop = window.innerWidth > 1024;
 
-    card.style.opacity = '0';
-    card.style.transform = `translate(${startX}px, ${startY}px) rotate(${startRotation}deg)`;
-    card.style.transition = 'none';
+  const rows = [];
+  portfolioCards.forEach((card) => {
+    const rowTop = card.offsetTop;
+    let row = rows.find((r) => Math.abs(r[0].offsetTop - rowTop) < 50);
+    if (!row) {
+      row = [];
+      rows.push(row);
+    }
+    row.push(card);
+  });
 
-    requestAnimationFrame(() => {
-      card.getBoundingClientRect();
+  rows.forEach((row, rowIndex) => {
+    row.forEach((card, index) => {
+      let startX, startY, startRotation, bounceY, settleY;
 
-      setTimeout(() => {
-        card.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s ease';
-        card.style.transform = 'translate(0, 0) rotate(0deg)';
-        card.style.opacity = '1';
-      }, index * 100);
+      if (isDesktop) {
+        startX = (Math.random() - 0.3) * window.innerWidth * 0.2;
+        startY = window.innerHeight * 0.7;
+        startRotation = (Math.random() - 0.5) * 30;
+        const previousRowBottom =
+          rowIndex === 0 ? headerBottom : rows[rowIndex - 1][0].offsetTop + 50;
+        bounceY = previousRowBottom + 20;
+        settleY = 0;
+      } else {
+        startX = (Math.random() - 0.1) * 30;
+        startY = 100 + Math.random() * 30;
+        startRotation = (Math.random() - 0.5) * 5;
+        bounceY = 50;
+        settleY = 0;
+      }
+
+      card.style.opacity = '0';
+      card.style.visibility = 'hidden';
+      card.style.transform = `translate3d(${startX}px, ${startY}px, 0) rotate(${startRotation}deg)`;
+      card.style.transition = 'none';
+
+      requestAnimationFrame(() => {
+        card.getBoundingClientRect();
+
+        setTimeout(() => {
+          card.style.visibility = 'visible';
+
+          card.style.transition = isDesktop
+            ? 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease'
+            : 'transform 0.4s ease-out, opacity 0.3s ease';
+
+          card.style.transform = `translate3d(0px, ${bounceY}px, 0) rotate(${
+            startRotation / 2
+          }deg)`;
+          card.style.opacity = '1';
+
+          setTimeout(
+            () => {
+              card.style.transition = isDesktop
+                ? 'transform 0.3s ease-in-out'
+                : 'transform 0.3s ease-out';
+              card.style.transform = `translate3d(0, ${settleY}px, 0) rotate(0deg)`;
+            },
+            isDesktop ? 200 : 100,
+          );
+        }, rowIndex * 150 + index * (isDesktop ? 50 : 30));
+      });
     });
   });
 }
@@ -194,20 +243,32 @@ function applySpans(card, img) {
   const aspectRatio = width / height;
 
   let rowSpan, colSpan;
+
   if (width > 2000 || height > 1500) {
-    rowSpan = 3;
+    rowSpan = 2;
+    colSpan = 2;
+  } else if (aspectRatio > 1.3) {
+    rowSpan = 2;
     colSpan = 3;
-  } else if (aspectRatio > 1) {
+  } else if (aspectRatio < 0.8) {
     rowSpan = 2;
     colSpan = 2;
   } else {
-    rowSpan = 3;
-    colSpan = 1;
+    rowSpan = 2;
+    colSpan = 2;
   }
 
   card.style.transition = 'all 0.5s ease-in-out';
   card.style.gridRow = `span ${rowSpan}`;
   card.style.gridColumn = `span ${colSpan}`;
+
+  card.style.transform = 'scale(1.0)';
+  card.style.opacity = '0.8';
+  requestAnimationFrame(() => {
+    card.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+    card.style.transform = 'scale(1.05)';
+    card.style.opacity = '1';
+  });
 }
 
 export function setupHoverExpansion() {

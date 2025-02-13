@@ -129,17 +129,3 @@ export function hideDescription() {
     descriptionContainer.classList.remove('hide');
   }, 400);
 }
-
-function stackInPortfolioGrid() {
-  const portfolioGrid = document.querySelector('.portfolioGrid');
-  if (portfolioGrid) {
-    portfolioGrid.style.opacity = '0';
-    portfolioGrid.style.transform = 'translateY(100vh)';
-    portfolioGrid.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
-
-    setTimeout(() => {
-      portfolioGrid.style.transform = 'translateY(0)';
-      portfolioGrid.style.opacity = '1';
-    }, 100);
-  }
-}

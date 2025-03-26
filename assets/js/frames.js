@@ -82,7 +82,7 @@ export function throwInHomecards() {
 
       setTimeout(() => {
         card.style.transition =
-          'transform 0.8s cubic-bezier(0.2, 1.2, 0.3, 1), opacity 0.5s ease-out';
+          'transform 0.98s cubic-bezier(0.2, 1.2, 0.3, 1), opacity 0.3s ease-out';
         card.style.transform = 'translate(0, 0) rotate(0deg)';
         card.style.opacity = '1';
       }, index * 120 + Math.random() * 100);
@@ -335,104 +335,6 @@ export function adjustCardHoverBehaviorForCard(card) {
   }
 }
 
-async function handleOrientationChange() {
-  const expandedCard = document.querySelector('.expanded-card');
-
-  if (!expandedCard) {
-    if (screen.orientation && screen.orientation.lock) {
-      try {
-        await screen.orientation.lock('portrait-primary');
-      } catch (err) {
-        console.warn('Orientation lock failed:', err);
-      }
-    }
-    return;
-  }
-
-  if (window.matchMedia('(orientation: landscape)').matches) {
-    const description = expandedCard.querySelector('.description');
-    const textWrapper = expandedCard.querySelector('.text-wrapper');
-
-    const isMobile = /Mobi/i.test(navigator.userAgent);
-    const isLandscape = window.matchMedia('(orientation: landscape)').matches;
-
-    if (isMobile && expandedCard) {
-      if (isLandscape) {
-        if (description) description.style.display = 'none';
-        if (textWrapper) textWrapper.style.display = 'none';
-      } else {
-        if (description) description.style.display = '';
-        if (textWrapper) textWrapper.style.display = '';
-      }
-    } else {
-      if (description) description.style.display = '';
-      if (textWrapper) textWrapper.style.display = '';
-    }
-
-    const closeBtn = expandedCard.querySelector('.close-btn');
-    if (closeBtn) {
-      if (window.matchMedia('(orientation: landscape)').matches) {
-        closeBtn.style.position = 'fixed';
-        closeBtn.style.top = '15px';
-        closeBtn.style.right = '15px';
-        closeBtn.style.zIndex = '1001';
-      } else {
-        closeBtn.style.position = '';
-        closeBtn.style.top = '';
-        closeBtn.style.right = '';
-      }
-    }
-
-    const navArrows = expandedCard.querySelectorAll('.nav-arrow');
-    navArrows.forEach((arrow) => {
-      arrow.style.position = 'absolute';
-      arrow.style.top = '50%';
-      arrow.style.transform = 'translateY(-50%)';
-    });
-
-    const prevArrow = expandedCard.querySelector('.nav-arrow.prev');
-    const nextArrow = expandedCard.querySelector('.nav-arrow.next');
-
-    if (prevArrow) prevArrow.style.left = '10px';
-    if (nextArrow) nextArrow.style.right = '10px';
-  } else {
-    expandedCard.querySelector('.description').style.display = '';
-
-    const closeBtn = expandedCard.querySelector('.close-btn');
-    if (closeBtn) {
-      closeBtn.style.position = '';
-      closeBtn.style.top = '';
-      closeBtn.style.right = '';
-    }
-
-    const navArrows = expandedCard.querySelectorAll('.nav-arrow');
-    navArrows.forEach((arrow) => {
-      arrow.style.position = '';
-      arrow.style.top = '';
-      arrow.style.transform = '';
-    });
-  }
-
-  if (screen.orientation && screen.orientation.lock && /Mobi/i.test(navigator.userAgent)) {
-    try {
-      await screen.orientation.lock('portrait-primary');
-    } catch (err) {
-      console.warn('Orientation lock failed:', err);
-    }
-  }
-}
-
-window.addEventListener('resize', handleOrientationChange);
-window.addEventListener('orientationchange', handleOrientationChange);
-
-function cleanupOrientationLock() {
-  if (!document.querySelector('.expanded-card')) {
-    if (screen.orientation && screen.orientation.lock) {
-      screen.orientation.lock('portrait').catch(() => {});
-    }
-  }
-}
-
 export function openExpandedCard(card) {
   const descriptionText = card.querySelector('.description')?.innerText;
 
@@ -539,30 +441,101 @@ export function openExpandedCard(card) {
 
   expandedCard.appendChild(closeBtn);
 
-  window.addEventListener('keydown', portfolioNavigation);
-  handleOrientationChange();
-
-  expandedCard.addEventListener('click', async () => {
-    if (screen.orientation && screen.orientation.lock) {
-      try {
-        await screen.orientation.lock('landscape');
-      } catch (err) {
-        console.warn('Orientation lock failed:', err);
-
-        if (!document.fullscreenElement) {
-          if (document.documentElement.requestFullscreen) {
-            await document.documentElement.requestFullscreen();
-          } else if (document.documentElement.mozRequestFullScreen) {
-            await document.documentElement.mozRequestFullScreen();
-          } else if (document.documentElement.webkitRequestFullscreen) {
-            await document.documentElement.webkitRequestFullscreen();
-          } else if (document.documentElement.msRequestFullscreen) {
-            await document.documentElement.msRequestFullscreen();
-          }
-        }
-      }
-    }
+  expandedCard.addEventListener('click', (event) => {
+    event.stopPropagation();
   });
+
+  const isMobile = /Mobi/i.test(navigator.userAgent);
+
+  if (isMobile && expandedImg) {
+    expandedImg.onload = () => {
+      const imageRatio = expandedImg.naturalWidth / expandedImg.naturalHeight;
+
+      if (imageRatio > 1.3) {
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.classList.add('fullscreen-btn');
+        fullscreenBtn.innerHTML = '⛶';
+
+        let isFullscreen = false;
+
+        fullscreenBtn.addEventListener('click', () => {
+          if (!isFullscreen) {
+            expandedCard.classList.add('fullscreen-active');
+
+            const padding = 16;
+            const rotatedWidth = window.innerHeight - padding * 2;
+            const rotatedHeight = window.innerWidth - padding * 2;
+
+            expandedCard.style.width = `${window.innerHeight}px`;
+            expandedCard.style.height = `${window.innerWidth}px`;
+            expandedCard.style.maxWidth = '100vw';
+            expandedCard.style.maxHeight = '100vh';
+            expandedCard.style.overflow = 'hidden';
+            expandedCard.style.position = 'fixed';
+            expandedCard.style.top = '50%';
+            expandedCard.style.left = '50%';
+            expandedCard.style.transformOrigin = 'center center';
+            expandedCard.style.transform = 'translate(-50%, -50%) rotate(90deg)';
+            expandedCard.style.display = 'flex';
+            expandedCard.style.alignItems = 'center';
+            expandedCard.style.justifyContent = 'center';
+            expandedCard.style.transition = 'transform 0.5s ease-in-out';
+
+            expandedImg.style.width = '100%';
+            expandedImg.style.height = '100%';
+            expandedImg.style.objectFit = 'contain';
+
+            if (overlay) {
+              overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+            }
+
+            const descriptionContainer = document.querySelector('.description-container');
+            if (textWrapperBack) {
+              textWrapperBack.style.transition = 'opacity 0.3s ease-in-out';
+              textWrapperBack.style.opacity = '0';
+              textWrapperBack.style.pointerEvents = 'none';
+            }
+
+            if (descriptionContainer) {
+              hideDescription();
+            }
+
+            isFullscreen = true;
+          } else {
+            expandedCard.classList.remove('fullscreen-active');
+            expandedCard.style.transform = 'translate(-50%, -50%) rotate(0deg) scale(1)';
+
+            const descriptionContainer = expandedCard.querySelector('.description-container');
+            setTimeout(() => {
+              if (textWrapperBack) {
+                textWrapperBack.style.opacity = '1';
+                textWrapperBack.style.pointerEvents = 'auto';
+                textWrapperBack.style.transform = 'translateY(0)';
+              }
+            }, 350);
+
+            if (descriptionContainer) {
+              showDescription(descriptionContainer.innerText);
+            }
+
+            if (overlay) {
+              overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+            }
+
+            isFullscreen = false;
+          }
+        });
+
+        expandedCard.appendChild(fullscreenBtn);
+      }
+    };
+
+    if (expandedImg.complete) {
+      expandedImg.onload();
+    }
+  }
+
+  window.addEventListener('keydown', portfolioNavigation);
 
   if (screen.orientation && screen.orientation.lock) {
     screen.orientation.lock('natural').catch(() => {});
@@ -603,8 +576,6 @@ export function closeExpandedCard(
       overlay.style.display = 'none';
       overlay.innerHTML = '';
     }
-
-    cleanupOrientationLock();
 
     if (screen.orientation && screen.orientation.lock) {
       screen.orientation.lock('portrait-primary').catch(() => {});

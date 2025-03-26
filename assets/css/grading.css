@@ -87,8 +87,18 @@ header {
 .header-background {
   width: 100%;
   height: 100%;
-  background-image: repeating-radial-gradient(#0c0a0a 80%, #2f312f 90%, #3f4549 90%);
-  background-size: 65px 65px;
+  background-color: #1a1a1a; /* Base dark tone */
+  background-image: repeating-linear-gradient(
+      to right,
+      rgba(30, 30, 30, 0.8) 0px,
+      rgba(15, 15, 15, 0.9) 10px,
+      rgba(30, 30, 30, 0.8) 20px
+    ),
+    radial-gradient(circle at 20% 20%, rgba(50, 50, 50, 0.15), transparent),
+    radial-gradient(circle at 80% 70%, rgba(80, 80, 80, 0.1), transparent);
+  background-size: 100px 100px, 300px 300px, 400px 400px;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  filter: contrast(1.2) brightness(0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,6 +133,7 @@ header {
   #home-title {
     font-size: 2.1rem;
     text-align: center;
+    top: 5%;
     display: block;
     line-height: 1.2;
     white-space: normal;
@@ -597,7 +608,7 @@ header {
     margin-bottom: 16px;
   }
   .expanded-card .text-wrapper.back {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -899,6 +910,65 @@ header {
   .arrow-bottom {
     height: 2px;
     background-color: #fff;
+  }
+
+  .fullscreen-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    font-size: 19px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+  }
+
+  /* ✅ Apply fullscreen behavior ONLY when active */
+  .fullscreen-active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  /* ✅ Ensure image remains fully visible */
+  .fullscreen-active img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .fullscreen-active .fullscreen-btn {
+    position: absolute;
+    top: 16px;
+    left: auto;
+    right: 16px;
+    transform: rotate(-90deg) translateX(50%);
+  }
+
+  .fullscreen-active .close-btn {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    transform: rotate(-90deg) translateX(-50%);
+  }
+
+  /* ✅ Ensure description-container hides in fullscreen mode */
+  .fullscreen-active .description-container {
+    display: none !important;
+    opacity: 0;
+    pointer-events: none;
   }
 }
 

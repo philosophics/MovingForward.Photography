@@ -4,6 +4,19 @@ import { setupImages } from './images.js';
 import { setupNavigation } from './osd.js';
 import './portfolio.js';
 
+if (location.hostname !== 'movingforward.photography' && 'serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations()
+    .then(rs => rs.forEach(r => r.unregister()))
+    .catch(() => {});
+
+  try {
+    const sw = navigator.serviceWorker;
+    if (typeof sw.register === 'function') {
+      sw.register = () => Promise.resolve({ update() {} });
+    }
+  } catch {}
+}
+
 document.addEventListener('contextmenu', (event) => event.preventDefault());
 
 setupDebugging();
@@ -20,18 +33,21 @@ if (!window.appState) {
 }
 
 if ('navigator' in window && 'registerProtocolHandler' in navigator) {
-  navigator.registerProtocolHandler(
-    'web+photos',
-    window.location.origin + '/gallery?image=%s',
-    'Moving Forward Photography',
-  );
+  try {
+    navigator.registerProtocolHandler(
+      'web+photos',
+      `${window.location.origin}/gallery?image=%s`,
+      'Moving Forward Photography',
+    );
+  } catch (_) {
+    // no-op
+  }
 }
 
 async function initializeApp() {
   if (!window.appState.routerInitialized) {
     await setupRouter();
   }
-
   setupImages();
   setupNavigation();
 }
@@ -41,14 +57,18 @@ if (!window.appInitialized) {
   initializeApp();
 }
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/service-worker.js')
-    .then((registration) => {
-      console.log('✅ ExposureControl Registered');
-      registration.update();
-    })
-    .catch((error) => console.error('❌ Service Worker Registration Failed:', error));
+if ('serviceWorker' in navigator && location.hostname === 'movingforward.photography') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then((reg) => {
+        console.log('✅ ExposureControl Registered');
+        reg.update?.();
+      })
+      .catch(() => {
+        // quietly ignore transient errors (e.g., during deploy)
+      });
+  });
 }
 
 function getUrlParam(param) {
@@ -59,7 +79,7 @@ function getUrlParam(param) {
 document.addEventListener('DOMContentLoaded', () => {
   if (window.location.pathname.includes('404')) {
     console.log('🚨 Direct 404 Page Load Detected!');
-    apply404Background();
+    apply404Background?.();
   }
 
   const imageParam = getUrlParam('image');
@@ -117,11 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function checkPageForHamburger() {
     const isMobilePage = window.innerWidth <= 768;
-    if (!isMobilePage) {
-      hamburger.style.display = 'none';
-    } else {
-      hamburger.style.display = 'block';
-    }
+    hamburger.style.display = isMobilePage ? 'block' : 'none';
   }
 
   checkPageForHamburger();

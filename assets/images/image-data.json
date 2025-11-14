@@ -379,6 +379,20 @@
         }
     },
     {
+        "src": "/assets/images/landscape/Northern Beacon.webp",
+        "title": "Northern Beacon",
+        "description": "11/12/25 - Antelope Island - Watching the northern lights for the first time. It was rather dull trying to se it with my own eyes but after taking a few shots, I could see why it was such a neat experiance. Makes me want to see it where it's more powerful!",
+        "subtitle": "24mm | F/2.2 | 4.0s | 3200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "24mm",
+            "f_stop": "F/2.2",
+            "exposure_time": "4.0s",
+            "iso_speed": "3200",
+            "comments": "11/12/25 - Antelope Island - Watching the northern lights for the first time. It was rather dull trying to se it with my own eyes but after taking a few shots, I could see why it was such a neat experiance. Makes me want to see it where it's more powerful!"
+        }
+    },
+    {
         "src": "/assets/images/landscape/Fire Mountain.webp",
         "title": "Fire Mountain",
         "description": "Description Pending.",

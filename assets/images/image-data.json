@@ -393,6 +393,20 @@
         }
     },
     {
+        "src": "/assets/images/landscape/Journey through East Mountains.webp",
+        "title": "Journey Through East Mountains",
+        "description": "Description Pending.",
+        "subtitle": "106mm | F/6.3 | 1/60s | 50",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "106mm",
+            "f_stop": "F/6.3",
+            "exposure_time": "1/60s",
+            "iso_speed": "50",
+            "comments": "N/A"
+        }
+    },
+    {
         "src": "/assets/images/landscape/Fire Mountain.webp",
         "title": "Fire Mountain",
         "description": "Description Pending.",
@@ -403,20 +417,6 @@
             "f_stop": "F/8",
             "exposure_time": "1/320s",
             "iso_speed": "200",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/Motorcycle Journey through Mountain Wilderness.webp",
-        "title": "Motorcycle Journey Through Mountain Wilderness",
-        "description": "Description Pending.",
-        "subtitle": "106mm | F/6.3 | 1/60s | 50",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "106mm",
-            "f_stop": "F/6.3",
-            "exposure_time": "1/60s",
-            "iso_speed": "50",
             "comments": "N/A"
         }
     },
@@ -603,8 +603,18 @@
         }
     },
     {
-        "src": "/assets/images/landscape/homecard/landscape1.webp",
-        "title": "Landscape1",
+        "src": "/assets/images/landscape/homecard/homecard1.webp",
+        "title": "Homecard1",
+        "page": "landscape"
+    },
+    {
+        "src": "/assets/images/landscape/homecard/homecard2.webp",
+        "title": "Homecard2",
+        "page": "landscape"
+    },
+    {
+        "src": "/assets/images/landscape/homecard/homecard3.webp",
+        "title": "Homecard3",
         "page": "landscape"
     },
     {

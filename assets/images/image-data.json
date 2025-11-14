@@ -337,20 +337,6 @@
         }
     },
     {
-        "src": "/assets/images/landscape/Pond.webp",
-        "title": "Pond",
-        "description": "Description Pending.",
-        "subtitle": "35mm | F/4 | 1/1000s | 200",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "35mm",
-            "f_stop": "F/4",
-            "exposure_time": "1/1000s",
-            "iso_speed": "200",
-            "comments": "N/A"
-        }
-    },
-    {
         "src": "/assets/images/landscape/Devil's Castle.webp",
         "title": "Devil'S Castle",
         "description": "Description Pending.",
@@ -418,6 +404,20 @@
             "exposure_time": "1/320s",
             "iso_speed": "200",
             "comments": "N/A"
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Wasatch Front.webp",
+        "title": "Wasatch Front",
+        "description": "11/11/24 - Wasatch Front - Golden hour melting into blue hour over the Wasatch Front. Snow on the peaks, city lights waking up across the valley, and that clean line of State Street stretching straight into the horizon. The mountains anchor everything, turning a simple overlook into one of those rare \u201cstop and breathe\u201d moments.",
+        "subtitle": "49mm | F/2.8 | 1/60s | 1000",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "49mm",
+            "f_stop": "F/2.8",
+            "exposure_time": "1/60s",
+            "iso_speed": "1000",
+            "comments": "11/11/24 - Wasatch Front - Golden hour melting into blue hour over the Wasatch Front. Snow on the peaks, city lights waking up across the valley, and that clean line of State Street stretching straight into the horizon. The mountains anchor everything, turning a simple overlook into one of those rare \u201cstop and breathe\u201d moments."
         }
     },
     {
@@ -732,6 +732,34 @@
             "exposure_time": "1/125s",
             "iso_speed": "200",
             "comments": "N/A"
+        }
+    },
+    {
+        "src": "/assets/images/architecture/Downtown SLC.webp",
+        "title": "Downtown Slc",
+        "description": "Downtown Salt Lake City lit up like a circuit board. The straight shot of State Street stretching all the way into the distance is wild from this angle\u2014everything glowing in layers, from the Capitol in the foreground to the mountains sitting in the dark behind the city. Feels like the whole valley is alive.",
+        "subtitle": "150mm | F/2.8 | 1/125s | 5000",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "150mm",
+            "f_stop": "F/2.8",
+            "exposure_time": "1/125s",
+            "iso_speed": "5000",
+            "comments": "Downtown Salt Lake City lit up like a circuit board. The straight shot of State Street stretching all the way into the distance is wild from this angle\u2014everything glowing in layers, from the Capitol in the foreground to the mountains sitting in the dark behind the city. Feels like the whole valley is alive."
+        }
+    },
+    {
+        "src": "/assets/images/architecture/Walker Center.webp",
+        "title": "Walker Center",
+        "description": "8/20/22 - Salt Lake City - No idea which street I was on for this one, but the perspective lined up perfectly\u2014classic Walker Center sign stacked against the repeating geometry of the newer building. The mix of tones, textures, and that teal sky made this shot pull together way better than I expected.",
+        "subtitle": "35mm | F/11 | 1/125s | 400",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "35mm",
+            "f_stop": "F/11",
+            "exposure_time": "1/125s",
+            "iso_speed": "400",
+            "comments": "8/20/22 - Salt Lake City - No idea which street I was on for this one, but the perspective lined up perfectly\u2014classic Walker Center sign stacked against the repeating geometry of the newer building. The mix of tones, textures, and that teal sky made this shot pull together way better than I expected."
         }
     },
     {

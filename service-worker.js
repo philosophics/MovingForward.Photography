@@ -1,36 +1,46 @@
 // service-worker.js
-// Moving Forward Photography — PWA worker (patched)
-// - Ignores chrome-extension and cross-origin requests
-// - Only caches same-origin, successful GET responses
-// - Uses separate PRECACHE (install-time) and RUNTIME (on-demand) caches
+// Moving Forward Photography — PWA worker (v4)
+// - Precache main shell (HTML, CSS, JS that "run the show")
+// - Network-first for HTML + JS (so new builds show up)
+// - Cache-first for images and everything else
 
-const PRECACHE = 'mfp-precache-v2';
-const RUNTIME  = 'mfp-runtime-v2';
+const PRECACHE = 'mfp-precache-v4';
+const RUNTIME  = 'mfp-runtime-v4';
 
-// Helper predicates
-const isHttp = (url) => url.startsWith('http://') || url.startsWith('https://');
-const sameOrigin = (url) => new URL(url).origin === self.location.origin;
+// Helpers
+const isHttp = (url) =>
+  url.startsWith('http://') || url.startsWith('https://');
+
+const sameOrigin = (url) =>
+  new URL(url).origin === self.location.origin;
 
 self.addEventListener('install', (event) => {
-  // Take control immediately
+  // Take control ASAP
   self.skipWaiting();
 
   event.waitUntil(
     caches.open(PRECACHE).then((cache) =>
       cache.addAll([
-        '/',                     // keep your existing precache list
+        '/',
         '/index.html',
         '/manifest.json',
+
+        // CSS
         '/assets/css/grading.css',
+        '/assets/css/nav.css',
+
+        // Core JS
         '/assets/js/app.js',
         '/assets/js/base.js',
         '/assets/js/develop.js',
         '/assets/js/foot.js',
         '/assets/js/frames.js',
         '/assets/js/images.js',
-        '/assets/js/portfolio.js',
         '/assets/js/optics.js',
         '/assets/js/osd.js',
+        '/assets/js/portfolio.js',
+
+        // Core images / offline
         '/assets/images/logo.png',
         '/assets/pages/offline.html',
       ])
@@ -56,37 +66,88 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
 
-  // Only handle GET requests for same-origin HTTP(S) URLs
   if (request.method !== 'GET') return;
 
-  const url = request.url;
-  if (!isHttp(url) || !sameOrigin(url)) return; // ignore chrome-extension:, data:, cross-origin, etc.
+  const urlStr = request.url;
+  if (!isHttp(urlStr) || !sameOrigin(urlStr)) return;
 
+  const url = new URL(urlStr);
+
+  // HTML / navigation → NETWORK-FIRST
+  if (
+    request.mode === 'navigate' ||
+    request.headers.get('accept')?.includes('text/html')
+  ) {
+    event.respondWith(
+      (async () => {
+        try {
+          const networkResponse = await fetch(request);
+          const cache = await caches.open(RUNTIME);
+          if (networkResponse && networkResponse.status === 200) {
+            cache.put(request, networkResponse.clone());
+          }
+          return networkResponse;
+        } catch (err) {
+          const cache = await caches.open(RUNTIME);
+          const cached = await cache.match(request);
+          if (cached) return cached;
+
+          const offline = await caches.match('/assets/pages/offline.html');
+          return (
+            offline ||
+            new Response('Offline mode. Page not available.', { status: 408 })
+          );
+        }
+      })()
+    );
+    return;
+  }
+
+  // JS & CSS → NETWORK-FIRST, CACHE FALLBACK
+  if (url.pathname.endsWith('.js') || url.pathname.endsWith('.css')) {
+    event.respondWith(
+      (async () => {
+        const cache = await caches.open(RUNTIME);
+        const cached = await cache.match(request);
+
+        try {
+          const networkResponse = await fetch(request);
+          if (
+            networkResponse &&
+            networkResponse.status === 200 &&
+            networkResponse.type === 'basic'
+          ) {
+            cache.put(request, networkResponse.clone());
+          }
+          return networkResponse;
+        } catch (err) {
+          if (cached) return cached;
+          throw err;
+        }
+      })()
+    );
+    return;
+  }
+
+  // Images & everything else → CACHE-FIRST
   event.respondWith(
     (async () => {
-      // Try cache first
       const cached = await caches.match(request);
       if (cached) return cached;
 
       try {
-        const response = await fetch(request);
-
-        // Cache only successful, same-origin basic responses
-        const okToCache =
-          response &&
-          response.status === 200 &&
-          response.type === 'basic';
-
-        if (okToCache) {
-          const runtime = await caches.open(RUNTIME);
-          runtime.put(request, response.clone());
+        const networkResponse = await fetch(request);
+        if (
+          networkResponse &&
+          networkResponse.status === 200 &&
+          networkResponse.type === 'basic'
+        ) {
+          const cache = await caches.open(RUNTIME);
+          cache.put(request, networkResponse.clone());
         }
-
-        return response;
+        return networkResponse;
       } catch (err) {
-        // Offline fallback (if available)
-        const offline = await caches.match('/assets/pages/offline.html');
-        return offline || new Response('Offline mode. Page not available.', { status: 408 });
+        return new Response('Offline.', { status: 408 });
       }
     })()
   );

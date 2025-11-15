@@ -716,8 +716,13 @@
         }
     },
     {
-        "src": "/assets/images/abstract/homecard/abstract1.webp",
-        "title": "Abstract1",
+        "src": "/assets/images/abstract/homecard/homecard1.webp",
+        "title": "Homecard1",
+        "page": "abstract"
+    },
+    {
+        "src": "/assets/images/abstract/homecard/homecard2.webp",
+        "title": "Homecard2",
         "page": "abstract"
     },
     {
@@ -833,8 +838,13 @@
         }
     },
     {
-        "src": "/assets/images/architecture/homecard/architecture1.webp",
-        "title": "Architecture1",
+        "src": "/assets/images/architecture/homecard/homecard1.webp",
+        "title": "Homecard1",
+        "page": "architecture"
+    },
+    {
+        "src": "/assets/images/architecture/homecard/homecard2.webp",
+        "title": "Homecard2",
         "page": "architecture"
     }
 ]

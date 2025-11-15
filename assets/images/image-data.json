@@ -726,9 +726,37 @@
         "page": "abstract"
     },
     {
+        "src": "/assets/images/architecture/Glass Ascension.webp",
+        "title": "Glass Ascension",
+        "description": "A repeating grid of glass and shadow pulling the eye upward, like the building is trying to disappear into its own reflection.",
+        "subtitle": "40mm | F/13 | 1/125s | 200",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "40mm",
+            "f_stop": "F/13",
+            "exposure_time": "1/125s",
+            "iso_speed": "200",
+            "comments": "A repeating grid of glass and shadow pulling the eye upward, like the building is trying to disappear into its own reflection."
+        }
+    },
+    {
+        "src": "/assets/images/architecture/World Trade Center City Creek.webp",
+        "title": "World Trade Center City Creek",
+        "description": "World Trade Center - 60 E 0 S, Salt Lake City, UT",
+        "subtitle": "35mm | F/13 | 1/125s | 400",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "35mm",
+            "f_stop": "F/13",
+            "exposure_time": "1/125s",
+            "iso_speed": "400",
+            "comments": "World Trade Center - 60 E 0 S, Salt Lake City, UT"
+        }
+    },
+    {
         "src": "/assets/images/architecture/Palace Foyer.webp",
         "title": "Palace Foyer",
-        "description": "Description Pending.",
+        "description": "A glance upward becomes a study in symmetry, curves, and sky.",
         "subtitle": "18mm | F/14 | 1/125s | 200",
         "page": "architecture",
         "metadata": {
@@ -736,7 +764,35 @@
             "f_stop": "F/14",
             "exposure_time": "1/125s",
             "iso_speed": "200",
-            "comments": "N/A"
+            "comments": "A glance upward becomes a study in symmetry, curves, and sky."
+        }
+    },
+    {
+        "src": "/assets/images/architecture/City Creek Tower.webp",
+        "title": "City Creek Tower",
+        "description": "95 State at City Creek - Salt Lake City, UT",
+        "subtitle": "35mm | F/4 | 1/125s | 100",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "35mm",
+            "f_stop": "F/4",
+            "exposure_time": "1/125s",
+            "iso_speed": "100",
+            "comments": "95 State at City Creek - Salt Lake City, UT"
+        }
+    },
+    {
+        "src": "/assets/images/architecture/Hyatt Regency.webp",
+        "title": "Hyatt Regency",
+        "description": "Hyatt Regency - Salt Lake City, UT",
+        "subtitle": "46mm | F/4.8 | 1/800s | 160",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "46mm",
+            "f_stop": "F/4.8",
+            "exposure_time": "1/800s",
+            "iso_speed": "160",
+            "comments": "Hyatt Regency - Salt Lake City, UT"
         }
     },
     {
@@ -754,6 +810,20 @@
         }
     },
     {
+        "src": "/assets/images/architecture/The Cost of Climbing.webp",
+        "title": "The Cost Of Climbing",
+        "description": "4/29/23 \u2013 Salt Lake City \u2013 The city expands one floor at a time, cranes carving out the future. It\u2019s a striking sight that shows how beauty and destruction often share the same foundation.",
+        "subtitle": "35mm | F/4 | 1/400s | 50",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "35mm",
+            "f_stop": "F/4",
+            "exposure_time": "1/400s",
+            "iso_speed": "50",
+            "comments": "4/29/23 \u2013 Salt Lake City \u2013 The city expands one floor at a time, cranes carving out the future. It\u2019s a striking sight that shows how beauty and destruction often share the same foundation."
+        }
+    },
+    {
         "src": "/assets/images/architecture/Walker Center.webp",
         "title": "Walker Center",
         "description": "8/20/22 - Salt Lake City - No idea which street I was on for this one, but the perspective lined up perfectly\u2014classic Walker Center sign stacked against the repeating geometry of the newer building. The mix of tones, textures, and that teal sky made this shot pull together way better than I expected.",
@@ -765,76 +835,6 @@
             "exposure_time": "1/125s",
             "iso_speed": "400",
             "comments": "8/20/22 - Salt Lake City - No idea which street I was on for this one, but the perspective lined up perfectly\u2014classic Walker Center sign stacked against the repeating geometry of the newer building. The mix of tones, textures, and that teal sky made this shot pull together way better than I expected."
-        }
-    },
-    {
-        "src": "/assets/images/architecture/DSC0316.webp",
-        "title": "Dsc0316",
-        "description": "Description Pending.",
-        "subtitle": "35mm | F/4 | 1/125s | 100",
-        "page": "architecture",
-        "metadata": {
-            "focal_length": "35mm",
-            "f_stop": "F/4",
-            "exposure_time": "1/125s",
-            "iso_speed": "100",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/architecture/DSC0388-2.webp",
-        "title": "Dsc0388-2",
-        "description": "Description Pending.",
-        "subtitle": "46mm | F/4.8 | 1/800s | 160",
-        "page": "architecture",
-        "metadata": {
-            "focal_length": "46mm",
-            "f_stop": "F/4.8",
-            "exposure_time": "1/800s",
-            "iso_speed": "160",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/architecture/DSC0421-Enhanced-NR.webp",
-        "title": "Dsc0421-Enhanced-Nr",
-        "description": "Description Pending.",
-        "subtitle": "35mm | F/13 | 1/125s | 400",
-        "page": "architecture",
-        "metadata": {
-            "focal_length": "35mm",
-            "f_stop": "F/13",
-            "exposure_time": "1/125s",
-            "iso_speed": "400",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/architecture/DCL00624-Enhanced-NR.webp",
-        "title": "Dcl00624-Enhanced-Nr",
-        "description": "Description Pending.",
-        "subtitle": "35mm | F/4 | 1/400s | 50",
-        "page": "architecture",
-        "metadata": {
-            "focal_length": "35mm",
-            "f_stop": "F/4",
-            "exposure_time": "1/400s",
-            "iso_speed": "50",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/architecture/DSC0696.webp",
-        "title": "Dsc0696",
-        "description": "Description Pending.",
-        "subtitle": "40mm | F/13 | 1/125s | 200",
-        "page": "architecture",
-        "metadata": {
-            "focal_length": "40mm",
-            "f_stop": "F/13",
-            "exposure_time": "1/125s",
-            "iso_speed": "200",
-            "comments": "N/A"
         }
     },
     {

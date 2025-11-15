@@ -632,20 +632,6 @@
         }
     },
     {
-        "src": "/assets/images/abstract/Goblin's Lapse.webp",
-        "title": "Goblin'S Lapse",
-        "description": "Description Pending.",
-        "subtitle": "24mm | F/2.8 | 181.0s | 100",
-        "page": "abstract",
-        "metadata": {
-            "focal_length": "24mm",
-            "f_stop": "F/2.8",
-            "exposure_time": "181.0s",
-            "iso_speed": "100",
-            "comments": "N/A"
-        }
-    },
-    {
         "src": "/assets/images/abstract/Splash.webp",
         "title": "Splash",
         "description": "Description Pending.",
@@ -713,6 +699,20 @@
             "exposure_time": "1/2s",
             "iso_speed": "400",
             "comments": "Does this work to add comments?"
+        }
+    },
+    {
+        "src": "/assets/images/abstract/Goblin Lapse.webp",
+        "title": "Goblin Lapse",
+        "description": "Description Pending.",
+        "subtitle": "24mm | F/2.8 | 181.0s | 100",
+        "page": "abstract",
+        "metadata": {
+            "focal_length": "24mm",
+            "f_stop": "F/2.8",
+            "exposure_time": "181.0s",
+            "iso_speed": "100",
+            "comments": "N/A"
         }
     },
     {

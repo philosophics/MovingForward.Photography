@@ -782,6 +782,20 @@
         }
     },
     {
+        "src": "/assets/images/architecture/Downtown Salt Lake City.webp",
+        "title": "Downtown Salt Lake City",
+        "description": "Downtown Salt Lake City lit up like a circuit board. The straight shot of State Street stretching all the way into the distance is wild from this angle\u2014everything glowing in layers, from the Capitol in the foreground to the mountains sitting in the dark behind the city. Feels like the whole valley is alive.",
+        "subtitle": "150mm | F/2.8 | 1/125s | 5000",
+        "page": "architecture",
+        "metadata": {
+            "focal_length": "150mm",
+            "f_stop": "F/2.8",
+            "exposure_time": "1/125s",
+            "iso_speed": "5000",
+            "comments": "Downtown Salt Lake City lit up like a circuit board. The straight shot of State Street stretching all the way into the distance is wild from this angle\u2014everything glowing in layers, from the Capitol in the foreground to the mountains sitting in the dark behind the city. Feels like the whole valley is alive."
+        }
+    },
+    {
         "src": "/assets/images/architecture/Hyatt Regency.webp",
         "title": "Hyatt Regency",
         "description": "Hyatt Regency - Salt Lake City, UT",
@@ -793,20 +807,6 @@
             "exposure_time": "1/800s",
             "iso_speed": "160",
             "comments": "Hyatt Regency - Salt Lake City, UT"
-        }
-    },
-    {
-        "src": "/assets/images/architecture/Downtown SLC.webp",
-        "title": "Downtown Slc",
-        "description": "Downtown Salt Lake City lit up like a circuit board. The straight shot of State Street stretching all the way into the distance is wild from this angle\u2014everything glowing in layers, from the Capitol in the foreground to the mountains sitting in the dark behind the city. Feels like the whole valley is alive.",
-        "subtitle": "150mm | F/2.8 | 1/125s | 5000",
-        "page": "architecture",
-        "metadata": {
-            "focal_length": "150mm",
-            "f_stop": "F/2.8",
-            "exposure_time": "1/125s",
-            "iso_speed": "5000",
-            "comments": "Downtown Salt Lake City lit up like a circuit board. The straight shot of State Street stretching all the way into the distance is wild from this angle\u2014everything glowing in layers, from the Capitol in the foreground to the mountains sitting in the dark behind the city. Feels like the whole valley is alive."
         }
     },
     {

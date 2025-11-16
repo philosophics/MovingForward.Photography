@@ -1,11 +1,11 @@
 // service-worker.js
-// Moving Forward Photography — PWA worker (v4)
+// Moving Forward Photography — PWA worker
 // - Precache main shell (HTML, CSS, JS that "run the show")
 // - Network-first for HTML + JS (so new builds show up)
 // - Cache-first for images and everything else
 
-const PRECACHE = 'mfp-precache-v4';
-const RUNTIME  = 'mfp-runtime-v4';
+const PRECACHE = 'mfp-precache-v5';
+const RUNTIME  = 'mfp-runtime-v5';
 
 // Helpers
 const isHttp = (url) =>

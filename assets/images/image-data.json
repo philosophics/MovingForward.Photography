@@ -323,9 +323,23 @@
         "page": "street"
     },
     {
+        "src": "/assets/images/landscape/Buffalo Point.webp",
+        "title": "Buffalo Point",
+        "description": "7/21/24 \u2013 Antelope Island, Utah \u2013 A calm, pastel sunset sliding across the Great Salt Lake, folding warm color into cool water. Just one of those evenings where the world feels quiet, the light feels right, and you\u2019re reminded why this place keeps pulling you back.",
+        "subtitle": "50mm | F/4 | 1/125s | 50",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "50mm",
+            "f_stop": "F/4",
+            "exposure_time": "1/125s",
+            "iso_speed": "50",
+            "comments": "7/21/24 \u2013 Antelope Island, Utah \u2013 A calm, pastel sunset sliding across the Great Salt Lake, folding warm color into cool water. Just one of those evenings where the world feels quiet, the light feels right, and you\u2019re reminded why this place keeps pulling you back."
+        }
+    },
+    {
         "src": "/assets/images/landscape/Stew's Solitude.webp",
-        "title": "Stew'S Solitude",
-        "description": "Description Pending.",
+        "title": "Stew's Solitude",
+        "description": "7/4/22 \u2013 Stewart Falls, Utah \u2013 Standing at the base of this waterfall feels unreal. Layers of water stack into one towering cascade, drifting mist into the heat while the sun beats down. The kind of place that\u2019s loud, massive, and still somehow peaceful\u2026 a reward at the end of a hike that's definitely worth it.",
         "subtitle": "19mm | F/4.2 | 1/1000s | 125",
         "page": "landscape",
         "metadata": {
@@ -333,13 +347,41 @@
             "f_stop": "F/4.2",
             "exposure_time": "1/1000s",
             "iso_speed": "125",
-            "comments": "N/A"
+            "comments": "7/4/22 \u2013 Stewart Falls, Utah \u2013 Standing at the base of this waterfall feels unreal. Layers of water stack into one towering cascade, drifting mist into the heat while the sun beats down. The kind of place that\u2019s loud, massive, and still somehow peaceful\u2026 a reward at the end of a hike that's definitely worth it."
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Mossline Veil.webp",
+        "title": "Mossline Veil",
+        "description": "\u3600\u2f00\u3100\u3900\u2f00\u3200\u3200\u2000\u1320\u2000\u4200\u7200\u6900\u6400\u6100\u6c00\u2000\u5600\u6500\u6900\u6c00\u2000\u4600\u6100\u6c00\u6c00\u7300\u2c00\u2000\u5500\u7400\u6100\u6800\u2000\u1320\u2000\u5400\u6800\u6500\u2000\u6d00\u6100\u6900\u6e00\u2000\u7700\u6100\u7400\u6500\u7200\u6600\u6100\u6c00\u6c00\u2000\u6100\u6c00\u7700\u6100\u7900\u7300\u2000\u6700\u6500\u7400\u7300\u2000\u7400\u6800\u6500\u2000\u6100\u7400\u7400\u6500\u6e00\u7400\u6900\u6f00\u6e00\u2c00\u2000\u6200\u7500\u7400\u2000\u7400\u6800\u6900\u7300\u2000\u7300\u6d00\u6100\u6c00\u6c00\u6500\u7200\u2000\u7200\u7500\u6e00\u6f00\u6600\u6600\u2000\u6100\u7400\u2000\u7400\u6800\u6500\u2000\u6200\u6100\u7300\u6500\u2000\u6300\u6100\u7500\u6700\u6800\u7400\u2000\u6d00\u7900\u2000\u6500\u7900\u6500\u2e00\u2000\u4c00\u6900\u6700\u6800\u7400\u2c00\u2000\u6d00\u6f00\u7300\u7300\u2c00\u2000\u6100\u6e00\u6400\u2000\u7700\u6100\u7400\u6500\u7200\u2000\u6100\u6c00\u6c00\u2000\u6d00\u6f00\u7600\u6900\u6e00\u6700\u2000\u7400\u6f00\u6700\u6500\u7400\u6800\u6500\u7200\u2000\u6900\u6e00\u2000\u6100\u2000\u7700\u6100\u7900\u2000\u7400\u6800\u6100\u7400\u2000\u6600\u6500\u6500\u6c00\u7300\u2000\u7100\u7500\u6900\u6500\u7400\u2000\u6100\u6e00\u6400\u2000\u6f00\u7600\u6500\u7200\u6c00\u6f00\u6f00\u6b00\u6500\u6400\u2e00\u2000\u4100\u2000\u7200\u6500\u6d00\u6900\u6e00\u6400\u6500\u7200\u2000\u7400\u6800\u6100\u7400\u2000\u7300\u6f00\u6d00\u6500\u2000\u6f00\u6600\u2000\u7400\u6800\u6500\u2000\u6200\u6500\u7300\u7400\u2000\u7300\u6300\u6500\u6e00\u6500\u7300\u2000\u6100\u7200\u6500\u2000\u7400\u6800\u6500\u2000\u6f00\u6e00\u6500\u7300\u2000\u6800\u6900\u6400\u6900\u6e00\u6700\u2000\u6900\u6e00\u2000\u7400\u6800\u6500\u2000\u6400\u6500\u7400\u6100\u6900\u6c00\u7300\u2e00",
+        "subtitle": "35mm | F/14 | 2.0s | 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35mm",
+            "f_stop": "F/14",
+            "exposure_time": "2.0s",
+            "iso_speed": "200",
+            "comments": "\u3600\u2f00\u3100\u3900\u2f00\u3200\u3200\u2000\u1320\u2000\u4200\u7200\u6900\u6400\u6100\u6c00\u2000\u5600\u6500\u6900\u6c00\u2000\u4600\u6100\u6c00\u6c00\u7300\u2c00\u2000\u5500\u7400\u6100\u6800\u2000\u1320\u2000\u5400\u6800\u6500\u2000\u6d00\u6100\u6900\u6e00\u2000\u7700\u6100\u7400\u6500\u7200\u6600\u6100\u6c00\u6c00\u2000\u6100\u6c00\u7700\u6100\u7900\u7300\u2000\u6700\u6500\u7400\u7300\u2000\u7400\u6800\u6500\u2000\u6100\u7400\u7400\u6500\u6e00\u7400\u6900\u6f00\u6e00\u2c00\u2000\u6200\u7500\u7400\u2000\u7400\u6800\u6900\u7300\u2000\u7300\u6d00\u6100\u6c00\u6c00\u6500\u7200\u2000\u7200\u7500\u6e00\u6f00\u6600\u6600\u2000\u6100\u7400\u2000\u7400\u6800\u6500\u2000\u6200\u6100\u7300\u6500\u2000\u6300\u6100\u7500\u6700\u6800\u7400\u2000\u6d00\u7900\u2000\u6500\u7900\u6500\u2e00\u2000\u4c00\u6900\u6700\u6800\u7400\u2c00\u2000\u6d00\u6f00\u7300\u7300\u2c00\u2000\u6100\u6e00\u6400\u2000\u7700\u6100\u7400\u6500\u7200\u2000\u6100\u6c00\u6c00\u2000\u6d00\u6f00\u7600\u6900\u6e00\u6700\u2000\u7400\u6f00\u6700\u6500\u7400\u6800\u6500\u7200\u2000\u6900\u6e00\u2000\u6100\u2000\u7700\u6100\u7900\u2000\u7400\u6800\u6100\u7400\u2000\u6600\u6500\u6500\u6c00\u7300\u2000\u7100\u7500\u6900\u6500\u7400\u2000\u6100\u6e00\u6400\u2000\u6f00\u7600\u6500\u7200\u6c00\u6f00\u6f00\u6b00\u6500\u6400\u2e00\u2000\u4100\u2000\u7200\u6500\u6d00\u6900\u6e00\u6400\u6500\u7200\u2000\u7400\u6800\u6100\u7400\u2000\u7300\u6f00\u6d00\u6500\u2000\u6f00\u6600\u2000\u7400\u6800\u6500\u2000\u6200\u6500\u7300\u7400\u2000\u7300\u6300\u6500\u6e00\u6500\u7300\u2000\u6100\u7200\u6500\u2000\u7400\u6800\u6500\u2000\u6f00\u6e00\u6500\u7300\u2000\u6800\u6900\u6400\u6900\u6e00\u6700\u2000\u6900\u6e00\u2000\u7400\u6800\u6500\u2000\u6400\u6500\u7400\u6100\u6900\u6c00\u7300\u2e00"
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Hidden Falls.webp",
+        "title": "Hidden Falls",
+        "description": "5/31/23 \u2013 Big Cottonwood Canyon \u2013 A waterfall hidden between walls of rock, quiet and powerful at the same time. I usually let people look at this one and form their own thoughts.",
+        "subtitle": "35mm | F/11 | 6.0s | 50",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35mm",
+            "f_stop": "F/11",
+            "exposure_time": "6.0s",
+            "iso_speed": "50",
+            "comments": "5/31/23 \u2013 Big Cottonwood Canyon \u2013 A waterfall hidden between walls of rock, quiet and powerful at the same time. I usually let people look at this one and form their own thoughts."
         }
     },
     {
         "src": "/assets/images/landscape/Devil's Castle.webp",
-        "title": "Devil'S Castle",
-        "description": "Description Pending.",
+        "title": "Devil's Castle",
+        "description": "7/29/22 \u2013 Albion Basin \u2013 Alta, Utah \u2013 The stars were perfect, the gear was dialed in, and patience did the rest. Moments like this are why I keep coming back to Alta.",
         "subtitle": "35mm | F/1.4 | 6.0s | 1600",
         "page": "landscape",
         "metadata": {
@@ -347,21 +389,7 @@
             "f_stop": "F/1.4",
             "exposure_time": "6.0s",
             "iso_speed": "1600",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/Deserted Drought.webp",
-        "title": "Deserted Drought",
-        "description": "Description Pending.",
-        "subtitle": "35mm | F/16 | 1/400s | 200",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "35mm",
-            "f_stop": "F/16",
-            "exposure_time": "1/400s",
-            "iso_speed": "200",
-            "comments": "N/A"
+            "comments": "7/29/22 \u2013 Albion Basin \u2013 Alta, Utah \u2013 The stars were perfect, the gear was dialed in, and patience did the rest. Moments like this are why I keep coming back to Alta."
         }
     },
     {
@@ -379,9 +407,37 @@
         }
     },
     {
-        "src": "/assets/images/landscape/Journey through East Mountains.webp",
-        "title": "Journey Through East Mountains",
-        "description": "Description Pending.",
+        "src": "/assets/images/landscape/Cecret Calm.webp",
+        "title": "Cecret Calm",
+        "description": "7/9/22 \u2013 Cecret Lake, Utah \u2013 A quiet and peaceful pause in the middle of the climb. Cecret Lake always feels like a little mountain hideout, a place to breathe before pushing on toward the real adventure above. The air sits still, the landscape spreads out around you, and for a moment everything just settles.",
+        "subtitle": "35mm | F/10 | 1/250s | 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35mm",
+            "f_stop": "F/10",
+            "exposure_time": "1/250s",
+            "iso_speed": "200",
+            "comments": "7/9/22 \u2013 Cecret Lake, Utah \u2013 A quiet and peaceful pause in the middle of the climb. Cecret Lake always feels like a little mountain hideout, a place to breathe before pushing on toward the real adventure above. The air sits still, the landscape spreads out around you, and for a moment everything just settles."
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Salt & Shadow.webp",
+        "title": "Salt & Shadow",
+        "description": "4/27/24 \u2013 Great Salt Lake, Utah \u2013 A dark ridge, a thinning lake bed, and storm clouds stacking over the horizon. An ominous, beautiful view where light and shadow hit in a way that feels both calm and foreboding.",
+        "subtitle": "69mm | F/18 | 1/320s | 100",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "69mm",
+            "f_stop": "F/18",
+            "exposure_time": "1/320s",
+            "iso_speed": "100",
+            "comments": "4/27/24 \u2013 Great Salt Lake, Utah \u2013 A dark ridge, a thinning lake bed, and storm clouds stacking over the horizon. An ominous, beautiful view where light and shadow hit in a way that feels both calm and foreboding."
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Passing Through.webp",
+        "title": "Passing Through",
+        "description": "10/14/23 \u2013 East Canyon, Utah \u2013 Sometimes you catch a frame that feels like part of someone else\u2019s story. Just a rider disappearing down the road.",
         "subtitle": "106mm | F/6.3 | 1/60s | 50",
         "page": "landscape",
         "metadata": {
@@ -389,21 +445,35 @@
             "f_stop": "F/6.3",
             "exposure_time": "1/60s",
             "iso_speed": "50",
-            "comments": "N/A"
+            "comments": "10/14/23 \u2013 East Canyon, Utah \u2013 Sometimes you catch a frame that feels like part of someone else\u2019s story. Just a rider disappearing down the road."
         }
     },
     {
-        "src": "/assets/images/landscape/Fire Mountain.webp",
-        "title": "Fire Mountain",
-        "description": "Description Pending.",
-        "subtitle": "35mm | F/8 | 1/320s | 200",
+        "src": "/assets/images/landscape/Holding Space.webp",
+        "title": "Holding Space",
+        "description": "6/17/23 \u2013 Near Antelope Island, Utah \u2013 Sometimes a person in the distance becomes the whole story. Just someone standing there, staring across the water, wrapped in their own thoughts.",
+        "subtitle": "40mm | F/16 | 1/5s | 50",
         "page": "landscape",
         "metadata": {
-            "focal_length": "35mm",
-            "f_stop": "F/8",
-            "exposure_time": "1/320s",
-            "iso_speed": "200",
-            "comments": "N/A"
+            "focal_length": "40mm",
+            "f_stop": "F/16",
+            "exposure_time": "1/5s",
+            "iso_speed": "50",
+            "comments": "6/17/23 \u2013 Near Antelope Island, Utah \u2013 Sometimes a person in the distance becomes the whole story. Just someone standing there, staring across the water, wrapped in their own thoughts."
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Goblin Valley.webp",
+        "title": "Goblin Valley",
+        "description": "9/16/24 \u2013 Goblin Valley, Utah \u2013 A wild landscape of sandstone shapes stretching in every direction. Just wish the wind wasn\u2019t trying to sandblast me the whole time.",
+        "subtitle": "24mm | F/11 | 1/250s | 100",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "24mm",
+            "f_stop": "F/11",
+            "exposure_time": "1/250s",
+            "iso_speed": "100",
+            "comments": "9/16/24 \u2013 Goblin Valley, Utah \u2013 A wild landscape of sandstone shapes stretching in every direction. Just wish the wind wasn\u2019t trying to sandblast me the whole time."
         }
     },
     {
@@ -421,107 +491,9 @@
         }
     },
     {
-        "src": "/assets/images/landscape/Allen's View.webp",
-        "title": "Allen'S View",
-        "description": "Description Pending.",
-        "subtitle": "35mm | F/10 | 1/500s | 200",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "35mm",
-            "f_stop": "F/10",
-            "exposure_time": "1/500s",
-            "iso_speed": "200",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/Valley Colors.webp",
-        "title": "Valley Colors",
-        "description": "Description Pending.",
-        "subtitle": "50mm | F/8 | 1/8s | 200",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "50mm",
-            "f_stop": "F/8",
-            "exposure_time": "1/8s",
-            "iso_speed": "200",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/DSC0620.webp",
-        "title": "Dsc0620",
-        "description": "Description Pending.",
-        "subtitle": "35mm | F/14 | 2.0s | 200",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "35mm",
-            "f_stop": "F/14",
-            "exposure_time": "2.0s",
-            "iso_speed": "200",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/DSC0824.webp",
-        "title": "Dsc0824",
-        "description": "Description Pending.",
-        "subtitle": "35mm | F/10 | 1/250s | 200",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "35mm",
-            "f_stop": "F/10",
-            "exposure_time": "1/250s",
-            "iso_speed": "200",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/DCL00966-Enhanced-NR.webp",
-        "title": "Dcl00966-Enhanced-Nr",
-        "description": "Description Pending.",
-        "subtitle": "35mm | F/11 | 6.0s | 50",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "35mm",
-            "f_stop": "F/11",
-            "exposure_time": "6.0s",
-            "iso_speed": "50",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/DCL01409-Enhanced-NR.webp",
-        "title": "Dcl01409-Enhanced-Nr",
-        "description": "Description Pending.",
-        "subtitle": "40mm | F/16 | 1/5s | 50",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "40mm",
-            "f_stop": "F/16",
-            "exposure_time": "1/5s",
-            "iso_speed": "50",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/DCL07975-Enhanced-NR.webp",
-        "title": "Dcl07975-Enhanced-Nr",
-        "description": "Description Pending.",
-        "subtitle": "69mm | F/18 | 1/320s | 100",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "69mm",
-            "f_stop": "F/18",
-            "exposure_time": "1/320s",
-            "iso_speed": "100",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/DCL07995-Enhanced-NR-Edit.webp",
-        "title": "Dcl07995-Enhanced-Nr-Edit",
-        "description": "Description Pending.",
+        "src": "/assets/images/landscape/Edge of the Lake.webp",
+        "title": "Edge Of The Lake",
+        "description": "4/27/24 \u2013 Great Salt Lake, Utah \u2013 A calm stretch of shoreline near Magna with the mountains in the distance. Just a good moment and a great landscape.",
         "subtitle": "51mm | F/7.1 | 1/25s | 50",
         "page": "landscape",
         "metadata": {
@@ -529,55 +501,13 @@
             "f_stop": "F/7.1",
             "exposure_time": "1/25s",
             "iso_speed": "50",
-            "comments": "N/A"
+            "comments": "4/27/24 \u2013 Great Salt Lake, Utah \u2013 A calm stretch of shoreline near Magna with the mountains in the distance. Just a good moment and a great landscape."
         }
     },
     {
-        "src": "/assets/images/landscape/DCL08023-Enhanced-NR.webp",
-        "title": "Dcl08023-Enhanced-Nr",
-        "description": "Description Pending.",
-        "subtitle": "50mm | F/18 | 1/30s | 50",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "50mm",
-            "f_stop": "F/18",
-            "exposure_time": "1/30s",
-            "iso_speed": "50",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/DCL08507-Enhanced-NR.webp",
-        "title": "Dcl08507-Enhanced-Nr",
-        "description": "Description Pending.",
-        "subtitle": "50mm | F/4 | 1/125s | 50",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "50mm",
-            "f_stop": "F/4",
-            "exposure_time": "1/125s",
-            "iso_speed": "50",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/DCL08768-Enhanced-NR-Edit.webp",
-        "title": "Dcl08768-Enhanced-Nr-Edit",
-        "description": "Description Pending.",
-        "subtitle": "79mm | F/4 | 1/1600s | 100",
-        "page": "landscape",
-        "metadata": {
-            "focal_length": "79mm",
-            "f_stop": "F/4",
-            "exposure_time": "1/1600s",
-            "iso_speed": "100",
-            "comments": "N/A"
-        }
-    },
-    {
-        "src": "/assets/images/landscape/DCL08911-Enhanced-NR-Edit.webp",
-        "title": "Dcl08911-Enhanced-Nr-Edit",
-        "description": "Description Pending.",
+        "src": "/assets/images/landscape/Dead Horse Point.webp",
+        "title": "Dead Horse Point",
+        "description": "9/16/24 \u2013 Dead Horse Point, Utah \u2013 One of the most breathtaking views I\u2019ve ever seen. The layers go on forever, the river carves its path below, and a single tiny jeep reminds you just how small we are out here.",
         "subtitle": "35mm | F/11 | 1/250s | 100",
         "page": "landscape",
         "metadata": {
@@ -585,21 +515,91 @@
             "f_stop": "F/11",
             "exposure_time": "1/250s",
             "iso_speed": "100",
-            "comments": "N/A"
+            "comments": "9/16/24 \u2013 Dead Horse Point, Utah \u2013 One of the most breathtaking views I\u2019ve ever seen. The layers go on forever, the river carves its path below, and a single tiny jeep reminds you just how small we are out here."
         }
     },
     {
-        "src": "/assets/images/landscape/DCL08951-Enhanced-NR-Edit.webp",
-        "title": "Dcl08951-Enhanced-Nr-Edit",
-        "description": "Description Pending.",
-        "subtitle": "24mm | F/11 | 1/250s | 100",
+        "src": "/assets/images/landscape/Allen's View.webp",
+        "title": "Allen's View",
+        "description": "7/9/22 \u2013 Alta, Utah \u2013 Somewhere along the trail to Cecret Lake, this view opened up and stopped me in my tracks. Only later did I notice the little groundhog on the rock. His name is Allen.",
+        "subtitle": "35mm | F/10 | 1/500s | 200",
         "page": "landscape",
         "metadata": {
-            "focal_length": "24mm",
-            "f_stop": "F/11",
-            "exposure_time": "1/250s",
+            "focal_length": "35mm",
+            "f_stop": "F/10",
+            "exposure_time": "1/500s",
+            "iso_speed": "200",
+            "comments": "7/9/22 \u2013 Alta, Utah \u2013 Somewhere along the trail to Cecret Lake, this view opened up and stopped me in my tracks. Only later did I notice the little groundhog on the rock. His name is Allen."
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Golden Remnant.webp",
+        "title": "Golden Remnant",
+        "description": "4/27/24 \u2013 Great Salt Lake, Utah \u2013 Sunlight catching the ripples in the sand and the fading shoreline. A quiet moment of calm on a lake that\u2019s still shrinking, but still stunning.",
+        "subtitle": "50mm | F/18 | 1/30s | 50",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "50mm",
+            "f_stop": "F/18",
+            "exposure_time": "1/30s",
+            "iso_speed": "50",
+            "comments": "4/27/24 \u2013 Great Salt Lake, Utah \u2013 Sunlight catching the ripples in the sand and the fading shoreline. A quiet moment of calm on a lake that\u2019s still shrinking, but still stunning."
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Fireline Sunset.webp",
+        "title": "Fireline Sunset",
+        "description": "7/9/22 \u2013 Sugarloaf Summit, Utah \u2013 The Tooele fires shaped the entire horizon, painting the sky in colors you only see when beauty and disaster blur together.",
+        "subtitle": "35mm | F/8 | 1/320s | 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35mm",
+            "f_stop": "F/8",
+            "exposure_time": "1/320s",
+            "iso_speed": "200",
+            "comments": "7/9/22 \u2013 Sugarloaf Summit, Utah \u2013 The Tooele fires shaped the entire horizon, painting the sky in colors you only see when beauty and disaster blur together."
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Valley Colors.webp",
+        "title": "Valley Colors",
+        "description": "5/25/22 \u2013 Salt Lake City, Utah \u2013 A sunset stretched across the entire valley, painting everything from the foothills to the far edge of the lake in layers of color. One of those evenings where the whole city feels like it\u2019s exhaling.",
+        "subtitle": "50mm | F/8 | 1/8s | 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "50mm",
+            "f_stop": "F/8",
+            "exposure_time": "1/8s",
+            "iso_speed": "200",
+            "comments": "5/25/22 \u2013 Salt Lake City, Utah \u2013 A sunset stretched across the entire valley, painting everything from the foothills to the far edge of the lake in layers of color. One of those evenings where the whole city feels like it\u2019s exhaling."
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Salt & Memory.webp",
+        "title": "Salt & Memory",
+        "description": "7/23/22 \u2013 Antelope Island Causeway \u2013 I grew up driving around the Great Salt Lake when the name actually fit. Now it\u2019s mostly cracked earth and empty shoreline. Beautiful in its own way\u2026 but also a reminder of what we lose along the way.",
+        "subtitle": "35mm | F/16 | 1/400s | 200",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "35mm",
+            "f_stop": "F/16",
+            "exposure_time": "1/400s",
+            "iso_speed": "200",
+            "comments": "7/23/22 \u2013 Antelope Island Causeway \u2013 I grew up driving around the Great Salt Lake when the name actually fit. Now it\u2019s mostly cracked earth and empty shoreline. Beautiful in its own way\u2026 but also a reminder of what we lose along the way."
+        }
+    },
+    {
+        "src": "/assets/images/landscape/Wired Horizon.webp",
+        "title": "Wired Horizon",
+        "description": "9/7/24 \u2013 Ogden Canyon, Utah \u2013 The pastel sky, the layered mountains, the sagging cables cutting through it all\u2026 a strange harmony between the things we build and the places we borrow.",
+        "subtitle": "79mm | F/4 | 1/1600s | 100",
+        "page": "landscape",
+        "metadata": {
+            "focal_length": "79mm",
+            "f_stop": "F/4",
+            "exposure_time": "1/1600s",
             "iso_speed": "100",
-            "comments": "N/A"
+            "comments": "9/7/24 \u2013 Ogden Canyon, Utah \u2013 The pastel sky, the layered mountains, the sagging cables cutting through it all\u2026 a strange harmony between the things we build and the places we borrow."
         }
     },
     {

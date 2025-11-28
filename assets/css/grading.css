@@ -1189,45 +1189,324 @@ footer a:hover {
   object-fit: cover; /* Ensure the image scales well */
 }
 
-/* Text section next to the image */
 .hero-text {
-  flex: 1 1 60%; /* Allocate 60% width to text */
-  max-width: 700px; /* Prevent text from stretching too wide */
+  flex: 1 1 60%;
+  max-width: 700px;
 }
 
-/* Typography */
 .hero-title {
-  font-size: 2rem; /* Large title */
-  margin-bottom: 1rem; /* Space below the title */
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem; /* Slightly smaller text */
-  line-height: 1.6; /* Improve readability */
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-/* Ensure content container spans full height and enables scrolling */
 .content-container {
-  display: block; /* Override potential flex or grid on main container */
-  overflow-y: auto; /* Allow vertical scrolling */
-  padding-bottom: 5rem; /* Add space for scrolling past the content */
+  display: block;
+  overflow-y: auto;
+  padding-bottom: 5rem;
   margin: 12px;
 }
 
-/* Mobile adjustments */
+
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column; /* Stack image and text */
-    text-align: center; /* Center-align text for better presentation */
+    flex-direction: column;
+    text-align: center;
   }
 
   .hero-image {
-    width: 100%; /* Use full width on small screens */
-    margin-bottom: 1.5rem; /* Add space below the image */
+    width: 100%;
+    margin-bottom: 1.5rem;
   }
 
   .hero-text {
-    width: 100%; /* Full width for text */
+    width: 100%;
+  }
+} 
+
+#about {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem 3rem;
+}
+
+.about-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+#about .hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  padding: 0 0.5rem;
+}
+
+#about .hero-image {
+  display: block;
+  width: 240px;
+  max-width: 35%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+#about .hero-text {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  #about .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #about .hero-image {
+    max-width: 60%;
+    width: 200px;
+  }
+}
+
+.about-bio,
+.about-experience,
+.philosophy,
+.call-to-action {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  margin-bottom: 2rem;
+}
+
+.about-bio h2,
+.about-experience h2,
+.philosophy h2,
+.call-to-action h2 {
+  font-family: 'Unica One', system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.85;
+}
+
+.about-bio p,
+.about-experience p,
+.philosophy p,
+.call-to-action p {
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.about-experience ul {
+  list-style: none;
+  margin: 0 0 0.75rem 0;
+  padding: 0;
+}
+
+.about-experience li {
+  margin-bottom: 0.4rem;
+  padding-left: 1.2rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.about-experience li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+}
+
+.call-to-action {
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.call-to-action a {
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.call-to-action a:hover {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 900px) {
+  #about {
+    padding: 0 1.25rem 2.5rem;
+  }
+
+  .about-details {
+    grid-template-columns: 1fr;
+  }
+
+  .about-bio,
+  .about-experience,
+  .philosophy,
+  .call-to-action {
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #about {
+    padding: 0 1.25rem 2.25rem;
+  }
+
+  #about .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  #about .hero-image {
+    width: 200px;
+    max-width: 45vw;
+  }
+
+  #about .hero-text {
+    width: 100%;
+  }
+
+  .about-details {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-bio,
+  .about-experience,
+  .philosophy,
+  .call-to-action {
+    padding: 1.25rem 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .call-to-action {
+    text-align: left;
+  }
+
+  .about-nav {
+  margin-top: 1.25rem;
+  justify-content: center;
+}
+
+.about-nav-btn {
+  width: auto;
+  padding: 0.65rem 1.1rem;
+}
+}
+
+.about-nav {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about-nav-btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.about-nav-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+.about-animate {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: aboutThrowUp 0.65s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes aboutThrowUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#about > .about-animate:nth-of-type(2) { animation-delay: 0.18s; }
+#about > .about-animate:nth-of-type(3) { animation-delay: 0.36s; }
+#about > .about-animate:nth-of-type(4) { animation-delay: 0.54s; }
+#about > .about-animate:nth-of-type(5) { animation-delay: 0.72s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .about-animate {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+.hero-image-animate {
+  opacity: 0;
+  transform: translateX(-72px);
+  animation: heroImageSlide 0.6s ease-out forwards;
+  will-change: opacity, transform;
+  animation-delay: 0.05s;
+}
+
+@keyframes heroImageSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-72px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-text-animate {
+  opacity: 0;
+  transform: translateX(24px);
+  animation: heroTextSlide 0.85s ease-out forwards;
+  will-change: opacity, transform;
+  animation-delay: 0.18s;
+}
+
+@keyframes heroTextSlide {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

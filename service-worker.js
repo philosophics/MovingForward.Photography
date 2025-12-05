@@ -4,8 +4,8 @@
 // - Network-first for HTML + JS (so new builds show up)
 // - Cache-first for images and everything else
 
-const PRECACHE = 'mfp-precache-v6';
-const RUNTIME  = 'mfp-runtime-v6';
+const PRECACHE = 'mfp-precache-v7';
+const RUNTIME  = 'mfp-runtime-v7';
 
 // Helpers
 const isHttp = (url) =>

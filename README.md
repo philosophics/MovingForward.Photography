@@ -2,7 +2,7 @@
 
 #
 
-Copyright © 2022-2025 Philosophics
+Copyright © 2022-2026 Philosophics
 
 - **Photographs and Media**
 
